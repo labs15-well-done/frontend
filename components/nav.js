@@ -1,56 +1,72 @@
 import React from 'react'
 import Link from 'next/link'
 
-const links = [
-  { href: 'https://zeit.co/now', label: 'ZEIT' },
-  { href: 'https://github.com/zeit/next.js', label: 'GitHub' }
-].map(link => {
-  link.key = `nav-link-${link.href}-${link.label}`
-  return link
-})
-
-const Nav = () => (
-  <nav>
-    <ul>
-      <li>
-        <Link href='/'>
-          <a>Home</a>
-        </Link>
-      </li>
-      {links.map(({ key, href, label }) => (
-        <li key={key}>
-          <a href={href}>{label}</a>
-        </li>
-      ))}
-    </ul>
-
-    <style jsx>{`
-      :global(body) {
-        margin: 0;
-        font-family: -apple-system, BlinkMacSystemFont, Avenir Next, Avenir,
-          Helvetica, sans-serif;
-      }
-      nav {
-        text-align: center;
-      }
-      ul {
+export default function Nav() {
+  return (
+    <>
+       <div className='navigation-styles'>
+                <Link href='/index'>
+                <img src='../static/welldoneLOGO.png' />
+                </Link>
+            <div className='nav-styles'>
+                <div>
+                {/* <FontAwesomeIcon icon={faBars} size={'xs'} width={'20px'}/> */}
+                <Link href='/dashboard'>
+                    <a>Dashboard</a>
+                </Link>
+                </div>
+                <div>
+                {/* <FontAwesomeIcon icon={faSignal} size={'xs'} width={'20px'}/> */}
+                <Link href='/monitors'>
+                    <a>Monitors</a>
+                </Link>
+                </div>
+                <div>
+                {/* <FontAwesomeIcon icon={faEdit} size={'xs'} width={'20px'}/> */}
+                <Link href='reports'>
+                    <a>Reports</a>
+                </Link>
+                </div>
+                <div>
+                {/* <FontAwesomeIcon icon={faCog} size={'xs'} width={'20px'}/> */}
+                <Link href='settings'>
+                    <a>Settings</a>
+                </Link>
+                </div>
+                <div>
+                {/* <FontAwesomeIcon icon={faSignOutAlt} size={'xs'} width={'20px'}/> */}
+                    <a>Logout</a>
+                </div>
+            </div>
+        </div>
+        <style jsx>{`
+      .navigation-styles {
         display: flex;
-        justify-content: space-between;
+        flex-direction: column;
+        width: 275px;
+        align-items: center;
+        background-color: #00cffe;
+        height: 686px;
       }
-      nav > ul {
-        padding: 4px 16px;
-      }
-      li {
+      .nav-styles {
         display: flex;
-        padding: 6px 8px;
+        flex-direction: column;
+        align-items: center
       }
       a {
-        color: #067df7;
-        text-decoration: none;
-        font-size: 13px;
+          padding: 5px;
+          padding-left: 10px;
+          padding-top: 10px;
+          font-family: Roboto;
+          font-size: 1.25rem;
+          color: white;
+          text-decoration: none;
+      }
+      a:hover {
+        background-color: #1e90fe;
+        cursor: pointer;
       }
     `}</style>
-  </nav>
-)
-
-export default Nav
+    </>
+  )
+}
