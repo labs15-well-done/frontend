@@ -9,7 +9,7 @@ const Home = () => (
       <title>Home</title>
     </Head>
 
-    <h2>Auto-deploy test from Andrew B.</h2>
+    <h2>Auto-deploy test from Jay :D.</h2>
 
     <style jsx>{`
       .hero {
