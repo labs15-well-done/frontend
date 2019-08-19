@@ -1,7 +1,7 @@
-import React from 'react'
-import Link from 'next/link'
-import Head from 'next/head'
-import Nav from '../components/nav'
+import React from 'react';
+import Link from 'next/link';
+import Head from 'next/head';
+import Nav from '../components/nav';
 
 const Home = () => (
   <>
@@ -9,7 +9,7 @@ const Home = () => (
       <title>Home</title>
     </Head>
 
-    <h2>Auto-deploy github not using NOW</h2>
+    <h2>Auto-deploy test from Andrew B.</h2>
 
     <style jsx>{`
       .hero {
@@ -58,6 +58,6 @@ const Home = () => (
       }
     `}</style>
   </>
-)
+);
 
-export default Home
+export default Home;
