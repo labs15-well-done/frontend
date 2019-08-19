@@ -8,8 +8,8 @@ const Home = () => (
     <Head>
       <title>Home</title>
     </Head>
-    
-    <h2>Welcome to the Jungle 🌴</h2>
+
+    <h2>Auto-deploy</h2>
 
     <style jsx>{`
       .hero {
