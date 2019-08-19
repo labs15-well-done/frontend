@@ -11,7 +11,7 @@ const Home = () => (
 
     <div className='container'>
       <Nav />
-      <h2>Index Page!</h2>
+      <h2>Index Page</h2>
     </div>
     <style jsx>{`
       .container {
