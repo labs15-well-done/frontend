@@ -1,5 +1,6 @@
 import React from 'react'
 import Nav from '../components/Nav';
+import Map from '../components/Map'
 
 export default function dashboard() {
     return (
@@ -7,6 +8,7 @@ export default function dashboard() {
             <div className='container'>
                 <Nav />
                 <h2>Dashboard Page</h2>
+                <Map />
             </div>
             <style jsx>{`
             .container {

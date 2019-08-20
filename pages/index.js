@@ -6,7 +6,9 @@ const Home = () => (
   <>
       <Head>
         <title>Home</title>
+        <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
         <script src="https://use.fontawesome.com/9640fc46c9.js"></script>
+        
       </Head>
 
     <div className='container'>
