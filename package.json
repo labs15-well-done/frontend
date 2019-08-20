@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "cypress:open": "cypress open"
     "export": "next export",
     "deploy": "npm run build && npm run export"
   },
@@ -20,6 +21,10 @@
     "next": "9.0.4",
     "react": "16.9.0",
     "react-dom": "16.9.0",
-    "react-map-gl": "^4.1.13"
+    "react-map-gl": "^4.1.13",
+    "react-dom": "16.9.0"
+  },
+  "devDependencies": {
+    "cypress": "^3.4.1"
   }
 }
