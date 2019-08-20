@@ -25,7 +25,7 @@ export default function dashboard() {
                 // flex-direction: row;
             }
             .chart {
-                height: 800px;
+                height: 300px;
                 // border: 3px solid green;
                 // margin-left: 50%;
             }
