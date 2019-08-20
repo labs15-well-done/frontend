@@ -5,45 +5,70 @@ export default function PopUp(props) {
     return (
         <>
         <div className='popup' >
+                <button onClick={() => props.setPopUp(null)} >X</button>
             <div className='popup-inner' >
-                <button onClick={() => props.setPopUp(null)} >Close</button>
                 <h1><strong>Sensor/Pump Report:</strong></h1>
-                <p><strong>Pump ID:</strong> 3</p>
-                <p><strong>Status:</strong> Active/Attention/Failure</p>
-                <p><strong>Details:</strong> *INSERT_DETAILS*</p>
+                <div className='report'>
+                    <p><strong>Pump ID:</strong> 3</p>
+                    <p><strong>Status:</strong> Active/Attention/Failure</p>
+                    <p><strong>Details:</strong> *INSERT_DETAILS*</p>
+                </div>
             </div>
+
         </div>
         <style jsx>{`
             .popup {
+                display: flex;
+                flex-direction: row-reverse;
                 position: fixed;
-                zIndex: 7;
+                z-index: 7;
                 color: white;
-                width: 25vw;
-                height: 25vh;
+                width: 400px;
+                height: 300px;
                 top: 0;
-                left: 200px;
+                left: 35%;
                 right: 0;
                 bottom: 0;
                 margin: auto;
-                backgroundColor: rgba(0,0,0, 0.3);
-                borderRadius: 12px
+                background: rgba(0,0,0, 0.3);
+                border-radius: 12px
             }
             .popup-inner {
                 display: flex;
-                flexDirection: column;
-                justifyContent: center;
-                alignItems: center;
-                padding: 20px;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 0 20px;
                 width: 75%;
                 height: 70%;
                 position: absolute;
-                left: 7.5%;
-                // right: 36%;
+                left: 7%;
                 top: 38%;
                 bottom: 38%;
                 margin: auto;
                 background: dodgerblue;
-                borderRadius: 12px;
+                border-radius: 12px;
+            }
+            .report {
+                justify-content: flex-start;
+            }
+            h1 {
+                font-size: 1.25rem;
+            }
+            p {
+                font-size: 1rem;
+            }
+            button {
+                height: 23px;
+                border-radius: 12px;
+                background: none;
+                color: white;
+                border: 2px solid white;
+                margin: 10px;
+            }
+            button:hover {
+                border: 2px solid red;
+                background-color: red;
             }
     `}</style>
         </>

@@ -47,8 +47,8 @@ const sensors = [
 
 export default function Map() {
     const [viewPort, setViewPort] = useState({
-        width: '1000px',
-        height: '600px',
+        width: '800px',
+        height: '450px',
         latitude: 13.5,
         longitude: 105.5,
         zoom: 6
