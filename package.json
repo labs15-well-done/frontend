@@ -7,6 +7,8 @@
     "build": "next build",
     "start": "next start",
     "cypress:open": "cypress open"
+    "export": "next export",
+    "deploy": "npm run build && npm run export"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.21",
