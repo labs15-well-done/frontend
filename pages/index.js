@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from 'next/link';
 import Head from 'next/head';
 import Nav from '../components/Nav';
 
@@ -7,6 +6,7 @@ const Home = () => (
   <>
       <Head>
         <title>Home</title>
+        <script src="https://use.fontawesome.com/9640fc46c9.js"></script>
       </Head>
 
     <div className='container'>

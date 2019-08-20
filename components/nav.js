@@ -1,5 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBars, faSignal, faEdit, faCog, faSignOutAlt } from '@fortawesome/free-solid-svg-icons'
 
 export default function Nav() {
   return (
@@ -9,32 +11,32 @@ export default function Nav() {
                 <img src='../static/welldoneLOGO.png' />
                 </Link>
             <div className='nav-styles'>
-                <div>
-                {/* <FontAwesomeIcon icon={faBars} size={'xs'} width={'20px'}/> */}
+                <div className='icon'>
+                <FontAwesomeIcon icon={faBars} size={'xs'} width={'20px'}/>
                 <Link href='/dashboard'>
                     <a>Dashboard</a>
                 </Link>
                 </div>
-                <div>
-                {/* <FontAwesomeIcon icon={faSignal} size={'xs'} width={'20px'}/> */}
+                <div className='icon'>
+                <FontAwesomeIcon icon={faSignal} size={'xs'} width={'20px'}/>
                 <Link href='/monitors'>
                     <a>Monitors</a>
                 </Link>
                 </div>
-                <div>
-                {/* <FontAwesomeIcon icon={faEdit} size={'xs'} width={'20px'}/> */}
+                <div className='icon'>
+                <FontAwesomeIcon icon={faEdit} size={'xs'} width={'20px'}/>
                 <Link href='reports'>
                     <a>Reports</a>
                 </Link>
                 </div>
-                <div>
-                {/* <FontAwesomeIcon icon={faCog} size={'xs'} width={'20px'}/> */}
+                <div className='icon'>
+                <FontAwesomeIcon icon={faCog} size={'xs'} width={'20px'}/>
                 <Link href='settings'>
                     <a>Settings</a>
                 </Link>
                 </div>
-                <div>
-                {/* <FontAwesomeIcon icon={faSignOutAlt} size={'xs'} width={'20px'}/> */}
+                <div className='icon'>
+                <FontAwesomeIcon icon={faSignOutAlt} size={'xs'} width={'20px'}/>
                     <a>Logout</a>
                 </div>
             </div>
@@ -63,6 +65,17 @@ export default function Nav() {
           text-decoration: none;
       }
       a:hover {
+        background-color: #1e90fe;
+        cursor: pointer;        
+      }
+      .icon {
+        width: 225px;
+        display: flex;
+        color: white;
+        padding-left: 50px;
+        align-items: center;
+      }
+      .icon:hover {
         background-color: #1e90fe;
         cursor: pointer;
       }
