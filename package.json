@@ -17,6 +17,7 @@
     "@fortawesome/react-fontawesome": "^0.1.4",
     "@nivo/bar": "^0.59.2",
     "@nivo/geo": "^0.59.2",
+    "@nivo/line": "^0.59.3",
     "@nivo/sankey": "^0.59.1",
     "@nivo/sunburst": "^0.59.1",
     "next": "9.0.4",
