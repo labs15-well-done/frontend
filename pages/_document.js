@@ -1,0 +1,26 @@
+import Document, { Head, Main, NextScript } from 'next/document';
+
+export default class extends Document {
+  static async getInitialProps(ctx) {
+    const initialProps = await Document.getInitialProps(ctx);
+    return { ...initialProps };
+  }
+
+  render() {
+    // prettier-ignore
+    return (
+      <html>
+        <Head>
+          <meta charSet="utf-8" />
+          <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+          <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+          <link rel="stylesheet" href="/static/normalize.css" />
+        </Head>
+        <body>
+          <Main />
+          <NextScript />
+        </body>
+      </html>
+    )
+  }
+}
