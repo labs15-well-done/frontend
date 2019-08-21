@@ -1,17 +1,25 @@
 import React from "react"
-import Nav from "../components/Nav"
-import Map from "../components/Map"
-import { SunburstChart } from "../components/SunburstChart"
-import { LineChart } from "../components/LineChart"
-import DashReports from "../components/DashReports"
 import DashHeader from "../components/DashHeader"
 import Seo from "../components/Seo"
+import { FiEdit } from "react-icons/fi"
+import Card from "../components/Card"
+import { colors } from "../components/Styles"
 
 export default function dashboard() {
   return (
     <div css={{ width: "100%" }}>
       <Seo title="Dashboard • Welldone" description="" />
       <DashHeader />
+      <div css={{ padding: "20px 20px", maxWidth: 1240, margin: "0 auto" }}>
+        <div css={{ display: "flex" }}>
+          <Card
+            text="Monitor Reports"
+            icon={FiEdit}
+            value={20}
+            color={colors.brand}
+          />
+        </div>
+      </div>
     </div>
   )
 }
