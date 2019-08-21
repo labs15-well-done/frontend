@@ -18,12 +18,12 @@ export default function dashboard() {
                     <Map />
                 </div>
                     <div className='charts'>
-                    <div className='sunburst'>
-                    <SunburstChart />
-                    </div>
-                    <div className='line'>
-                    <LineChart />
-                    </div>
+                        <div className='sunburst'>
+                            <SunburstChart />
+                        </div>
+                        <div className='line'>
+                        <   LineChart />
+                        </div>
                     </div>
                     </div>
                     </div>
