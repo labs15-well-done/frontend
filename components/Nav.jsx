@@ -8,54 +8,51 @@ import {
   faCog,
   faSignOutAlt
 } from '@fortawesome/free-solid-svg-icons';
+import { FiMenu } from 'react-icons/fi';
+
+const nav = [
+  { name: 'Dashboard', link: '/dashboard', icon: FiMenu }
+  // { name: 'Monitors', link: '/monitors' },
+  // { name: 'Reports', link: '/reports' },
+  // { name: 'Settings', link: '/settings' }
+];
 
 export default function Nav() {
   return (
     <>
-      <div className="navigation-styles">
+      <div
+        className="navigation-styles"
+        css={{
+          minHeight: '100vh',
+          backgroundColor: '#00cffe',
+          padding: '0 20px'
+        }}
+      >
         <Link href="/index">
-          <img src="../static/welldoneLOGO.png" />
+          <img
+            src="../static/textlogo.png"
+            css={{ width: 200, margin: '30px 0 50px' }}
+          />
         </Link>
-        <div className="nav-styles">
-          <div className="icon">
-            <FontAwesomeIcon icon={faBars} size={'xs'} width={'20px'} />
-            <Link href="/dashboard">
-              <a>Dashboard</a>
-            </Link>
-          </div>
-          <div className="icon">
-            <FontAwesomeIcon icon={faSignal} size={'xs'} width={'20px'} />
-            <Link href="/monitors">
-              <a>Monitors</a>
-            </Link>
-          </div>
-          <div className="icon">
-            <FontAwesomeIcon icon={faEdit} size={'xs'} width={'20px'} />
-            <Link href="reports">
-              <a>Reports</a>
-            </Link>
-          </div>
-          <div className="icon">
-            <FontAwesomeIcon icon={faCog} size={'xs'} width={'20px'} />
-            <Link href="settings">
-              <a>Settings</a>
-            </Link>
-          </div>
-          <div className="icon">
+        <div css={{ textAlign: 'left' }}>
+          <div>
+            {nav.map(({ name, link, icon: Icon }) => {
+              return (
+                <Link href={link}>
+                  <div>
+                    <Icon />
+                    <a>{name}</a>
+                  </div>
+                </Link>
+              );
+            })}
+
             <FontAwesomeIcon icon={faSignOutAlt} size={'xs'} width={'20px'} />
             <a>Logout</a>
           </div>
         </div>
       </div>
       <style jsx>{`
-        .navigation-styles {
-          display: flex;
-          flex-direction: column;
-          width: 275px;
-          align-items: center;
-          background-color: #00cffe;
-          height: 686px;
-        }
         .nav-styles {
           display: flex;
           flex-direction: column;

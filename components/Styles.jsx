@@ -1,7 +1,8 @@
 import { Global, css } from '@emotion/core';
 
 export const colors = {
-  main: '#fff'
+  main: '#fff',
+  btnHover: '#1e90fe'
 };
 
 export const breakingPoints = {

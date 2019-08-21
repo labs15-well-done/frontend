@@ -7,13 +7,15 @@ export default class extends Document {
   }
 
   render() {
-    // prettier-ignore
     return (
       <html>
         <Head>
           <meta charSet="utf-8" />
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-          <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+          <meta
+            name="viewport"
+            content="width=device-width,initial-scale=1.0"
+          />
           <link rel="stylesheet" href="/static/normalize.css" />
         </Head>
         <body>
@@ -21,6 +23,6 @@ export default class extends Document {
           <NextScript />
         </body>
       </html>
-    )
+    );
   }
 }
