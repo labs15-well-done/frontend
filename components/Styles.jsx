@@ -5,6 +5,7 @@ export const colors = {
   brand: "#00cffe",
   btnHover: "#1e90fe",
   backgroundColor: "#E5EDF6",
+  text: "#50A8FF",
 }
 
 export const breakingPoints = {

@@ -5,10 +5,12 @@ import { SunburstChart } from "../components/SunburstChart"
 import { LineChart } from "../components/LineChart"
 import DashReports from "../components/DashReports"
 import DashHeader from "../components/DashHeader"
+import Seo from "../components/Seo"
 
 export default function dashboard() {
   return (
     <div css={{ width: "100%" }}>
+      <Seo title="Dashboard • Welldone" description="" />
       <DashHeader />
     </div>
   )

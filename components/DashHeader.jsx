@@ -1,29 +1,68 @@
 import React, { useState } from "react"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faSearch, faUserCircle } from "@fortawesome/free-solid-svg-icons"
-import { FiSearch, FiUser } from "react-icons/fi"
+import { FiUser } from "react-icons/fi"
+import { colors } from "./Styles"
 
 export default function DashHeader() {
-  const [search, setSearch] = useState("")
+  const [] = useState("")
   return (
     <>
       <div css={{ borderBottom: "1px solid #D1DEEA" }}>
         <div css={{ padding: "20px 20px", maxWidth: 1240, margin: "0 auto" }}>
-          <div css={{ display: "flex" }}>
-            <FiSearch size="25px" css={{ margin: "0 10px" }} />
-            <input value={search} />
-            <div>
-              <FiUser></FiUser>
+          <div
+            css={{
+              display: "flex",
+              justifyContent: "flex-end",
+              alignItems: "center",
+              marginBottom: 40,
+            }}>
+            <input
+              placeholder="Search"
+              css={{
+                backgroundColor: "white",
+                border: "none",
+                outline: "none",
+                borderRadius: 5,
+                padding: "5px 10px",
+              }}
+            />
+            <div
+              css={{
+                height: 40,
+                width: 40,
+                backgroundColor: "#ABD5FF",
+                borderRadius: "50%",
+                margin: "0 10px",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}>
+              <FiUser size="20px" color="white" />
             </div>
           </div>
-
-          <div className="user-circle">
-            <FontAwesomeIcon icon={faUserCircle} size={"2x"} />
-          </div>
-          <h4>Insights</h4>
-          <div className="a-tags">
-            <a>weekly</a>
-            <a>monthly</a>
+          <div css={{ display: "flex", alignItems: "center" }}>
+            <div css={{ flexGrow: 1 }}>
+              <h1 css={{ margin: 0, fontSize: 25, color: colors.text }}>
+                Insights
+              </h1>
+            </div>
+            <div
+              css={{
+                a: {
+                  transition: ".2s",
+                  marginLeft: 20,
+                  color: colors.btnHover,
+                  padding: "5px 10px",
+                  fontWeight: "lighter",
+                  borderRadius: 5,
+                  ":hover": {
+                    backgroundColor: colors.btnHover,
+                    color: "white",
+                  },
+                },
+              }}>
+              <a>Weekly</a>
+              <a>Monthly</a>
+            </div>
           </div>
         </div>
       </div>
