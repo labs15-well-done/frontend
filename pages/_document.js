@@ -1,9 +1,9 @@
-import Document, { Head, Main, NextScript } from 'next/document';
+import Document, { Head, Main, NextScript } from "next/document"
 
 export default class extends Document {
   static async getInitialProps(ctx) {
-    const initialProps = await Document.getInitialProps(ctx);
-    return { ...initialProps };
+    const initialProps = await Document.getInitialProps(ctx)
+    return { ...initialProps }
   }
 
   render() {
@@ -17,12 +17,16 @@ export default class extends Document {
             content="width=device-width,initial-scale=1.0"
           />
           <link rel="stylesheet" href="/static/normalize.css" />
+          <link
+            href="https://fonts.googleapis.com/css?family=Poppins:300,400,600&display=swap"
+            rel="stylesheet"
+          />
         </Head>
         <body>
           <Main />
           <NextScript />
         </body>
       </html>
-    );
+    )
   }
 }
