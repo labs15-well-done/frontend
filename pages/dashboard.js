@@ -1,7 +1,12 @@
 import React from "react"
 import DashHeader from "../components/DashHeader"
 import Seo from "../components/Seo"
-import { FiEdit } from "react-icons/fi"
+import {
+  FiEdit,
+  FiHelpCircle,
+  FiAlertCircle,
+  FiCheckCircle,
+} from "react-icons/fi"
 import Card from "../components/Card"
 import { colors } from "../components/Styles"
 
@@ -11,12 +16,30 @@ export default function dashboard() {
       <Seo title="Dashboard • Welldone" description="" />
       <DashHeader />
       <div css={{ padding: "20px 20px", maxWidth: 1240, margin: "0 auto" }}>
-        <div css={{ display: "flex" }}>
+        <div css={{ display: "flex", justifyContent: "space-between" }}>
           <Card
             text="Monitor Reports"
             icon={FiEdit}
             value={20}
             color={colors.brand}
+          />
+          <Card
+            text="Functional"
+            icon={FiCheckCircle}
+            value={50}
+            color={colors.success}
+          />
+          <Card
+            text="Non-Functional"
+            icon={FiAlertCircle}
+            value={15}
+            color={colors.danger}
+          />
+          <Card
+            text="Unknown"
+            icon={FiHelpCircle}
+            value={10}
+            color={colors.orange}
           />
         </div>
       </div>

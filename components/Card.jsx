@@ -6,9 +6,10 @@ export default function Card({ text, icon: Icon, color, value }) {
         backgroundColor: "white",
         padding: "10px 20px 20px",
         color: color ? color : "black",
+        borderRadius: 5,
       }}>
       <div css={{ display: "flex", alignItems: "center" }}>
-        <Icon size="20px" css={{ marginRight: 10 }} />
+        <Icon size="25px" css={{ marginRight: 10 }} />
         <h3 css={{ fontSize: 18 }}>{text}</h3>
       </div>
       <div
