@@ -6,7 +6,7 @@ export default function DashHeader() {
   const [] = useState("")
   return (
     <>
-      <div css={{ borderBottom: "1px solid #D1DEEA" }}>
+      <div css={{ borderBottom: "2px solid #D1DEEA" }}>
         <div css={{ padding: "20px 20px", maxWidth: 1240, margin: "0 auto" }}>
           <div
             css={{
