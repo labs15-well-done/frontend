@@ -6,19 +6,28 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "cypress:open": "cypress open"
+    "cypress:open": "cypress open",
     "export": "next export",
     "deploy": "npm run build && npm run export"
   },
   "dependencies": {
+    "@emotion/core": "^10.0.16",
     "@fortawesome/fontawesome-svg-core": "^1.2.21",
     "@fortawesome/free-solid-svg-icons": "^5.10.1",
     "@fortawesome/react-fontawesome": "^0.1.4",
+    "@nivo/bar": "^0.59.2",
+    "@nivo/geo": "^0.59.2",
+    "@nivo/line": "^0.59.3",
+    "@nivo/sankey": "^0.59.1",
+    "@nivo/sunburst": "^0.59.1",
     "next": "9.0.4",
     "react": "16.9.0",
-    "react-dom": "16.9.0"
+    "react-dom": "16.9.0",
+    "react-map-gl": "^4.1.13"
   },
   "devDependencies": {
-    "cypress": "^3.4.1"
+    "cypress": "^3.4.1",
+    "@emotion/babel-preset-css-prop": "^10.0.14",
+    "babel-plugin-emotion": "^10.0.16"
   }
 }
