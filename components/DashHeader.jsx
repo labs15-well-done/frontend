@@ -1,28 +1,33 @@
-import React, { useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch, faUserCircle } from '@fortawesome/free-solid-svg-icons';
+import React, { useState } from "react"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faSearch, faUserCircle } from "@fortawesome/free-solid-svg-icons"
+import { FiSearch, FiUser } from "react-icons/fi"
 
 export default function DashHeader() {
-  const [search, setSearch] = useState('');
+  const [search, setSearch] = useState("")
   return (
     <>
-      <div className="top">
-        <div className="search-icon">
-          <FontAwesomeIcon icon={faSearch} size={'s'} />
-        </div>
-        <input value={search} />
-        <div className="user-circle">
-          <FontAwesomeIcon icon={faUserCircle} size={'2x'} />
+      <div css={{ borderBottom: "1px solid #D1DEEA" }}>
+        <div css={{ padding: "20px 20px", maxWidth: 1240, margin: "0 auto" }}>
+          <div css={{ display: "flex" }}>
+            <FiSearch size="25px" css={{ margin: "0 10px" }} />
+            <input value={search} />
+            <div>
+              <FiUser></FiUser>
+            </div>
+          </div>
+
+          <div className="user-circle">
+            <FontAwesomeIcon icon={faUserCircle} size={"2x"} />
+          </div>
+          <h4>Insights</h4>
+          <div className="a-tags">
+            <a>weekly</a>
+            <a>monthly</a>
+          </div>
         </div>
       </div>
-      <div className="bottom">
-        <h4>Insights</h4>
-        <div className="a-tags">
-          <a>weekly</a>
-          <a>monthly</a>
-        </div>
-      </div>
-      <style jsx>{`
+      {/* <style jsx>{`
         .top {
           display: flex;
           justify-content: flex-end;
@@ -68,7 +73,7 @@ export default function DashHeader() {
           border-radius: 8px;
           cursor: pointer;
         }
-      `}</style>
+      `}</style> */}
     </>
-  );
+  )
 }

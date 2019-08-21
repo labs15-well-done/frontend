@@ -1,14 +1,20 @@
 import React from "react"
 import Link from "next/link"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { FiMenu, FiLogOut } from "react-icons/fi"
+import {
+  FiMenu,
+  FiLogOut,
+  FiBarChart2,
+  FiEdit,
+  FiSettings,
+} from "react-icons/fi"
 import { colors } from "./Styles"
 
 const nav = [
   { name: "Dashboard", link: "/dashboard", icon: FiMenu },
-  { name: "Monitors", link: "/monitors", icon: FiMenu },
-  // { name: 'Reports', link: '/reports' },
-  // { name: 'Settings', link: '/settings' }
+  { name: "Monitors", link: "/monitors", icon: FiBarChart2 },
+  { name: "Reports", link: "/reports", icon: FiEdit },
+  { name: "Settings", link: "/settings", icon: FiSettings },
 ]
 
 export default function Nav() {
@@ -19,12 +25,11 @@ export default function Nav() {
         css={{
           minHeight: "100vh",
           backgroundColor: colors.brand,
-          padding: "0 20px",
         }}>
         <Link href="/index">
           <img
             src="../static/textlogo.png"
-            css={{ width: 200, margin: "30px 0 50px" }}
+            css={{ width: 200, margin: "30px 20px 50px" }}
           />
         </Link>
         <div
@@ -38,14 +43,28 @@ export default function Nav() {
           {nav.map(({ name, link, icon: Icon }) => {
             return (
               <Link href={link}>
-                <div>
+                <div
+                  css={{
+                    padding: "10px 25px",
+                    cursor: "pointer",
+                    ":hover": {
+                      backgroundColor: colors.btnHover,
+                    },
+                  }}>
                   {Icon ? <Icon /> : null}
                   <a>{name}</a>
                 </div>
               </Link>
             )
           })}
-          <div>
+          <div
+            css={{
+              padding: "10px 25px",
+              cursor: "pointer",
+              ":hover": {
+                backgroundColor: colors.btnHover,
+              },
+            }}>
             <FiLogOut />
             <a>Logout</a>
           </div>

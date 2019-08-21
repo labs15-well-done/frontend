@@ -1,15 +1,21 @@
-import React from 'react';
-import Nav from '../components/Nav';
-import Map from '../components/Map';
-import { SunburstChart } from '../components/SunburstChart';
-import { LineChart } from '../components/LineChart';
-import DashReports from '../components/DashReports';
-import DashHeader from '../components/DashHeader';
+import React from "react"
+import Nav from "../components/Nav"
+import Map from "../components/Map"
+import { SunburstChart } from "../components/SunburstChart"
+import { LineChart } from "../components/LineChart"
+import DashReports from "../components/DashReports"
+import DashHeader from "../components/DashHeader"
 
 export default function dashboard() {
   return (
-    <>
-      <div className="stack">
+    <div css={{ width: "100%" }}>
+      <DashHeader />
+    </div>
+  )
+}
+
+{
+  /* <div className="stack">
         <DashHeader />
         <div className="dash-container">
           <DashReports />
@@ -27,8 +33,10 @@ export default function dashboard() {
             </div>
           </div>
         </div>
-      </div>
-      <style jsx>{`
+      </div> */
+}
+{
+  /* <style jsx>{`
         .container {
           display: flex;
           background-color: #e5edf6;
@@ -70,7 +78,5 @@ export default function dashboard() {
           margin-top: 4%;
           border: 1px solid blue;
         }
-      `}</style>
-    </>
-  );
+      `}</style> */
 }
