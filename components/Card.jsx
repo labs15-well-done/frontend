@@ -1,4 +1,12 @@
-export default function Card({ text, icon: Icon, color, value }) {
+export default function Card({
+  text,
+  icon: Icon,
+  color,
+  value,
+  toggle,
+  toggleSummary,
+  progress,
+}) {
   return (
     <div
       css={{
@@ -27,6 +35,42 @@ export default function Card({ text, icon: Icon, color, value }) {
           {value}
         </h2>
       </div>
+      {toggle ? (
+        <div css={{ padding: "20px 10px 0", outline: "none" }}>
+          <details>
+            <summary css={{ outline: "none", cursor: "pointer" }}>
+              {toggleSummary}
+            </summary>
+            {toggle}
+          </details>
+        </div>
+      ) : null}
+      {progress ? (
+        <div
+          css={{
+            width: "100%",
+            padding: "20px 10px 0",
+            display: "flex",
+            alignItems: "center",
+          }}>
+          <div
+            css={{
+              height: 10,
+              width: "100%",
+              backgroundColor: "#E0E0E0",
+              borderRadius: 5,
+            }}>
+            <div
+              css={{
+                backgroundColor: color,
+                width: `${progress}%`,
+                height: "100%",
+                borderRadius: 5,
+              }}></div>
+          </div>
+          <p css={{ margin: "0 0 0 10px" }}>{progress}%</p>
+        </div>
+      ) : null}
     </div>
   )
 }
