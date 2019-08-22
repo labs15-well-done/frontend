@@ -1,79 +1,85 @@
-import { Component, useState } from 'react';
-import ReactMapGL, { Marker } from 'react-map-gl';
-import PopUp from './PopUp';
+import React, { useState } from "react"
+import ReactMapGL, { Marker } from "react-map-gl"
+import PopUp from "./Popup"
 
 const sensors = [
   {
     latitude: 13.74180294,
     longitude: 106.9793701,
-    id: 0
+    id: 0,
   },
   {
     latitude: 13.8653917,
     longitude: 107.0437533,
-    id: 1
+    id: 1,
   },
   {
     latitude: 13.74180294,
     longitude: 106.9793701,
-    id: 2
+    id: 2,
   },
   {
     latitude: 13.68651955,
     longitude: 107.2160912,
-    id: 3
+    id: 3,
   },
   {
     latitude: 13.74180294,
     longitude: 106.9793701,
-    id: 4
+    id: 4,
   },
   {
     latitude: 13.66288,
     longitude: 104.0218467,
-    id: 5
+    id: 5,
   },
   {
     latitude: 13.66423349,
     longitude: 104.0051294,
-    id: 6
+    id: 6,
   },
   {
     latitude: 13.66048333,
     longitude: 104.0075117,
-    id: 7
-  }
-];
+    id: 7,
+  },
+]
 
 export default function Map() {
   const [viewPort, setViewPort] = useState({
-    width: '800px',
-    height: '450px',
+    width: "800px",
+    height: "450px",
     latitude: 13.5,
     longitude: 105.5,
-    zoom: 6
-  });
-  const [popUp, setPopUp] = useState(null);
-  console.log(viewPort);
+    zoom: 6,
+  })
+  const [popUp, setPopUp] = useState(null)
   return (
     <div>
       <ReactMapGL
-        mapStyle="mapbox://styles/mapbox/streets-v9"
-        mapboxApiAccessToken="pk.eyJ1IjoiZGlhbW9uZG1haWw5MSIsImEiOiJjanpidzZxajMwMXF5M2Rueng0MmExc3FsIn0.8_SaAolyg_YzvdzClFuvXQ"
+        // josh
+        // mapbox://styles/mapbox/streets-v9
+        // andy
+        // mapbox://styles/brudnak/cjzmvsu8c16b61cp0te3xkq2l
+        mapStyle="mapbox://styles/brudnak/cjzmvsu8c16b61cp0te3xkq2l"
+        mapboxApiAccessToken="pk.eyJ1IjoiYnJ1ZG5hayIsImEiOiJjanpramh2bnMwMGU4M210M3N5amRnMTVkIn0.ShGGESPCjVZo2MugiijwWw"
+        // josh
+        // pk.eyJ1IjoiZGlhbW9uZG1haWw5MSIsImEiOiJjanpidzZxajMwMXF5M2Rueng0MmExc3FsIn0.8_SaAolyg_YzvdzClFuvXQ
+        // andy
+        // pk.eyJ1IjoiYnJ1ZG5hayIsImEiOiJjanpramh2bnMwMGU4M210M3N5amRnMTVkIn0.ShGGESPCjVZo2MugiijwWw
         onViewportChange={props => setViewPort(props)}
-        {...viewPort}
-      >
+        {...viewPort}>
         {sensors.map(sensor => (
           <Marker
             latitude={sensor.latitude}
             longitude={sensor.longitude}
             offsetLeft={-20}
-            offsetTop={-10}
-          >
+            offsetTop={-10}>
             <img
               src="../static/LOGO.png"
-              width={'31px'}
+              width={"31px"}
               onClick={() => setPopUp(sensor.id)}
+              alt=""
             />
             {popUp && popUp === sensor.id ? (
               <PopUp setPopUp={setPopUp} />
@@ -82,7 +88,7 @@ export default function Map() {
         ))}
       </ReactMapGL>
     </div>
-  );
+  )
 }
 
 // <Marker latitude={13.8653917} longitude={107.0437533} offsetLeft={-20} offsetTop={-10}>
