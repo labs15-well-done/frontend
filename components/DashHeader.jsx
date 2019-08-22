@@ -60,8 +60,8 @@ export default function DashHeader() {
                   },
                 },
               }}>
-              <a>Weekly</a>
-              <a>Monthly</a>
+              <a css={{ cursor: "pointer" }}>Weekly</a>
+              <a css={{ cursor: "pointer" }}>Monthly</a>
             </div>
           </div>
         </div>
