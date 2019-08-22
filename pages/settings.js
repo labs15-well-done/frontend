@@ -5,7 +5,6 @@ export default function settings() {
     return (
         <>
             <div className='container'>
-                <Nav />
                 <h2>Settings Page</h2>
             </div>
             <style jsx>{`

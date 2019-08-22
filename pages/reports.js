@@ -5,7 +5,6 @@ export default function reports() {
     return (
         <>
             <div className='container'>
-                <Nav />
                 <h2>Reports Page</h2>
             </div>
             <style jsx>{`
