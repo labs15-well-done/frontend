@@ -5,7 +5,6 @@ export default function monitors() {
   return (
     <>
       <div className="container">
-        <Nav />
         <h2>Monitors Page</h2>
       </div>
       <style jsx>
