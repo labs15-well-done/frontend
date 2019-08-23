@@ -60,7 +60,6 @@ export default function Map() {
       <ReactMapGL
         mapStyle="mapbox://styles/mapbox/streets-v9"
         mapboxApiAccessToken="pk.eyJ1IjoiZGlhbW9uZG1haWw5MSIsImEiOiJjanpidzZxajMwMXF5M2Rueng0MmExc3FsIn0.8_SaAolyg_YzvdzClFuvXQ"
-        onViewportChange={props => setViewPort(props)}
         css={{ borderRadius: 5 }}
         {...viewPort}>
         {sensors.map(sensor => (

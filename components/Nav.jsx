@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import Link from "next/link"
 import {
   FiMenu,
@@ -7,8 +7,9 @@ import {
   FiEdit,
   FiSettings,
 } from "react-icons/fi"
-import { colors } from "./Styles"
+import { colors, breakingPoints } from "./Styles"
 import Joyride from "react-joyride"
+import { useStore } from "./Layout"
 
 const nav = [
   {
@@ -42,11 +43,7 @@ const nav = [
 ]
 
 export default function Nav() {
-  console.log(
-    nav.map(({ id, content }) => {
-      return { target: `.${id}`, content }
-    }),
-  )
+  const { store } = useStore()
   return (
     <>
       <div
@@ -54,6 +51,12 @@ export default function Nav() {
         css={{
           minHeight: "100vh",
           backgroundColor: colors.brand,
+          [breakingPoints.md]: {
+            transition: ".2s",
+            position: "fixed",
+            zIndex: 99999,
+            marginLeft: store.nav ? 0 : -250,
+          },
         }}>
         <Joyride
           run={true}

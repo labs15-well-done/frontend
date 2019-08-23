@@ -6,15 +6,16 @@ export default function Card({
   toggle,
   toggleSummary,
   progress,
+  css,
 }) {
   return (
     <div
       css={{
-        width: "24%",
         backgroundColor: "white",
         padding: "10px 20px 20px",
         color: color ? color : "black",
         borderRadius: 5,
+        ...css,
       }}>
       <div css={{ display: "flex", alignItems: "center" }}>
         <Icon size="25px" css={{ marginRight: 10 }} />
