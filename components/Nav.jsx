@@ -8,7 +8,6 @@ import {
   FiSettings,
 } from "react-icons/fi"
 import { colors, breakingPoints } from "./Styles"
-import Joyride from "react-joyride"
 import { useStore } from "./Layout"
 
 const nav = [
@@ -58,26 +57,6 @@ export default function Nav() {
             marginLeft: store.nav ? 0 : -250,
           },
         }}>
-        <Joyride
-          run={true}
-          scrollToFirstStep={true}
-          showProgress={true}
-          showSkipButton={true}
-          styles={{
-            options: {
-              arrowColor: "#e3ffeb",
-              backgroundColor: "#e3ffeb",
-              overlayColor: "rgba(79, 26, 0, 0.4)",
-              primaryColor: "#000",
-              textColor: "#004a14",
-              width: 900,
-              zIndex: 1000,
-            },
-          }}
-          step={nav.map(({ id, content }) => {
-            return { target: id, content }
-          })}
-        />
         <Link href="/index">
           <img
             src="../static/textlogo.png"

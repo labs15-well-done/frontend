@@ -3,9 +3,36 @@ import React, { useState } from 'react';
 export default function PopUp(props) {
   return (
     <>
-      <div className="popup">
+      <div className="popup" css={{  display: 'flex',
+          flexDirection: 'row-reverse',
+          position: 'fixed',
+          zIndex: 7,
+          color: 'white',
+          width: '400px',
+          height: '300px',
+          top: 0,
+          left: '3%',
+          right: 0,
+          bottom: 0,
+          margin: 'auto',
+          background: 'rgba(0, 0, 0, 0.3)',
+          borderRadius: '12px', }}>
         <button onClick={() => props.setPopUp(null)}>X</button>
-        <div className="popup-inner">
+        <div className="popup-inner" css={{ display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
+          padding: '0 20px',
+          width: '75%',
+          height: '70%',
+          position: 'absolute',
+          left: '7%',
+          top: '38%',
+          bottom: '38%',
+          margin: 'auto',
+          background: 'dodgerblue',
+          borderRadius: '12px',
+          zIndex: 10}} >
           <h1>
             <strong>Sensor/Pump Report:</strong>
           </h1>
@@ -14,7 +41,7 @@ export default function PopUp(props) {
               <strong>Pump ID:</strong> 3
             </p>
             <p>
-              <strong>Status:</strong> Active/Attention/Failure
+              <strong>Status:</strong> {props.sensor.status === 0 ? "Failure" : props.sensor.status === 1 ? "Attention" : props.sensor.status === 2 ? 'Active' : null}
             </p>
             <p>
               <strong>Details:</strong> *INSERT_DETAILS*
