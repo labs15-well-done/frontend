@@ -2,7 +2,7 @@ import React from 'react'
 import { HeatMapChartDay } from './HeatMapChartDay';
 import { HeatMapChartWeek } from './HeatMapChartWeek';
 
-export default function monitorsCharts() {
+export default function monitorsCharts({ twoWeekSpread }) {
     return (
         <>
             <div className='charts'>
@@ -10,10 +10,10 @@ export default function monitorsCharts() {
                     <div className="monitor-title">
                         <h1>Monitor Status: Aug 18 - Aug 24</h1>
                     </div>
-                    <HeatMapChartDay />
+                    <HeatMapChartDay twoWeekSpread={twoWeekSpread} />
                 </div>
                 <div className='heatmapweek'>
-                    <HeatMapChartWeek />
+                    <HeatMapChartWeek twoWeekSpread={twoWeekSpread} />
                 </div>
             </div>
             <style jsx>{`

@@ -1,12 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useRouter } from "next/router";
 import { MonitorData } from "../../components/MonitorData";
 import MonitorsCharts from '../../components/MonitorsCharts'
+import axios from 'axios'
 
 export default function Pump(){
     const router = useRouter()
     const [data, setData] = useState(MonitorData)
+    const [twoWeekSpread, setTwoWeekSpread] = useState([])
     const currentPump = data.filter(currPump => currPump.id == router.query.id)[0]
+
+    useEffect(() => {
+    axios
+        .get(`https://welldone-cache.herokuapp.com/p-api/${currentPump.sensorId}`)
+        .then(res => console.log(res))
+        .catch(err => console.log(err))
+    }, [])
 
     return (
         <div className="current-pump">
@@ -33,7 +42,7 @@ export default function Pump(){
                 <p>quality: {currentPump.quality}</p>
             </div>
             <div>
-                <MonitorsCharts />
+                <MonitorsCharts twoWeekSpread={twoWeekSpread} />
             </div>
 
             <style jsx>{`
