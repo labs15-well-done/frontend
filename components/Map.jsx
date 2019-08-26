@@ -1,6 +1,6 @@
-import React, { useState } from "react"
+import { Component, useState } from "react"
 import ReactMapGL, { Marker } from "react-map-gl"
-import PopUp from "./Popup"
+import PopUp from "./PopUp"
 
 const sensors = [
   {
@@ -47,27 +47,20 @@ const sensors = [
 
 export default function Map() {
   const [viewPort, setViewPort] = useState({
-    width: "800px",
-    height: "450px",
+    width: "100%",
+    height: "600px",
     latitude: 13.5,
     longitude: 105.5,
     zoom: 6,
   })
   const [popUp, setPopUp] = useState(null)
+  console.log(viewPort)
   return (
     <div>
       <ReactMapGL
-        // josh
-        // mapbox://styles/mapbox/streets-v9
-        // andy
-        // mapbox://styles/brudnak/cjzmvsu8c16b61cp0te3xkq2l
-        mapStyle="mapbox://styles/brudnak/cjzmvsu8c16b61cp0te3xkq2l"
-        mapboxApiAccessToken="pk.eyJ1IjoiYnJ1ZG5hayIsImEiOiJjanpramh2bnMwMGU4M210M3N5amRnMTVkIn0.ShGGESPCjVZo2MugiijwWw"
-        // josh
-        // pk.eyJ1IjoiZGlhbW9uZG1haWw5MSIsImEiOiJjanpidzZxajMwMXF5M2Rueng0MmExc3FsIn0.8_SaAolyg_YzvdzClFuvXQ
-        // andy
-        // pk.eyJ1IjoiYnJ1ZG5hayIsImEiOiJjanpramh2bnMwMGU4M210M3N5amRnMTVkIn0.ShGGESPCjVZo2MugiijwWw
-        onViewportChange={props => setViewPort(props)}
+        mapStyle="mapbox://styles/mapbox/streets-v9"
+        mapboxApiAccessToken="pk.eyJ1IjoiZGlhbW9uZG1haWw5MSIsImEiOiJjanpidzZxajMwMXF5M2Rueng0MmExc3FsIn0.8_SaAolyg_YzvdzClFuvXQ"
+        css={{ borderRadius: 5 }}
         {...viewPort}>
         {sensors.map(sensor => (
           <Marker
