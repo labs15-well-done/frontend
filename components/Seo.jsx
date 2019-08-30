@@ -8,7 +8,7 @@ export default function Seo({ title, description, image }) {
 
   return (
     <Head>
-      <link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
+      <link rel="icon" type="image/x-icon" href="/static/favicon.png" />
       {title && <title key="title">{title}</title>}
       {title && <meta name="title" content={title} key="meta:title" />}
       {author && <meta name="author" content={author} key="meta:author" />}
