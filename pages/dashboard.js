@@ -155,7 +155,8 @@ export default function Dashboard({ pumps }) {
                   gridArea: "5 / 1 / 6 / 3",
                 },
               }}>
-              <BlankCard style={{ height: 300 }}>
+              <BlankCard style={{ height: 350 }}>
+                <h2>Sensor Information</h2>
                 <Modal modalId={modalId} pumps={pumps} />
               </BlankCard>
             </div>
