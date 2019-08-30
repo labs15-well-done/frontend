@@ -13,11 +13,10 @@ import BlankCard from "../components/BlankCard"
 import Map from "../components/Map"
 import { SunburstChart } from "../components/SunburstChart"
 import { LineChart } from "../components/LineChart"
-import Modal from '../components/Modal'
+import Modal from "../components/Modal"
 
 export default function Dashboard({ pumps }) {
-
-  const [modalId, setModalId] = useState(null);
+  const [modalId, setModalId] = useState(null)
   console.log(modalId)
 
   console.log("cache pumps", pumps)
@@ -131,10 +130,7 @@ export default function Dashboard({ pumps }) {
                 },
               }}>
               <BlankCard style={{ padding: "10px " }}>
-                <Map
-                 well={pumps}
-                 setModalId={setModalId}
-                />
+                <Map pumps={pumps} setModalId={setModalId} />
               </BlankCard>
             </div>
             <div
