@@ -14,8 +14,6 @@ import Map from "../components/Map"
 import { SunburstChart } from "../components/SunburstChart"
 import { LineChart } from "../components/LineChart"
 
-import axios from "axios"
-
 export default function Dashboard({ pumps }) {
   console.log("cache pumps", pumps)
   return (
