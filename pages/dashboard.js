@@ -74,7 +74,7 @@ export default function Dashboard({ pumps }) {
               icon={FiCheckCircle}
               value={pumps.filter(pump => pump.status === 2).length}
               color={colors.success}
-              progress={Math.floor(
+              progress={Math.ceil(
                 (pumps.filter(pump => pump.status === 2).length /
                   pumps.length) *
                   100,
@@ -91,7 +91,7 @@ export default function Dashboard({ pumps }) {
               icon={FiAlertCircle}
               value={pumps.filter(pump => pump.status === 0).length}
               color={colors.danger}
-              progress={Math.floor(
+              progress={Math.ceil(
                 (pumps.filter(pump => pump.status === 0).length /
                   pumps.length) *
                   100,
@@ -108,7 +108,7 @@ export default function Dashboard({ pumps }) {
               icon={FiHelpCircle}
               value={pumps.filter(pump => pump.status === 1).length}
               color={colors.orange}
-              progress={Math.floor(
+              progress={Math.ceil(
                 (pumps.filter(pump => pump.status === 1).length /
                   pumps.length) *
                   100,
