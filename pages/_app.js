@@ -1,6 +1,6 @@
 import React from "react"
 import App, { Container } from "next/app"
-import Styles from "../components/Styles"
+import Styles, { breakingPoints } from "../components/Styles"
 import Nav from "../components/Nav"
 import Layout from "../components/Layout"
 
@@ -20,7 +20,14 @@ export default class extends App {
       <Container>
         <Layout>
           <Nav />
-          <div css={{ marginLeft: 240, width: "100%" }}>
+          <div
+            css={{
+              marginLeft: 240,
+              width: "100%",
+              [breakingPoints.md]: {
+                marginLeft: 0,
+              },
+            }}>
             <Component {...pageProps} />
           </div>
         </Layout>

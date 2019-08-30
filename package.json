@@ -7,7 +7,6 @@
     "fetch": "node services/jsonCache.js",
     "build": "node services/jsonCache.js && next build",
     "start": "next start",
-    "cypress:open": "cypress open",
     "export": "node services/jsonCache.js && next export",
     "deploy": "node services/jsonCache.js && npm run build && npm run export"
   },
@@ -38,7 +37,6 @@
     "@emotion/babel-preset-css-prop": "^10.0.14",
     "babel-eslint": "^10.0.2",
     "babel-plugin-emotion": "^10.0.16",
-    "cypress": "^3.4.1",
     "eslint": "^6.1.0",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-config-node": "^4.0.0",
