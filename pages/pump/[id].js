@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useRouter } from "next/router";
 import { MonitorData } from "../../components/MonitorData";
 import MonitorsCharts from '../../components/MonitorsCharts'
-import axios from 'axios'
+import axios from 'axios';
 
 export default function Pump(){
     const router = useRouter()
@@ -10,20 +10,30 @@ export default function Pump(){
     const [twoWeekSpread, setTwoWeekSpread] = useState([])
     const currentPump = data.filter(currPump => currPump.id == router.query.id)[0]
 
-    useEffect(() => {
-    axios
-        .get(`https://welldone-cache.herokuapp.com/p-api/${currentPump.sensorId}`)
-        .then(res => console.log(res))
-        .catch(err => console.log(err))
-    }, [])
+    const [dates, setDates] = useState([]);
+    const [statuses, setStatuses] = useState([]);
 
+    useEffect(() => {
+        fetch()
+    },[])
+
+    const fetch = () => {
+        axios.get('https://welldone-cache.herokuapp.com/p-api/4762')
+            .then(res => {
+                return (setDates(res.data.dates), setStatuses(res.data.statuses))
+            })
+            .catch(err => {
+                return console.log(err)
+            })
+    }
+console.log(statuses)
     return (
         <div className="current-pump">
             <div>
                 <h1>{currentPump.name}</h1>
                 <p>ID: {currentPump.id}</p>
                 <p>name: {currentPump.name}</p>
-                <p>commune: "{currentPump.commune}</p>
+                <p>commune: {currentPump.commune}</p>
                 <p>district: {currentPump.district}</p>
                 <p>province: {currentPump.province}</p>
                 <p>sensorId: {currentPump.sensorId}</p>
@@ -42,7 +52,7 @@ export default function Pump(){
                 <p>quality: {currentPump.quality}</p>
             </div>
             <div>
-                <MonitorsCharts twoWeekSpread={twoWeekSpread} />
+                <MonitorsCharts dates={dates} statuses={statuses}/>
             </div>
 
             <style jsx>{`
