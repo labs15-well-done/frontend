@@ -4,11 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "fetch": "node services/jsonCache.js",
+    "build": "node services/jsonCache.js && next build",
     "start": "next start",
     "cypress:open": "cypress open",
-    "export": "next export",
-    "deploy": "npm run build && npm run export"
+    "export": "node services/jsonCache.js && next export",
+    "deploy": "node services/jsonCache.js && npm run build && npm run export"
   },
   "dependencies": {
     "@emotion/core": "^10.0.16",
@@ -22,15 +23,21 @@
     "@nivo/sankey": "^0.59.1",
     "@nivo/sunburst": "^0.59.1",
     "axios": "^0.19.0",
+<<<<<<< HEAD
     "cors": "^2.8.5",
     "express": "^4.17.1",
+=======
+    "fs": "0.0.1-security",
+>>>>>>> 433e1ea1713ece75b5eaf8d683a8403b1ee9bea9
     "next": "9.0.4",
     "react": "16.9.0",
     "react-dom": "16.9.0",
     "react-icons": "^3.7.0",
     "react-joyride": "^2.1.1",
     "react-map-gl": "^4.1.13",
-    "reactour": "^1.15.0"
+    "reactour": "^1.15.0",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4"
   },
   "devDependencies": {
     "@emotion/babel-preset-css-prop": "^10.0.14",

@@ -1,3 +1,5 @@
+import React, { useState } from "react"
+
 export default function Card({
   text,
   icon: Icon,

@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import Header from "../components/Header"
 import Seo from "../components/Seo"
 import {
@@ -14,7 +14,8 @@ import Map from "../components/Map"
 import { SunburstChart } from "../components/SunburstChart"
 import { LineChart } from "../components/LineChart"
 
-export default function dashboard() {
+export default function Dashboard({ pumps }) {
+  console.log("cache pumps", pumps)
   return (
     <div css={{ width: "100%" }}>
       <Seo title="Dashboard • Welldone" description="" />
@@ -55,7 +56,7 @@ export default function dashboard() {
             <Card
               text="Monitor Reports"
               icon={FiEdit}
-              value={20}
+              value={pumps.length}
               color={colors.brand}
               toggleSummary="View Reports"
               toggle={<h3>Content</h3>}
@@ -69,9 +70,13 @@ export default function dashboard() {
             <Card
               text="Functional"
               icon={FiCheckCircle}
-              value={50}
+              value={pumps.filter(pump => pump.status === 2).length}
               color={colors.success}
-              progress="66"
+              progress={Math.ceil(
+                (pumps.filter(pump => pump.status === 2).length /
+                  pumps.length) *
+                  100,
+              )}
               css={{
                 gridArea: "1 / 2 / 2 / 3",
                 [breakingPoints.lg]: {
@@ -82,9 +87,13 @@ export default function dashboard() {
             <Card
               text="Non-Functional"
               icon={FiAlertCircle}
-              value={15}
+              value={pumps.filter(pump => pump.status === 0).length}
               color={colors.danger}
-              progress="20"
+              progress={Math.ceil(
+                (pumps.filter(pump => pump.status === 0).length /
+                  pumps.length) *
+                  100,
+              )}
               css={{
                 gridArea: "1 / 3 / 2 / 4",
                 [breakingPoints.lg]: {
@@ -95,9 +104,13 @@ export default function dashboard() {
             <Card
               text="Unknown"
               icon={FiHelpCircle}
-              value={10}
+              value={pumps.filter(pump => pump.status === 1).length}
               color={colors.orange}
-              progress="17"
+              progress={Math.ceil(
+                (pumps.filter(pump => pump.status === 1).length /
+                  pumps.length) *
+                  100,
+              )}
               css={{
                 gridArea: "1 / 4 / 2 / 5",
                 [breakingPoints.lg]: {
@@ -113,7 +126,16 @@ export default function dashboard() {
                 },
               }}>
               <BlankCard style={{ padding: "10px " }}>
-                <Map />
+                {/* <Map
+                  status1={status1}
+                  status2={status2}
+                  status3={status3}
+                  status4={status4}
+                  status5={status5}
+                  status6={status6}
+                  status7={status7}
+                  status8={status8}
+                /> */}
               </BlankCard>
             </div>
             <div
@@ -135,7 +157,8 @@ export default function dashboard() {
                 },
               }}>
               <BlankCard style={{ height: 300 }}>
-                <LineChart />
+                {/* <LineChart /> */}
+                <h2>well data here</h2>
               </BlankCard>
             </div>
           </div>
@@ -143,4 +166,9 @@ export default function dashboard() {
       </div>
     </div>
   )
+}
+
+Dashboard.getInitialProps = async () => {
+  const { pumps } = require("../assets/cache/pumps.json")
+  return { pumps }
 }
