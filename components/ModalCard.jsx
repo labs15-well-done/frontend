@@ -5,6 +5,7 @@ export default function ModalCard({pump}) {
     return (
         <div>
             <p>Sensor ID: {pump.id}</p>
+            <p>Total Water-Flow: {pump.statuses && pump.statuses[13].total}</p>
             <p>Current Status: {pump.status === 0 ? 'Non-Functional' : pump.status === 1 ? 'Unknown' : pump.status === 2 ? 'Functional' : null}</p>
             <p>3-Day Spread: <ul>
             <li>{pump.dates && pump.dates[12]} {pump.statuses ? pump.statuses[12].status === 0 ? 'Non-Functional' : pump.status === 1 ? 'Unknown' : pump.status === 2 ? 'Functional' : null : 'Connection Failure'}</li>
