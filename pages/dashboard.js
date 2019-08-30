@@ -18,150 +18,6 @@ import axios from "axios"
 
 export default function Dashboard({ pumps }) {
   console.log("cache pumps", pumps)
-  const [statusTotal, setStatusTotal] = useState([])
-
-  const [data, setData] = useState({
-    pumps: {
-      "4734": {},
-      "4762": {},
-      "4736": {},
-      "4764": {},
-      "4742": {},
-      "4763": {},
-      "4715": {},
-    },
-  })
-
-  const [status1, setStatus1] = useState(null)
-  const [status2, setStatus2] = useState(null)
-  const [status3, setStatus3] = useState(null)
-  const [status4, setStatus4] = useState(null)
-  const [status5, setStatus5] = useState(null)
-  const [status6, setStatus6] = useState(null)
-  const [status7, setStatus7] = useState(null)
-  const [status8, setStatus8] = useState(null)
-
-  const [modal1, setModal1] = useState(null)
-  const [modal2, setModal2] = useState(null)
-  const [modal3, setModal3] = useState(null)
-  const [modal4, setModal4] = useState(null)
-  const [modal5, setModal5] = useState(null)
-  const [modal6, setModal6] = useState(null)
-  const [modal7, setModal7] = useState(null)
-  const [modal8, setModal8] = useState(null)
-
-  // const [func, setFunc] = useState(0)
-  // const [nonFunc, setNonFunc] = useState(0)
-  // const [unknown, setUnknown] = useState(0)
-
-  const filteredFunc = statusTotal.filter(stat => {
-    stat === 2
-  })
-
-  const filteredNonFunc = statusTotal.filter(stat => {
-    stat === 1
-  })
-
-  const filteredUnknown = statusTotal.filter(stat => {
-    stat === 0
-  })
-
-  useEffect(() => {
-    Object.keys(data.pumps).forEach(async id => {
-      const res = await axios.get(
-        `https://welldone-cache.herokuapp.com/p-api/${id}`,
-      )
-      console.log(id, res)
-      setData({
-        ...data,
-        pumps: {
-          ...data.pumps,
-          [id]: { ...data.pumps.id, status: res.data.status },
-        },
-      })
-    })
-  }, [])
-  console.log(data)
-  // const pump1 = () => {
-  //   axios
-  //     .get(`https://welldone-cache.herokuapp.com/p-api/4734`)
-  //     .then(
-  //       res => (
-  //         setStatus1(res.data.status),
-  //         setModal1(res.data),
-  //         setStatusTotal([...statusTotal, res.data.status])
-  //       ),
-  //     )
-  //     .catch(err => console.log(err))
-  // }
-  // console.log(status1)
-  // const pump2 = () => {
-  //   axios
-  //     .get(`https://welldone-cache.herokuapp.com/p-api/4762`)
-  //     .then(
-  //       res => (
-  //         setStatus2(res.data.status),
-  //         setModal2(res.data),
-  //         setStatusTotal([...statusTotal, res.data.status])
-  //       ),
-  //     )
-  //     .catch(err => console.log(err))
-  // }
-  // const pump3 = () => {
-  //   axios
-  //     .get(`https://welldone-cache.herokuapp.com/p-api/4736`)
-  //     .then(
-  //       res => (setStatus3(res.data.status), setModal3(res.data)),
-  //       setStatusTotal([...statusTotal, res.data.status]),
-  //     )
-  //     .catch(err => console.log(err))
-  // }
-  // const pump4 = () => {
-  //   axios
-  //     .get(`https://welldone-cache.herokuapp.com/p-api/4742`)
-  //     .then(
-  //       res => (setStatus4(res.data.status), setModal4(res.data)),
-  //       setStatusTotal([...statusTotal, res.data.status]),
-  //     )
-  //     .catch(err => console.log(err))
-  // }
-  // const pump5 = () => {
-  //   axios
-  //     .get(`https://welldone-cache.herokuapp.com/p-api/4760`)
-  //     .then(
-  //       res => (setStatus5(res.data.status), setModal5(res.data)),
-  //       setStatusTotal([...statusTotal, res.data.status]),
-  //     )
-  //     .catch(err => console.log(err))
-  // }
-  // const pump6 = () => {
-  //   axios
-  //     .get(`https://welldone-cache.herokuapp.com/p-api/4763`)
-  //     .then(
-  //       res => (setStatus6(res.data.status), setModal6(res.data)),
-  //       setStatusTotal([...statusTotal, res.data.status]),
-  //     )
-  //     .catch(err => console.log(err))
-  // }
-  // const pump7 = () => {
-  //   axios
-  //     .get(`https://welldone-cache.herokuapp.com/p-api/4764`)
-  //     .then(
-  //       res => (setStatus7(res.data.status), setModal7(res.data)),
-  //       setStatusTotal([...statusTotal, res.data.status]),
-  //     )
-  //     .catch(err => console.log(err))
-  // }
-  // const pump8 = () => {
-  //   axios
-  //     .get(`https://welldone-cache.herokuapp.com/p-api/4715`)
-  //     .then(
-  //       res => (setStatus8(res.data.status), setModal8(res.data)),
-  //       setStatusTotal([...statusTotal, res.data.status]),
-  //     )
-  //     .catch(err => console.log(err))
-  // }
-
   return (
     <div css={{ width: "100%" }}>
       <Seo title="Dashboard • Welldone" description="" />
@@ -202,7 +58,7 @@ export default function Dashboard({ pumps }) {
             <Card
               text="Monitor Reports"
               icon={FiEdit}
-              value={20}
+              value={pumps.length}
               color={colors.brand}
               toggleSummary="View Reports"
               toggle={<h3>Content</h3>}
@@ -216,10 +72,13 @@ export default function Dashboard({ pumps }) {
             <Card
               text="Functional"
               icon={FiCheckCircle}
-              value={filteredFunc.length}
+              value={pumps.filter(pump => pump.status === 2).length}
               color={colors.success}
-              progress="66"
-              statusTotal={statusTotal}
+              progress={Math.floor(
+                (pumps.filter(pump => pump.status === 2).length /
+                  pumps.length) *
+                  100,
+              )}
               css={{
                 gridArea: "1 / 2 / 2 / 3",
                 [breakingPoints.lg]: {
@@ -230,10 +89,13 @@ export default function Dashboard({ pumps }) {
             <Card
               text="Non-Functional"
               icon={FiAlertCircle}
-              value={filteredNonFunc.length}
+              value={pumps.filter(pump => pump.status === 0).length}
               color={colors.danger}
-              progress="20"
-              statusTotal={statusTotal}
+              progress={Math.floor(
+                (pumps.filter(pump => pump.status === 0).length /
+                  pumps.length) *
+                  100,
+              )}
               css={{
                 gridArea: "1 / 3 / 2 / 4",
                 [breakingPoints.lg]: {
@@ -244,10 +106,13 @@ export default function Dashboard({ pumps }) {
             <Card
               text="Unknown"
               icon={FiHelpCircle}
-              value={20}
+              value={pumps.filter(pump => pump.status === 1).length}
               color={colors.orange}
-              progress="17"
-              statusTotal={statusTotal}
+              progress={Math.floor(
+                (pumps.filter(pump => pump.status === 1).length /
+                  pumps.length) *
+                  100,
+              )}
               css={{
                 gridArea: "1 / 4 / 2 / 5",
                 [breakingPoints.lg]: {
@@ -263,8 +128,7 @@ export default function Dashboard({ pumps }) {
                 },
               }}>
               <BlankCard style={{ padding: "10px " }}>
-                <Map
-                  statusTotal={statusTotal}
+                {/* <Map
                   status1={status1}
                   status2={status2}
                   status3={status3}
@@ -273,7 +137,7 @@ export default function Dashboard({ pumps }) {
                   status6={status6}
                   status7={status7}
                   status8={status8}
-                />
+                /> */}
               </BlankCard>
             </div>
             <div
