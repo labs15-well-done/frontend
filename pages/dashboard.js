@@ -48,8 +48,8 @@ export default function Dashboard({ pumps }) {
               display: "grid",
               gridTemplateColumns: "1fr 1fr 1fr 1fr",
               gridTemplateRows: "auto 1fr 1fr",
-              gridColumnGap: "20px",
-              gridRowGap: "20px",
+              gridColumnGap: "25px",
+              gridRowGap: "25px",
               [breakingPoints.lg]: {
                 gridTemplateColumns: "1fr 1fr",
                 gridTemplateRows: "auto auto 1fr auto auto",
@@ -135,25 +135,16 @@ export default function Dashboard({ pumps }) {
             </div>
             <div
               css={{
-                gridArea: "2 / 4 / 3 / 5",
+                gridArea: "2 / 4 / 4 / 5",
                 [breakingPoints.lg]: {
                   gridArea: "4 / 1 / 5 / 3",
                 },
               }}>
-              <BlankCard style={{ height: 300 }}>
-                <SunburstChart />
-              </BlankCard>
-            </div>
-            <div
-              css={{
-                gridArea: "3 / 4 / 4 / 5",
-                [breakingPoints.lg]: {
-                  gridArea: "5 / 1 / 6 / 3",
-                },
-              }}>
-              <BlankCard style={{ height: 350 }}>
-                <h2>Sensor Information</h2>
-                <Modal modalId={modalId} pumps={pumps} />
+              <BlankCard style={{ textAlign: "center" }}>
+                <h2>Details</h2>
+                <div css={{ textAlign: "left" }}>
+                  <Modal modalId={modalId} pumps={pumps} />
+                </div>
               </BlankCard>
             </div>
           </div>

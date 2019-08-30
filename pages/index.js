@@ -1,11 +1,5 @@
-import React from 'react'
-import Box from '../components/Map'
+import React from "react"
 
 export default function index() {
-  return (
-    <div>
-      <Box />
-    </div>
-  )
+  return <div></div>
 }
-

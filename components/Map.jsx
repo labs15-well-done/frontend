@@ -13,11 +13,10 @@ export default function Map({ pumps, setModalId }) {
   return (
     <div>
       <ReactMapGL
-        
         // andy's
         mapStyle="mapbox://styles/brudnak/cjzofruj1135o1cp23vojccc8"
         mapboxApiAccessToken="pk.eyJ1IjoiYnJ1ZG5hayIsImEiOiJjanpramh2bnMwMGU4M210M3N5amRnMTVkIn0.ShGGESPCjVZo2MugiijwWw"
-        onViewportChange={(view) => setViewPort({...view, width: '100%'})}
+        onViewportChange={view => setViewPort({ ...view, width: "100%" })}
         css={{ borderRadius: 5 }}
         {...viewPort}>
         {pumps.map(pump => (
@@ -28,7 +27,7 @@ export default function Map({ pumps, setModalId }) {
             offsetTop={-10}>
             {pump.status === 0 ? (
               <img
-                src="../static/icon1.png"
+                src="../static/error.svg"
                 width={"31px"}
                 css={{ zIndex: 2 }}
                 onClick={() => setModalId(pump.id)}
@@ -36,14 +35,14 @@ export default function Map({ pumps, setModalId }) {
               />
             ) : pump.status === 1 ? (
               <img
-                src="../static/icon2.png"
+                src="../static/unknown.svg"
                 width={"31px"}
                 onClick={() => setModalId(pump.id)}
                 alt=""
               />
             ) : pump.status === 2 ? (
               <img
-                src="../static/icon3.png"
+                src="../static/success.svg"
                 width={"31px"}
                 onClick={() => setModalId(pump.id)}
                 alt=""

@@ -2,13 +2,13 @@ import { Global, css } from "@emotion/core"
 
 export const colors = {
   main: "#fff",
-  brand: "#00cffe",
+  brand: "#0282FA",
   btnHover: "#1e90fe",
-  backgroundColor: "#E5EDF6",
-  text: "#50A8FF",
+  backgroundColor: "#F3F7FC",
+  text: "#886BFE",
   success: "#01c000",
   danger: "#f44336",
-  orange: "#FF9800",
+  orange: "#FFAD34",
 }
 
 export const breakingPoints = {

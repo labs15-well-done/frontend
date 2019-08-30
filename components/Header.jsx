@@ -8,8 +8,13 @@ export default function DashHeader({ title, actions }) {
   const { store, toggleNav } = useStore()
   return (
     <>
-      <div css={{ borderBottom: "2px solid #D1DEEA" }}>
-        <div css={{ padding: "20px 20px", maxWidth: 1240, margin: "0 auto" }}>
+      <div>
+        <div
+          css={{
+            padding: "20px 20px",
+            maxWidth: 1240,
+            margin: "0 auto",
+          }}>
           <div
             css={{
               display: "flex",
@@ -17,7 +22,7 @@ export default function DashHeader({ title, actions }) {
               alignItems: "center",
               marginBottom: 40,
             }}>
-            <input
+            {/* <input
               placeholder="Search"
               css={{
                 backgroundColor: "white",
@@ -26,8 +31,8 @@ export default function DashHeader({ title, actions }) {
                 borderRadius: 5,
                 padding: "5px 10px",
               }}
-            />
-            <div
+            /> */}
+            {/* <div
               css={{
                 height: 40,
                 width: 40,
@@ -39,7 +44,7 @@ export default function DashHeader({ title, actions }) {
                 alignItems: "center",
               }}>
               <FiUser size="20px" color="white" />
-            </div>
+            </div> */}
             <div>
               <button
                 css={{
@@ -58,7 +63,7 @@ export default function DashHeader({ title, actions }) {
           </div>
           <div css={{ display: "flex", alignItems: "center" }}>
             <div css={{ flexGrow: 1 }}>
-              <h1 css={{ margin: 0, fontSize: 25, color: colors.text }}>
+              <h1 css={{ margin: 0, fontSize: 25, color: "#2A2A32" }}>
                 {title}
               </h1>
             </div>
