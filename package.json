@@ -5,10 +5,10 @@
   "scripts": {
     "dev": "next dev",
     "fetch": "node services/jsonCache.js",
-    "build": "node services/jsonCache.js && next build",
+    "build": "npm run fetch && next build",
     "start": "next start",
-    "export": "node services/jsonCache.js && next export",
-    "deploy": "node services/jsonCache.js && npm run build && npm run export"
+    "export": "npm run fetch && next export",
+    "deploy": "npm run build && npm run export"
   },
   "dependencies": {
     "@emotion/core": "^10.0.16",
