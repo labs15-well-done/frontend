@@ -33,21 +33,21 @@ export default function Map({ pumps, setModalId }) {
                 src="../static/icon1.png"
                 width={"31px"}
                 css={{ zIndex: 2 }}
-                onClick={() => setModalId(sensor.id)}
+                onClick={() => setModalId(pump.id)}
                 alt=""
               />
             ) : pump.status === 1 ? (
               <img
                 src="../static/icon2.png"
                 width={"31px"}
-                onClick={() => setModalId(sensor.id)}
+                onClick={() => setModalId(pump.id)}
                 alt=""
               />
             ) : pump.status === 2 ? (
               <img
                 src="../static/icon3.png"
                 width={"31px"}
-                onClick={() => setModalId(sensor.id)}
+                onClick={() => setModalId(pump.id)}
                 alt=""
               />
             ) : null}
