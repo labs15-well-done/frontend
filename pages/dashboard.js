@@ -1,5 +1,5 @@
-import React from "react"
-import DashHeader from "../components/DashHeader"
+import React, { useState, useEffect } from "react"
+import Header from "../components/Header"
 import Seo from "../components/Seo"
 import {
   FiEdit,
@@ -8,108 +8,153 @@ import {
   FiCheckCircle,
 } from "react-icons/fi"
 import Card from "../components/Card"
-import { colors } from "../components/Styles"
+import { colors, breakingPoints } from "../components/Styles"
+import BlankCard from "../components/BlankCard"
+import Map from "../components/Map"
+import { SunburstChart } from "../components/SunburstChart"
+import { LineChart } from "../components/LineChart"
+import Modal from "../components/Modal"
 
-export default function dashboard() {
+export default function Dashboard({ pumps }) {
+  const [modalId, setModalId] = useState(null)
+  console.log(modalId)
+
+  console.log("cache pumps", pumps)
   return (
     <div css={{ width: "100%" }}>
       <Seo title="Dashboard • Welldone" description="" />
-      <DashHeader />
+      <Header
+        title="Insights"
+        actions={
+          <div>
+            <a>Weekly</a>
+            <a>Monthly</a>
+          </div>
+        }
+      />
       <div css={{ padding: "20px 20px", maxWidth: 1240, margin: "0 auto" }}>
-        <div css={{ display: "flex", justifyContent: "space-between" }}>
-          <Card
-            text="Monitor Reports"
-            icon={FiEdit}
-            value={20}
-            color={colors.brand}
-          />
-          <Card
-            text="Functional"
-            icon={FiCheckCircle}
-            value={50}
-            color={colors.success}
-          />
-          <Card
-            text="Non-Functional"
-            icon={FiAlertCircle}
-            value={15}
-            color={colors.danger}
-          />
-          <Card
-            text="Unknown"
-            icon={FiHelpCircle}
-            value={10}
-            color={colors.orange}
-          />
+        {/* Card Section */}
+        <div
+          css={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "flex-start",
+          }}></div>
+        {/* Maps and Montior */}
+        <div>
+          <div
+            css={{
+              margin: "20px 0",
+              display: "grid",
+              gridTemplateColumns: "1fr 1fr 1fr 1fr",
+              gridTemplateRows: "auto 1fr 1fr",
+              gridColumnGap: "25px",
+              gridRowGap: "25px",
+              [breakingPoints.lg]: {
+                gridTemplateColumns: "1fr 1fr",
+                gridTemplateRows: "auto auto 1fr auto auto",
+                gridColumnGap: "20px",
+                gridRowGap: "20px",
+              },
+            }}>
+            <Card
+              text="Monitor Reports"
+              icon={FiEdit}
+              value={pumps.length}
+              color={colors.brand}
+              toggleSummary="View Reports"
+              toggle={<h3>Content</h3>}
+              css={{
+                gridArea: "1 / 1 / 2 / 2",
+                [breakingPoints.lg]: {
+                  gridArea: "1 / 1 / 2 / 2",
+                },
+              }}
+            />
+            <Card
+              text="Functional"
+              icon={FiCheckCircle}
+              value={pumps.filter(pump => pump.status === 2).length}
+              color={colors.success}
+              progress={Math.ceil(
+                (pumps.filter(pump => pump.status === 2).length /
+                  pumps.length) *
+                  100,
+              )}
+              css={{
+                gridArea: "1 / 2 / 2 / 3",
+                [breakingPoints.lg]: {
+                  gridArea: "1 / 2 / 2 / 3",
+                },
+              }}
+            />
+            <Card
+              text="Non-Functional"
+              icon={FiAlertCircle}
+              value={pumps.filter(pump => pump.status === 0).length}
+              color={colors.danger}
+              progress={Math.ceil(
+                (pumps.filter(pump => pump.status === 0).length /
+                  pumps.length) *
+                  100,
+              )}
+              css={{
+                gridArea: "1 / 3 / 2 / 4",
+                [breakingPoints.lg]: {
+                  gridArea: "2 / 1 / 3 / 2",
+                },
+              }}
+            />
+            <Card
+              text="Unknown"
+              icon={FiHelpCircle}
+              value={pumps.filter(pump => pump.status === 1).length}
+              color={colors.orange}
+              progress={Math.ceil(
+                (pumps.filter(pump => pump.status === 1).length /
+                  pumps.length) *
+                  100,
+              )}
+              css={{
+                gridArea: "1 / 4 / 2 / 5",
+                [breakingPoints.lg]: {
+                  gridArea: "2 / 2 / 3 / 3",
+                },
+              }}
+            />
+            <div
+              css={{
+                gridArea: "2 / 1 / 4 / 4",
+                [breakingPoints.lg]: {
+                  gridArea: "3 / 1 / 4 / 3",
+                },
+              }}>
+              <BlankCard style={{ padding: "10px " }}>
+                <Map pumps={pumps} setModalId={setModalId} />
+              </BlankCard>
+            </div>
+            <div
+              css={{
+                gridArea: "2 / 4 / 4 / 5",
+                [breakingPoints.lg]: {
+                  gridArea: "4 / 1 / 5 / 3",
+                },
+              }}>
+              <BlankCard style={{ textAlign: "center" }}>
+                <h2>Details</h2>
+                <div css={{ textAlign: "left" }}>
+                  <Modal modalId={modalId} pumps={pumps} />
+                </div>
+              </BlankCard>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   )
 }
 
-{
-  /* <div className="stack">
-        <DashHeader />
-        <div className="dash-container">
-          <DashReports />
-          <div className="parent">
-            <div className="mapview">
-              <Map />
-            </div>
-            <div className="charts">
-              <div className="sunburst">
-                <SunburstChart />
-              </div>
-              <div className="line">
-                <LineChart />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> */
-}
-{
-  /* <style jsx>{`
-        .container {
-          display: flex;
-          background-color: #e5edf6;
-        }
-        .stack {
-          width: 100%;
-          border: 1px solid pink;
-        }
-        .dash-container {
-          width: 100%;
-          border: 1px solid green;
-          flex-direction: column;
-        }
-        .parent {
-          display: flex;
-          flex-direction: row;
-          width: 100%;
-        }
-        .mapview {
-          border: 1px solid red;
-          width: 100%;
-          margin: 2%;
-        }
-        .charts {
-          height: auto;
-          width: 100%;
-          margin: 2%;
-          margin-left: -0.1%;
-        }
-        .sunburst {
-          height: 300px;
-          width: 100%;
-          margin-top: 4%;
-          border: 1px solid purple;
-        }
-        .line {
-          height: 300px;
-          width: 100%;
-          margin-top: 4%;
-          border: 1px solid blue;
-        }
-      `}</style> */
+Dashboard.getInitialProps = async () => {
+  const { pumps } = require("../assets/cache/pumps.json")
+  return { pumps }
 }

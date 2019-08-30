@@ -1,13 +1,20 @@
 import React, { useState } from "react"
 import { FiUser } from "react-icons/fi"
-import { colors } from "./Styles"
+import { colors, breakingPoints } from "./Styles"
+import { useStore } from "./Layout"
+import { FiMenu, FiX } from "react-icons/fi"
 
-export default function DashHeader() {
-  const [] = useState("")
+export default function DashHeader({ title, actions }) {
+  const { store, toggleNav } = useStore()
   return (
     <>
-      <div css={{ borderBottom: "2px solid #D1DEEA" }}>
-        <div css={{ padding: "20px 20px", maxWidth: 1240, margin: "0 auto" }}>
+      <div>
+        <div
+          css={{
+            padding: "20px 20px",
+            maxWidth: 1240,
+            margin: "0 auto",
+          }}>
           <div
             css={{
               display: "flex",
@@ -15,7 +22,7 @@ export default function DashHeader() {
               alignItems: "center",
               marginBottom: 40,
             }}>
-            <input
+            {/* <input
               placeholder="Search"
               css={{
                 backgroundColor: "white",
@@ -24,8 +31,8 @@ export default function DashHeader() {
                 borderRadius: 5,
                 padding: "5px 10px",
               }}
-            />
-            <div
+            /> */}
+            {/* <div
               css={{
                 height: 40,
                 width: 40,
@@ -37,12 +44,27 @@ export default function DashHeader() {
                 alignItems: "center",
               }}>
               <FiUser size="20px" color="white" />
+            </div> */}
+            <div>
+              <button
+                css={{
+                  display: "none",
+                  backgroundColor: "transparent",
+                  outline: "none",
+                  border: "none",
+                  [breakingPoints.md]: {
+                    display: "inherit",
+                  },
+                }}
+                onClick={toggleNav}>
+                {store.nav ? <FiX size="30px" /> : <FiMenu size="30px" />}
+              </button>
             </div>
           </div>
           <div css={{ display: "flex", alignItems: "center" }}>
             <div css={{ flexGrow: 1 }}>
-              <h1 css={{ margin: 0, fontSize: 25, color: colors.text }}>
-                Insights
+              <h1 css={{ margin: 0, fontSize: 25, color: "#2A2A32" }}>
+                {title}
               </h1>
             </div>
             <div
@@ -60,59 +82,11 @@ export default function DashHeader() {
                   },
                 },
               }}>
-              <a css={{ cursor: "pointer" }}>Weekly</a>
-              <a css={{ cursor: "pointer" }}>Monthly</a>
+              {actions}
             </div>
           </div>
         </div>
       </div>
-      {/* <style jsx>{`
-        .top {
-          display: flex;
-          justify-content: flex-end;
-          margin-right: 3%;
-          margin-top: 1%;
-          align-items: center;
-        }
-        .user-circle {
-          margin-left: 1%;
-          color: #aad3fd;
-        }
-        .search-icon {
-          color: #52a7f8;
-        }
-        input {
-          margin-left: 1%;
-        }
-        .bottom {
-          display: flex;
-          align-items: flex-end;
-          justify-content: space-between;
-          padding: 1%;
-          border-bottom: 3px solid lightgrey;
-        }
-        .a-tags {
-          margin-right: 4%;
-        }
-        h4 {
-          margin: 0;
-          margin-right: 2%;
-          color: #52a7f8;
-          font-size: 1.5rem;
-        }
-        a {
-          margin-right: 15%;
-          color: #52a7f8;
-          padding: 5%;
-          font-size: 1.25rem;
-        }
-        a:hover {
-          background-color: #52a7f8;
-          color: #e5edf6;
-          border-radius: 8px;
-          cursor: pointer;
-        }
-      `}</style> */}
     </>
   )
 }

@@ -1,88 +1,52 @@
 import React, { useState } from "react"
 import ReactMapGL, { Marker } from "react-map-gl"
-import PopUp from "./Popup"
 
-const sensors = [
-  {
-    latitude: 13.74180294,
-    longitude: 106.9793701,
-    id: 0,
-  },
-  {
-    latitude: 13.8653917,
-    longitude: 107.0437533,
-    id: 1,
-  },
-  {
-    latitude: 13.74180294,
-    longitude: 106.9793701,
-    id: 2,
-  },
-  {
-    latitude: 13.68651955,
-    longitude: 107.2160912,
-    id: 3,
-  },
-  {
-    latitude: 13.74180294,
-    longitude: 106.9793701,
-    id: 4,
-  },
-  {
-    latitude: 13.66288,
-    longitude: 104.0218467,
-    id: 5,
-  },
-  {
-    latitude: 13.66423349,
-    longitude: 104.0051294,
-    id: 6,
-  },
-  {
-    latitude: 13.66048333,
-    longitude: 104.0075117,
-    id: 7,
-  },
-]
-
-export default function Map() {
+export default function Map({ pumps, setModalId }) {
   const [viewPort, setViewPort] = useState({
-    width: "800px",
-    height: "450px",
-    latitude: 13.5,
-    longitude: 105.5,
-    zoom: 6,
+    width: "100%",
+    height: "600px",
+    latitude: 12.55,
+    longitude: 104.9,
+    zoom: 6.5,
   })
-  const [popUp, setPopUp] = useState(null)
+
   return (
     <div>
       <ReactMapGL
-        // josh
-        // mapbox://styles/mapbox/streets-v9
-        // andy
-        // mapbox://styles/brudnak/cjzmvsu8c16b61cp0te3xkq2l
-        mapStyle="mapbox://styles/brudnak/cjzmvsu8c16b61cp0te3xkq2l"
+        // andy's
+        mapStyle="mapbox://styles/brudnak/cjzofruj1135o1cp23vojccc8"
         mapboxApiAccessToken="pk.eyJ1IjoiYnJ1ZG5hayIsImEiOiJjanpramh2bnMwMGU4M210M3N5amRnMTVkIn0.ShGGESPCjVZo2MugiijwWw"
-        // josh
-        // pk.eyJ1IjoiZGlhbW9uZG1haWw5MSIsImEiOiJjanpidzZxajMwMXF5M2Rueng0MmExc3FsIn0.8_SaAolyg_YzvdzClFuvXQ
-        // andy
-        // pk.eyJ1IjoiYnJ1ZG5hayIsImEiOiJjanpramh2bnMwMGU4M210M3N5amRnMTVkIn0.ShGGESPCjVZo2MugiijwWw
-        onViewportChange={props => setViewPort(props)}
+        onViewportChange={view => setViewPort({ ...view, width: "100%" })}
+        css={{ borderRadius: 5 }}
         {...viewPort}>
-        {sensors.map(sensor => (
+        {pumps.map(pump => (
           <Marker
-            latitude={sensor.latitude}
-            longitude={sensor.longitude}
+            latitude={pump.latitude}
+            longitude={pump.longitude}
             offsetLeft={-20}
             offsetTop={-10}>
-            <img
-              src="../static/LOGO.png"
-              width={"31px"}
-              onClick={() => setPopUp(sensor.id)}
-              alt=""
-            />
-            {popUp && popUp === sensor.id ? (
-              <PopUp setPopUp={setPopUp} />
+            {pump.status === 0 ? (
+              <img
+                src="../static/error.svg"
+                width={"31px"}
+                css={{ zIndex: 2 }}
+                onClick={() => setModalId(pump.id)}
+                alt=""
+              />
+            ) : pump.status === 1 ? (
+              <img
+                src="../static/unknown.svg"
+                width={"31px"}
+                onClick={() => setModalId(pump.id)}
+                alt=""
+              />
+            ) : pump.status === 2 ? (
+              <img
+                src="../static/success.svg"
+                width={"31px"}
+                onClick={() => setModalId(pump.id)}
+                alt=""
+              />
             ) : null}
           </Marker>
         ))}
@@ -90,45 +54,3 @@ export default function Map() {
     </div>
   )
 }
-
-// <Marker latitude={13.8653917} longitude={107.0437533} offsetLeft={-20} offsetTop={-10}>
-//     {/* <div style={{ backgroundColor: 'white', color: 'navy'}}><strong>TEST - YOU ARE HERE</strong></div> */}
-//     <img src='../static/LOGO.png' width={'31px'} onClick={this.togglePopUp} style={this.logoHoverStyles} />
-//     {this.state.popUp && <PopUp />}
-// </Marker>
-
-// <Marker latitude={13.74180294} longitude={106.9793701} offsetLeft={-20} offsetTop={-10}>
-//     {/* <div style={{ backgroundColor: 'white', color: 'navy'}}><strong>TEST - YOU ARE HERE</strong></div> */}
-//     <img src='../static/LOGO.png' width={'31px'} onClick={this.togglePopUp} style={this.logoHoverStyles} />
-//     {this.state.popUp && <PopUp />}
-// </Marker>
-
-// <Marker latitude={13.68651955} longitude={107.2160912} offsetLeft={-20} offsetTop={-10}>
-//     {/* <div style={{ backgroundColor: 'white', color: 'navy'}}><strong>TEST - YOU ARE HERE</strong></div> */}
-//     <img src='../static/LOGO.png' width={'31px'} onClick={this.togglePopUp} style={this.logoHoverStyles} />
-//     {this.state.popUp && <PopUp />}
-// </Marker>
-
-// <Marker latitude={13.74180294} longitude={106.9793701} offsetLeft={-20} offsetTop={-10}>
-//     {/* <div style={{ backgroundColor: 'white', color: 'navy'}}><strong>TEST - YOU ARE HERE</strong></div> */}
-//     <img src='../static/LOGO.png' width={'31px'} onClick={this.togglePopUp} style={this.logoHoverStyles} />
-//     {this.state.popUp && <PopUp />}
-// </Marker>
-
-// <Marker latitude={13.66288} longitude={104.0218467} offsetLeft={-20} offsetTop={-10}>
-//     {/* <div style={{ backgroundColor: 'white', color: 'navy'}}><strong>TEST - YOU ARE HERE</strong></div> */}
-//     <img src='../static/LOGO.png' width={'31px'} onClick={this.togglePopUp} style={this.logoHoverStyles} />
-//     {this.state.popUp && <PopUp />}
-// </Marker>
-
-// <Marker latitude={13.66423349} longitude={104.0051294} offsetLeft={-20} offsetTop={-10}>
-//     {/* <div style={{ backgroundColor: 'white', color: 'navy'}}><strong>TEST - YOU ARE HERE</strong></div> */}
-//     <img src='../static/LOGO.png' width={'31px'} onClick={this.togglePopUp} style={this.logoHoverStyles} />
-//     {this.state.popUp && <PopUp />}
-// </Marker>
-
-// <Marker latitude={13.66048333} longitude={104.0075117} offsetLeft={-20} offsetTop={-10}>
-//     {/* <div style={{ backgroundColor: 'white', color: 'navy'}}><strong>TEST - YOU ARE HERE</strong></div> */}
-//     <img src='../static/LOGO.png' width={'31px'} onClick={this.togglePopUp} style={this.logoHoverStyles} />
-//     {this.state.popUp && <PopUp />}
-// </Marker>

@@ -1,19 +1,15 @@
 import React from 'react'
-import { HeatMapChartDay } from './HeatMapChartDay';
 import { HeatMapChartWeek } from './HeatMapChartWeek';
 
-export default function monitorsCharts() {
+export default function monitorsCharts({dates, statuses}) {
     return (
         <>
             <div className='charts'>
-                <div className='heatmapday'>
+                <div className='heatmapweek'>
                     <div className="monitor-title">
                         <h1>Monitor Status: Aug 18 - Aug 24</h1>
                     </div>
-                    <HeatMapChartDay />
-                </div>
-                <div className='heatmapweek'>
-                    <HeatMapChartWeek />
+                    <HeatMapChartWeek dates={dates} statuses={statuses}/>
                 </div>
             </div>
             <style jsx>{`
@@ -24,12 +20,9 @@ export default function monitorsCharts() {
             .monitor-title {
                 text-align: center;
             }
-            .heatmapday {
-                height: 300px;
-                margin-top: 4%;
-            }
             .heatmapweek {
                 height: 300px;
+                margin-top: 4%;
             }
     `}</style>
         </>
