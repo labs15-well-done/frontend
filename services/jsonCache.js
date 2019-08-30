@@ -44,7 +44,7 @@ async function getPumps() {
     }
   })
 
-  return results
+  return { lastFetch: Date.now(), pumps: results }
 }
 
 async function asyncForEach(array, callback) {
