@@ -46,8 +46,8 @@ export default function Nav() {
   return (
     <>
       <div
-        className="navigation-styles"
         css={{
+          position: "fixed",
           minHeight: "100vh",
           backgroundColor: colors.brand,
           [breakingPoints.md]: {
@@ -59,8 +59,8 @@ export default function Nav() {
         }}>
         <Link href="/index">
           <img
-            src="../static/textlogo.png"
-            css={{ width: 200, margin: "30px 20px 50px" }}
+            src="../static/logo.png"
+            css={{ width: 200, margin: "50px 20px " }}
           />
         </Link>
         <div

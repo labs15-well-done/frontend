@@ -20,7 +20,9 @@ export default class extends App {
       <Container>
         <Layout>
           <Nav />
-          <Component {...pageProps} />
+          <div css={{ marginLeft: 240, width: "100%" }}>
+            <Component {...pageProps} />
+          </div>
         </Layout>
         <Styles />
       </Container>
