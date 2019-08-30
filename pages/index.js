@@ -1,11 +1,11 @@
-import React from "react"
-import Map from "../components/Map"
+import React from 'react'
+import Box from '../components/Map'
 
-const Home = () => (
-  <>
-    <h2>Index Page</h2>
-    <Map />
-  </>
-)
+export default function index() {
+  return (
+    <div>
+      <Box />
+    </div>
+  )
+}
 
-export default Home
