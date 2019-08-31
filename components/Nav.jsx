@@ -57,10 +57,10 @@ export default function Nav() {
             marginLeft: store.nav ? 0 : -250,
           },
         }}>
-        <Link href="/index">
+        <Link href="/">
           <img
             src="../static/logo.png"
-            css={{ width: 200, margin: "50px 20px " }}
+            css={{ width: 200, margin: "50px 20px ", cursor: "pointer" }}
           />
         </Link>
         <div

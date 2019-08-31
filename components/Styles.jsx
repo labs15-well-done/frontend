@@ -9,6 +9,7 @@ export const colors = {
   success: "#01c000",
   danger: "#f44336",
   orange: "#FFAD34",
+  darkText: "#2A2A32",
 }
 
 export const breakingPoints = {
@@ -31,6 +32,10 @@ export default function Styles() {
         body {
           font-family: "Poppins", sans-serif;
           background-color: ${colors.backgroundColor};
+        }
+
+        h1 {
+          color: ${colors.darkText};
         }
       `}
     />

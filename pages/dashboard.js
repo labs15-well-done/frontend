@@ -20,7 +20,7 @@ export default function Dashboard({ pumps }) {
 
   return (
     <div css={{ width: "100%" }}>
-      <Seo title="Dashboard • Welldone" description="" />
+      <Seo title="Home • Welldone Dashboard" description="" />
       <Header
         title="Insights"
         actions={
