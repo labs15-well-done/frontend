@@ -4,7 +4,7 @@ import ReactMapGL, { Marker } from "react-map-gl"
 export default function Map({ pumps, setModalId }) {
   const [viewPort, setViewPort] = useState({
     width: "100%",
-    height: "600px",
+    height: "500px",
     latitude: 12.55,
     longitude: 104.9,
     zoom: 6.5,
