@@ -14,7 +14,7 @@ export default function Map({ pumps, setModalId }) {
     <div>
       <ReactMapGL
         // andy's
-        mapStyle="mapbox://styles/brudnak/cjzofruj1135o1cp23vojccc8"
+        mapStyle="mapbox://styles/brudnak/cjzypjc362w9u1clduir026aw"
         mapboxApiAccessToken="pk.eyJ1IjoiYnJ1ZG5hayIsImEiOiJjanpramh2bnMwMGU4M210M3N5amRnMTVkIn0.ShGGESPCjVZo2MugiijwWw"
         onViewportChange={view => setViewPort({ ...view, width: "100%" })}
         css={{ borderRadius: 5 }}
