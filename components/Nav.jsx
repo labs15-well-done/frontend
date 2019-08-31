@@ -48,9 +48,7 @@ export default function Nav() {
       <div
         css={{
           position: "fixed",
-          margin: 10,
-          borderRadius: 10,
-          height: "calc(100vh - 20px)",
+          minHeight: "100vh",
           backgroundColor: colors.brand,
           [breakingPoints.md]: {
             transition: ".2s",
