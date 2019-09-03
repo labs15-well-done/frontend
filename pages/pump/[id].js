@@ -51,7 +51,7 @@ console.log(statuses)
                 <p>quality: {currentPump.quality}</p>
             </div>
             <div>
-                <MonitorsCharts dates={dates} statuses={statuses}/>
+                {statuses && <MonitorsCharts dates={dates} statuses={statuses}/>}
             </div>
 
             <style jsx>{`

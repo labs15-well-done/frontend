@@ -3,8 +3,8 @@ import { ResponsiveHeatMap } from '@nivo/heatmap'
 
 export const HeatMapChartWeek = ({dates, statuses}) => {
     let valueStatus = [];
-
-    statuses.map(status => {
+//use foreach instead
+    statuses && statuses.map(status => {
         if(status.status === 0){
             valueStatus = [...valueStatus, 0];
         } else if (status.status === 1){
