@@ -90,7 +90,7 @@ export default function Nav() {
               </Link>
             )
           })}
-          <div
+          {/* <div
             css={{
               padding: "10px 25px",
               cursor: "pointer",
@@ -100,7 +100,7 @@ export default function Nav() {
             }}>
             <FiLogOut />
             <a>Logout</a>
-          </div>
+          </div> */}
         </div>
       </div>
     </>

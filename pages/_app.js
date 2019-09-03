@@ -3,6 +3,7 @@ import App, { Container } from "next/app"
 import Styles, { breakingPoints } from "../components/Styles"
 import Nav from "../components/Nav"
 import Layout from "../components/Layout"
+import TopNav from "../components/TopNav"
 
 export default class extends App {
   static async getInitialProps({ Component, ctx }) {
@@ -28,6 +29,7 @@ export default class extends App {
                 marginLeft: 0,
               },
             }}>
+            <TopNav />
             <Component {...pageProps} />
           </div>
         </Layout>

@@ -14,7 +14,7 @@ export default function index() {
           zIndex: -1,
           marginTop: -40,
           borderRadius: 10,
-          margin: "50px 0 20px",
+          margin: "0 0 20px",
           height: "70vh",
           width: "100%",
           backgroundSize: "cover",
