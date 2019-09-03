@@ -8,7 +8,6 @@ export default function index() {
   return (
     <div css={{ padding: "20px 20px", maxWidth: 1240, margin: "0 auto" }}>
       <Seo title="Welcome • Welldone Dashboard" />
-
       <div
         css={{
           zIndex: -1,
