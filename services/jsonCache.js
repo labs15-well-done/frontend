@@ -54,6 +54,7 @@ async function getPumps() {
     console.log("Fetching Pumps Init")
     let pumps = {}
     const prismicPumps = await prismic.getDocs("pump")
+    console.log(prismicPumps)
     await asyncForEach(prismicPumps.results, async pump => {
       pumps = {
         ...pumps,

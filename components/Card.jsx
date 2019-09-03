@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import { breakingPoints } from "./Styles"
 
 function hexToRGB(hex, alpha) {
   var r = parseInt(hex.slice(1, 3), 16),
@@ -30,6 +31,11 @@ export default function Card({
         color: "#2A2A32",
         borderRadius: 5,
         textAlign: "center",
+        width: "24%",
+        marginBottom: 20,
+        [breakingPoints.md]: {
+          width: "48%",
+        },
         ...css,
       }}>
       <div

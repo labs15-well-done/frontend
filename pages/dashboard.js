@@ -35,25 +35,14 @@ export default function Dashboard({ pumps }) {
         <div
           css={{
             display: "flex",
-            justifyContent: "space-between",
-            alignItems: "flex-start",
           }}></div>
         {/* Maps and Montior */}
         <div>
           <div
             css={{
-              margin: "20px 0",
-              display: "grid",
-              gridTemplateColumns: "1fr 1fr 1fr 1fr",
-              gridTemplateRows: "auto 1fr 1fr",
-              gridColumnGap: "25px",
-              gridRowGap: "25px",
-              [breakingPoints.lg]: {
-                gridTemplateColumns: "1fr 1fr",
-                gridTemplateRows: "auto auto 1fr auto auto",
-                gridColumnGap: "20px",
-                gridRowGap: "20px",
-              },
+              display: "flex",
+              justifyContent: "space-between",
+              flexWrap: "wrap",
             }}>
             <Card
               text="Monitor Reports"
@@ -62,12 +51,6 @@ export default function Dashboard({ pumps }) {
               color={colors.brand}
               toggleSummary="View Reports"
               toggle={<h3>Content</h3>}
-              css={{
-                gridArea: "1 / 1 / 2 / 2",
-                [breakingPoints.lg]: {
-                  gridArea: "1 / 1 / 2 / 2",
-                },
-              }}
             />
             <Card
               text="Functional"
@@ -79,12 +62,6 @@ export default function Dashboard({ pumps }) {
                   pumps.length) *
                   100,
               )}
-              css={{
-                gridArea: "1 / 2 / 2 / 3",
-                [breakingPoints.lg]: {
-                  gridArea: "1 / 2 / 2 / 3",
-                },
-              }}
             />
             <Card
               text="Non-Functional"
@@ -96,12 +73,6 @@ export default function Dashboard({ pumps }) {
                   pumps.length) *
                   100,
               )}
-              css={{
-                gridArea: "1 / 3 / 2 / 4",
-                [breakingPoints.lg]: {
-                  gridArea: "2 / 1 / 3 / 2",
-                },
-              }}
             />
             <Card
               text="Unknown"
@@ -113,29 +84,42 @@ export default function Dashboard({ pumps }) {
                   pumps.length) *
                   100,
               )}
-              css={{
-                gridArea: "1 / 4 / 2 / 5",
-                [breakingPoints.lg]: {
-                  gridArea: "2 / 2 / 3 / 3",
-                },
-              }}
             />
             <div
               css={{
-                gridArea: "2 / 1 / 4 / 4",
-                [breakingPoints.lg]: {
-                  gridArea: "3 / 1 / 4 / 3",
+                width: "75%",
+                marginBottom: 20,
+                [breakingPoints.md]: {
+                  width: "100%",
                 },
               }}>
               <BlankCard style={{ padding: "10px " }}>
                 <Map pumps={pumps} setModalId={setModalId} />
               </BlankCard>
             </div>
-            <div
+            {/* <div
               css={{
-                gridArea: "2 / 4 / 4 / 5",
+                gridArea: "2 / 4 / 3 / 5",
                 [breakingPoints.lg]: {
                   gridArea: "4 / 1 / 5 / 3",
+                },
+              }}>
+              <BlankCard style={{ textAlign: "center" }}>
+                <h2>Villages</h2>
+                <div css={{ textAlign: "left" }}>
+                  <div>
+                    <h6 css={{ margin: 0 }}>Village Name</h6>
+                    <h6 css={{ margin: 0 }}>#5</h6>
+                  </div>
+                </div>
+              </BlankCard>
+            </div> */}
+            <div
+              css={{
+                width: "24%",
+                marginBottom: 20,
+                [breakingPoints.md]: {
+                  width: "100%",
                 },
               }}>
               <BlankCard style={{ textAlign: "center" }}>
