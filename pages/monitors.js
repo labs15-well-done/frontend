@@ -1,28 +1,32 @@
-import React, { useState } from 'react';
-import { MonitorData } from "../components/MonitorData";
-import MonitorCard from "../components/MonitorCard";
+import React, { useState } from "react"
+import { MonitorData } from "../components/MonitorData"
+import MonitorCard from "../components/MonitorCard"
 
 const Monitors = () => {
-    const [data, setData] = useState(MonitorData)
-    return(
-            <div className="card-container">
-                {data.map(pump => {
-                    const pumpUrl = `/pump/${pump.id}`
-                    return <a href={pumpUrl}><MonitorCard key={pump.id} pump={pump}/></a>
-                })}
-                <style jsx>{`
-                    .card-container {
-                        display: flex;
-                        flex-flow: wrap;
-                        justify-content: center;
-                        margin-top: 50px;
-                    }
-                `}</style>
-            </div>
-    )
+  const [data, setData] = useState(MonitorData)
+  return (
+    <div className="card-container">
+      {data.map(pump => {
+        const pumpUrl = `/pump/${pump.id}`
+        return (
+          <a href={pumpUrl}>
+            <MonitorCard key={pump.id} pump={pump} />
+          </a>
+        )
+      })}
+      <style jsx>{`
+        .card-container {
+          display: flex;
+          flex-flow: wrap;
+          justify-content: center;
+          margin-top: 50px;
+        }
+      `}</style>
+    </div>
+  )
 }
 
-export default Monitors;
+export default Monitors
 
 // import React, { useState, useEffect } from 'react';
 // import axios from 'axios';
