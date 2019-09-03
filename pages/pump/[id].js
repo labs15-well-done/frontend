@@ -26,7 +26,7 @@ export default function Pump(){
                 return console.log(err)
             })
     }
-console.log(statuses)
+console.log(pumps)
     return (
         <div className="current-pump">
             <div>
@@ -69,3 +69,7 @@ console.log(statuses)
         </div>
     )
 }
+// [id].getInitialProps = async () => {
+//     const { pumps } = require("../../assets/cache/pumps.json")
+//     return { pumps }
+//   }

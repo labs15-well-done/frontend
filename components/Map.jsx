@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import ReactMapGL, { Marker } from "react-map-gl"
+import ReactMapGL, { Marker, NavigationControl } from "react-map-gl"
 
 export default function Map({ pumps, setModalId }) {
   const [viewPort, setViewPort] = useState({
@@ -58,6 +58,9 @@ export default function Map({ pumps, setModalId }) {
             ) : null}
           </Marker>
         ))}
+        <div css={{ position: 'absolute', right: 10, bottom: '9%'}} >
+          <NavigationControl showZoom />
+        </div>
       </ReactMapGL>
     </div>
   )
