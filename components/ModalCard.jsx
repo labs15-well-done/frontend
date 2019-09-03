@@ -7,7 +7,7 @@ export default function ModalCard({pump}) {
         <div>
             <p>Sensor ID: {pump.id}</p>
             <p>Total Water-Flow: {pump.statuses && pump.statuses[13].total}</p>
-            <p css={{ fontWeight: 'bolder', textDecoration: 'underline'}}>Statuses</p>
+            <p css={{ fontWeight: 'bolder'}}>Statuses</p>
             <p><span css={{ textDecoration: 'underline'}} >Current:</span><span css={pump.status === 0 ? { color: "#f44336"} : pump.status === 1 ? { color: "#FFAD34"} : pump.status === 2 ? { color: "#01c000"} : null }> {pump.status === 0 ? 'Non-Functional' : pump.status === 1 ? 'Unknown' : pump.status === 2 ? 'Functional' : null}</span></p>
 
             {/* <p>Current Status:<span css={pump.status === 0 ? { color: `${success}`} : pump.status === 1 ? { color: `${unknown}`} : pump.status === 2 ? { color: `${nonFunctional}`} : null }> {pump.status === 0 ? 'Non-Functional' : pump.status === 1 ? 'Unknown' : pump.status === 2 ? 'Functional' : null}</span></p> */}
