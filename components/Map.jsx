@@ -11,7 +11,7 @@ export default function Map({ pumps, setModalId }) {
   })
 
   return (
-    <div>
+    <div css={{ img: { cursor: "pointer" } }}>
       <ReactMapGL
         // andy's
         mapStyle="mapbox://styles/brudnak/cjzypjc362w9u1clduir026aw"
