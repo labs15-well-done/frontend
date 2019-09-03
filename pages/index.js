@@ -76,6 +76,60 @@ export default function index() {
           </button>
         </Link>
       </div>
+      <div
+        css={{
+          display: "flex",
+          justifyContent: "space-between",
+          div: { width: "49%" },
+          [breakingPoints.md]: {
+            flexDirection: "column",
+            div: { width: "100%", margin: "10px 0" },
+          },
+        }}>
+        <div
+          css={{
+            backgroundColor: "white",
+            borderRadius: 10,
+            padding: "10px 30px",
+          }}>
+          <h1 css={{ marginBottom: 0 }}>About Welldone</h1>
+          <p css={{ color: "#2A2A32", opacity: 0.8 }}>
+            Phasellus vehicula consequat mollis. Nulla nec cursus metus, eget
+            vestibulum ipsum. Donec commodo purus ac diam venenatis
+            pellentesque. Vestibulum eget nunc in nisi lacinia pharetra ut quis
+            leo.
+          </p>
+        </div>
+        <div
+          css={{
+            backgroundColor: "white",
+            borderRadius: 10,
+            padding: "10px 30px",
+          }}>
+          <h1 css={{ marginBottom: 0 }}>Take a Tour</h1>
+          <p css={{ color: "#2A2A32", opacity: 0.8 }}>
+            Learn what tab is for you and how to understand our data.
+          </p>
+          <button
+            css={{
+              transition: ".3s",
+              backgroundColor: colors.brand,
+              padding: "10px 20px",
+              color: "white",
+              borderRadius: 10,
+              outline: "none",
+              border: `3px solid ${colors.brand}`,
+              fontWeight: 600,
+              ":hover": {
+                backgroundColor: "white",
+                color: colors.brand,
+                border: `3px solid ${colors.brand}`,
+              },
+            }}>
+            Start Tour
+          </button>
+        </div>
+      </div>
     </div>
   )
 }
