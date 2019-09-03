@@ -8,14 +8,18 @@ export default function Map({ pumps, setModalId }) {
     latitude: 12.55,
     longitude: 104.9,
     zoom: 6.5,
+    // maxBounds: [
+    //   [10.727291, 102.899053], // Southwest coordinates
+    //   [14.841942, 107.66624], // Northeast coordinates
+    // ],
   })
 
   const mapPins = {
     status: {
       functional: "../static/success.svg",
       unknown: "../static/unknown.svg",
-      nonFunctional: "../static/error.svg"
-    }
+      nonFunctional: "../static/error.svg",
+    },
   }
 
   return (
@@ -26,6 +30,10 @@ export default function Map({ pumps, setModalId }) {
         mapboxApiAccessToken="pk.eyJ1IjoiYnJ1ZG5hayIsImEiOiJjanpramh2bnMwMGU4M210M3N5amRnMTVkIn0.ShGGESPCjVZo2MugiijwWw"
         onViewportChange={view => setViewPort({ ...view, width: "100%" })}
         css={{ borderRadius: 5 }}
+        maxBounds={[
+          [-74.04728500751165, 40.68392799015035],
+          [-73.91058699000139, 40.87764500765852],
+        ]}
         {...viewPort}>
         {pumps.map(pump => (
           <Marker
@@ -58,7 +66,7 @@ export default function Map({ pumps, setModalId }) {
             ) : null}
           </Marker>
         ))}
-        <div css={{ position: 'absolute', right: 10, bottom: '9%'}} >
+        <div css={{ position: "absolute", right: 10, bottom: "9%" }}>
           <NavigationControl showZoom />
         </div>
       </ReactMapGL>
