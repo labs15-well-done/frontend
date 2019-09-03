@@ -10,6 +10,14 @@ export default function Map({ pumps, setModalId }) {
     zoom: 6.5,
   })
 
+  const mapPins = {
+    status: {
+      functional: "../static/success.svg",
+      unknown: "../static/unknown.svg",
+      nonFunctional: "../static/error.svg"
+    }
+  }
+
   return (
     <div css={{ img: { cursor: "pointer" } }}>
       <ReactMapGL
@@ -27,7 +35,7 @@ export default function Map({ pumps, setModalId }) {
             offsetTop={-10}>
             {pump.status === 0 ? (
               <img
-                src="../static/error.svg"
+                src={mapPins.status.nonFunctional}
                 width={"31px"}
                 css={{ zIndex: 2 }}
                 onClick={() => setModalId(pump.id)}
@@ -35,14 +43,14 @@ export default function Map({ pumps, setModalId }) {
               />
             ) : pump.status === 1 ? (
               <img
-                src="../static/unknown.svg"
+                src={mapPins.status.unknown}
                 width={"31px"}
                 onClick={() => setModalId(pump.id)}
                 alt=""
               />
             ) : pump.status === 2 ? (
               <img
-                src="../static/success.svg"
+                src={mapPins.status.functional}
                 width={"31px"}
                 onClick={() => setModalId(pump.id)}
                 alt=""
