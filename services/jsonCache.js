@@ -22,6 +22,7 @@ async function main() {
   try {
     console.log("Fetching Init")
     await cacheResource("pumps", getPumps)
+    await cacheResource("longStore", createStore)
     process.exit(0)
   } catch (err) {
     console.error(err)
@@ -80,6 +81,36 @@ async function getPumps() {
     console.log("Data Up To Date")
     return oldData
   }
+}
+
+async function createStore() {
+  const oldData = require("../assets/cache/longStore.json")
+  const data = require("../assets/cache/pumps.json")
+  let pumps = {}
+  data.pumps.forEach(({ id, dates, statuses }, index) => {
+    let pumpOldData = oldData.pumps ? oldData.pumps[id] : {}
+    let newData = {}
+    dates
+      ? dates.forEach(date => {
+          newData = {
+            ...newData,
+            [date]: {
+              ...statuses[index],
+            },
+          }
+        })
+      : {}
+
+    pumps = {
+      ...pumps,
+      [id]: {
+        ...pumpOldData,
+        ...newData,
+      },
+    }
+  })
+
+  return { pumps }
 }
 
 async function asyncForEach(array, callback) {
