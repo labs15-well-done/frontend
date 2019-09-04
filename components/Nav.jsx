@@ -42,7 +42,7 @@ const nav = [
 ]
 
 export default function Nav() {
-  const { store } = useStore()
+  const { store, toggleNav } = useStore()
   return (
     <>
       <div
@@ -77,6 +77,7 @@ export default function Nav() {
                 <div
                   id={id}
                   className={id}
+                  onClick={() => toggleNav(false)}
                   css={{
                     padding: "10px 25px",
                     cursor: "pointer",
