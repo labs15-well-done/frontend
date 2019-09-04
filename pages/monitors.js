@@ -1,11 +1,8 @@
-import React, { useState } from "react"
-import { MonitorData } from "../components/MonitorData"
-import MonitorCard from "../components/MonitorCard"
-import { getVillage } from "../services/prismicData"
-import { HeatMapChartWeek } from "../components/HeatMapChartWeek"
-import { colors } from "../components/Styles"
+import React from "react"
+import { colors, breakingPoints } from "../components/Styles"
 import Seo from "../components/Seo"
 import DashHeader from "../components/Header"
+import { FiHelpCircle, FiAlertCircle, FiCheckCircle } from "react-icons/fi"
 
 const styleStatus = {
   2: {
@@ -38,12 +35,34 @@ export default function Monitors({ pumps }) {
               <summary
                 css={{
                   display: "flex",
+                  alignItems: "center",
                   outline: "none",
                   cursor: "pointer",
                   "::-webkit-details-marker": {
                     display: "none",
                   },
                 }}>
+                <div css={{ marginRight: 10 }}>
+                  <span
+                    css={
+                      pump.status === 0
+                        ? { color: "#f44336" }
+                        : pump.status === 1
+                        ? { color: "#FFAD34" }
+                        : pump.status === 2
+                        ? { color: "#01c000" }
+                        : null
+                    }>
+                    {" "}
+                    {pump.status === 0 ? (
+                      <FiAlertCircle size="25px" />
+                    ) : pump.status === 1 ? (
+                      <FiHelpCircle size="25px" />
+                    ) : pump.status === 2 ? (
+                      <FiCheckCircle size="25px" />
+                    ) : null}
+                  </span>
+                </div>
                 <div css={{ flexGrow: 1 }}>{pump.id}</div>
                 <div css={{ textAlign: "right" }}>
                   <div css={{ display: "flex" }}>
@@ -59,11 +78,14 @@ export default function Monitors({ pumps }) {
                               margin: "0 2px",
                               borderRadius: 3,
                               backgroundColor: styleStatus[status].color,
+                              [breakingPoints.sm]: {
+                                width: 5,
+                              },
                             }}></div>
                         )
                       })
                     ) : (
-                      <div>No Data</div>
+                      <h3 css={{ margin: 0, fontSize: 16 }}>No Data</h3>
                     )}
                   </div>
                   <p
