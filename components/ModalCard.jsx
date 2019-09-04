@@ -18,42 +18,60 @@ export default function ModalCard({ pump }) {
       }}>
       <p css={{ alignSelf: "right", fontWeight: "bolder" }}>ID #{pump.id}</p>
       {/* <p>Total Water-Flow: {pump.statuses && pump.statuses[13].total}</p> */}
+      {/* <span css={{ display: "flex" }}> */}
       <p css={{ fontWeight: "bolder" }}>
-        <span css={{ textDecoration: "underline" }}>Status:</span>
-        <span
-          css={
-            pump.status === 0
-              ? { color: "#f44336" }
-              : pump.status === 1
-              ? { color: "#FFAD34" }
-              : pump.status === 2
-              ? { color: "#01c000" }
-              : null
-          }>
-          {" "}
-          {pump.status === 0 ? (
-            <FiAlertCircle />
-          ) : pump.status === 1 ? (
-            <FiHelpCircle />
-          ) : pump.status === 2 ? (
-            <FiCheckCircle />
-          ) : null}
-        </span>
+        <div
+          css={{ display: "flex", alignItems: "center", flexDirection: "row" }}>
+          <span css={{ textDecoration: "underline" }}>Status:</span>
+          <span
+            css={
+              pump.status === 0
+                ? {
+                    color: "#f44336",
+                    marginLeft: "15px",
+                    fontSize: "2rem",
+                  }
+                : pump.status === 1
+                ? {
+                    color: "#FFAD34",
+                    marginLeft: "15px",
+                    fontSize: "2rem",
+                  }
+                : pump.status === 2
+                ? {
+                    color: "#01c000",
+                    marginLeft: "15px",
+                    fontSize: "2rem",
+                  }
+                : null
+            }>
+            {" "}
+            {pump.status === 0 ? (
+              <FiAlertCircle />
+            ) : pump.status === 1 ? (
+              <FiHelpCircle />
+            ) : pump.status === 2 ? (
+              <FiCheckCircle />
+            ) : null}
+          </span>
+        </div>
       </p>
+      {/* </span> */}
       <p>
-        <span css={{ textDecoration: "underline" }}>3-Day Spread: </span>
-        <ul>
+        <span css={{ textDecoration: "underline", fontWeight: "bold" }}>
+          3-Day Spread:{" "}
+        </span>
+        <ul css={{ listStyleType: "none" }}>
           <li>
-            {pump.dates && pump.dates[12]}{" "}
             <span
               css={
                 pump.statuses
                   ? pump.statuses[12].status === 0
-                    ? { color: "#f44336" }
+                    ? { color: "#f44336", marginRight: "10px" }
                     : pump.statuses[12].status === 1
-                    ? { color: "#FFAD34" }
+                    ? { color: "#FFAD34", marginRight: "10px" }
                     : pump.statuses[12].status === 2
-                    ? { color: "#01c000" }
+                    ? { color: "#01c000", marginRight: "10px" }
                     : null
                   : ""
               }>
@@ -70,18 +88,18 @@ export default function ModalCard({ pump }) {
                 "Connection Failure"
               )}
             </span>
+            {pump.dates && pump.dates[12]}
           </li>
           <li>
-            {pump.dates && pump.dates[11]}{" "}
             <span
               css={
                 pump.statuses
                   ? pump.statuses[11].status === 0
-                    ? { color: "#f44336" }
+                    ? { color: "#f44336", marginRight: "10px" }
                     : pump.statuses[11].status === 1
-                    ? { color: "#FFAD34" }
+                    ? { color: "#FFAD34", marginRight: "10px" }
                     : pump.statuses[11].status === 2
-                    ? { color: "#01c000" }
+                    ? { color: "#01c000", marginRight: "10px" }
                     : null
                   : ""
               }>
@@ -98,18 +116,18 @@ export default function ModalCard({ pump }) {
                 "Connection Failure"
               )}
             </span>
+            {pump.dates && pump.dates[11]}{" "}
           </li>
           <li>
-            {pump.dates && pump.dates[10]}{" "}
             <span
               css={
                 pump.statuses
                   ? pump.statuses[10].status === 0
-                    ? { color: "#f44336" }
+                    ? { color: "#f44336", marginRight: "10px" }
                     : pump.statuses[10].status === 1
-                    ? { color: "#FFAD34" }
+                    ? { color: "#FFAD34", marginRight: "10px" }
                     : pump.statuses[10].status === 2
-                    ? { color: "#01c000" }
+                    ? { color: "#01c000", marginRight: "10px" }
                     : null
                   : ""
               }>
@@ -126,6 +144,7 @@ export default function ModalCard({ pump }) {
                 "Connection Failure"
               )}
             </span>
+            {pump.dates && pump.dates[10]}{" "}
           </li>
         </ul>
       </p>
