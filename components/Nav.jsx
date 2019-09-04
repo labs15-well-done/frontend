@@ -73,6 +73,7 @@ export default function Nav() {
         }}>
         <Link href="/">
           <img
+            onClick={() => toggleNav(false)}
             src="../static/logo.png"
             css={{ width: 200, margin: "50px 20px ", cursor: "pointer" }}
           />
