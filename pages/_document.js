@@ -21,6 +21,7 @@ export default class extends Document {
             href="https://fonts.googleapis.com/css?family=Poppins:300,400,600&display=swap"
             rel="stylesheet"
           />
+          <link rel="stylesheet" type="text/css" href="/static/nprogress.css" />
         </Head>
         <body>
           <Main />

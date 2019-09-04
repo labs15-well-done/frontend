@@ -18,8 +18,7 @@ const styleStatus = {
 
 export default function Monitors({ pumps }) {
   const [filter, setFilter] = useState({ 0: true, 1: true, 2: true })
-  console.log(filter[2])
-  console.log(pumps)
+
   return (
     <>
       <Seo title="Monitors • Welldone Dashboard" />
@@ -92,7 +91,6 @@ export default function Monitors({ pumps }) {
                       {pump.dates ? (
                         pump.dates.map((date, index) => {
                           const status = pump.statuses[index].status
-                          console.log(status)
                           return (
                             <div
                               css={{
@@ -123,7 +121,7 @@ export default function Monitors({ pumps }) {
                   </div>
                 </summary>
                 <div>
-                  <h3>asfdsadf</h3>
+                  <h3>More info and charts</h3>
                 </div>
               </details>
             )
