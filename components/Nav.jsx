@@ -45,6 +45,20 @@ export default function Nav() {
   const { store, toggleNav } = useStore()
   return (
     <>
+      {store.nav ? (
+        <div
+          onClick={() => toggleNav(false)}
+          css={{
+            position: "absolute",
+            backgroundColor: "black",
+            opacity: 0.2,
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            zIndex: 200,
+          }}></div>
+      ) : null}
       <div
         css={{
           position: "fixed",
