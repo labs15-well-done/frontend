@@ -17,6 +17,7 @@ const nav = [
     id: "tour-dashboard",
     content: "Dashboard Here",
     icon: FiMenu,
+    data: "dashboard",
   },
   {
     name: "Monitors",
@@ -71,10 +72,11 @@ export default function Nav() {
               marginLeft: 10,
             },
           }}>
-          {nav.map(({ name, link, id, icon: Icon }) => {
+          {nav.map(({ name, link, id, icon: Icon, data }) => {
             return (
               <Link href={link}>
                 <div
+                  data-tab={data}
                   id={id}
                   className={id}
                   css={{

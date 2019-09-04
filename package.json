@@ -35,7 +35,8 @@
     "react-mapbox-gl": "^4.6.0",
     "reactour": "^1.15.0",
     "request": "^2.88.0",
-    "request-promise": "^4.2.4"
+    "request-promise": "^4.2.4",
+    "styled-components": "^4.3.2"
   },
   "devDependencies": {
     "@emotion/babel-preset-css-prop": "^10.0.14",
