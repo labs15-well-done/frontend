@@ -63,12 +63,29 @@ async function getPumps() {
         },
       }
     })
+
     let results = []
     await asyncForEach(Object.keys(pumps), async (pump, index) => {
       try {
         console.log(`${index + 1}/${Object.keys(pumps).length}`)
         const res = await axios.get(`${url}${pump}`)
-        results.push({ id: pump, ...pumps[pump], ...res.data })
+
+        let newData = {}
+        res.data
+          ? res.data.dates.forEach(date => {
+              newData = {
+                ...newData,
+                [date]: {
+                  count: res.data.statuses[index].count,
+                  total: res.data.statuses[index].total,
+                  status: res.data.statuses[index].status,
+                },
+              }
+            })
+          : {}
+        //console.log(newData)
+        results.push({ id: pump, ...pumps[pump], statuses: newData })
+        console.log("YES", results)
       } catch (err) {
         console.error(`Error on pump #${pump}`)
         results.push({ id: pump, ...pumps[pump], status: 0, error: "500" })
@@ -88,23 +105,12 @@ async function createStore() {
   let pumps = {}
   data.pumps.forEach(({ id, dates, statuses }, index) => {
     let pumpOldData = oldData.pumps ? oldData.pumps[id] : {}
-    let newData = {}
-    dates
-      ? dates.forEach(date => {
-          newData = {
-            ...newData,
-            [date]: {
-              ...statuses[index],
-            },
-          }
-        })
-      : {}
 
     pumps = {
       ...pumps,
       [id]: {
         ...pumpOldData,
-        ...newData,
+        ...data.pumps.find(pump => pump.id === id).statuses,
       },
     }
   })
