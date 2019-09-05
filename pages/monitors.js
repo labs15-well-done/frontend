@@ -24,23 +24,23 @@ export default function Monitors({ pumps }) {
       <Seo title="Monitors • Welldone Dashboard" />
       <DashHeader
         title="Monitors"
-        // actions={
-        //   <div>
-        //     <button
-        //       active={filter[0]}
-        //       onClick={() => setFilter({ ...filter, 0: !filter[0] })}>
-        //       Functional
-        //     </button>
-        //     <button
-        //       active={filter[1]}
-        //       onClick={() => setFilter({ ...filter, 1: !filter[1] })}>
-        //       Non-Functional
-        //     </button>
-        //     <button onClick={() => setFilter({ ...filter, 2: !filter[2] })}>
-        //       Unknown
-        //     </button>
-        //   </div>
-        // }
+        actions={
+          <div>
+            <button
+              active={filter[0]}
+              onClick={() => setFilter({ ...filter, 2: !filter[2] })}>
+              Functional
+            </button>
+            <button
+              active={filter[1]}
+              onClick={() => setFilter({ ...filter, 1: !filter[1] })}>
+              Non-Functional
+            </button>
+            <button onClick={() => setFilter({ ...filter, 0: !filter[0] })}>
+              Unknown
+            </button>
+          </div>
+        }
       />
       <div css={{ padding: "0 20px", maxWidth: 1240, margin: "0 auto" }}>
         {pumps
