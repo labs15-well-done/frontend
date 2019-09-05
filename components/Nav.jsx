@@ -42,9 +42,25 @@ const nav = [
 ]
 
 export default function Nav() {
-  const { store } = useStore()
+  const { store, toggleNav } = useStore()
   return (
     <>
+      {store.nav ? (
+        <div
+          onClick={() => toggleNav(false)}
+          css={{
+            [breakingPoints.md]: {
+              position: "absolute",
+              backgroundColor: "black",
+              opacity: 0.2,
+              top: 0,
+              left: 0,
+              right: 0,
+              zIndex: 10000,
+              height: "100%",
+            },
+          }}></div>
+      ) : null}
       <div
         css={{
           position: "fixed",
@@ -59,6 +75,7 @@ export default function Nav() {
         }}>
         <Link href="/">
           <img
+            onClick={() => toggleNav(false)}
             src="../static/logo.png"
             css={{ width: 200, margin: "50px 20px ", cursor: "pointer" }}
           />
@@ -77,6 +94,7 @@ export default function Nav() {
                 <div
                   id={id}
                   className={id}
+                  onClick={() => toggleNav(false)}
                   css={{
                     padding: "10px 25px",
                     cursor: "pointer",
