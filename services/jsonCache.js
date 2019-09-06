@@ -69,6 +69,7 @@ async function getPumps() {
       try {
         console.log(`${index + 1}/${Object.keys(pumps).length}`)
         const res = await axios.get(`${url}${pump}`)
+        console.log(res.data)
 
         let newData = {}
         res.data
@@ -84,8 +85,12 @@ async function getPumps() {
             })
           : {}
         //console.log(newData)
-        results.push({ id: pump, ...pumps[pump], statuses: newData })
-        console.log("YES", results)
+        results.push({
+          id: pump,
+          ...pumps[pump],
+          status: res.data.status,
+          statuses: newData,
+        })
       } catch (err) {
         console.error(`Error on pump #${pump}`)
         results.push({ id: pump, ...pumps[pump], status: 0, error: "500" })

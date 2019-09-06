@@ -88,9 +88,9 @@ export default function Monitors({ pumps }) {
                   <div css={{ flexGrow: 1 }}>{pump.id}</div>
                   <div css={{ textAlign: "right" }}>
                     <div css={{ display: "flex" }}>
-                      {pump.dates ? (
-                        pump.dates.map((date, index) => {
-                          const status = pump.statuses[index].status
+                      {pump.statuses ? (
+                        Object.keys(pump.statuses).map(date => {
+                          const status = pump.statuses[date].status
                           return (
                             <div
                               css={{
