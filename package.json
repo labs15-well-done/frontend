@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "npm run fetch && next dev",
     "fetch": "node services/jsonCache.js",
-    "build": "npm run fetch && next build",
+    "build": "next build",
     "start": "next start",
     "export": "next export",
     "deploy": "npm run build && npm run export"
@@ -23,6 +23,7 @@
     "@nivo/sunburst": "^0.59.1",
     "axios": "^0.19.0",
     "fs": "0.0.1-security",
+    "mapbox-gl": "^1.3.0",
     "moment": "^2.24.0",
     "next": "9.0.4",
     "nprogress": "^0.2.0",
@@ -32,7 +33,9 @@
     "react-icons": "^3.7.0",
     "react-joyride": "^2.1.1",
     "react-map-gl": "^4.1.13",
+    "react-mapbox-gl": "^4.6.0",
     "reactour": "^1.15.0",
+    "recharts": "^1.7.1",
     "request": "^2.88.0",
     "request-promise": "^4.2.4"
   },

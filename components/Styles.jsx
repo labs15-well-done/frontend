@@ -1,4 +1,5 @@
 import { Global, css } from "@emotion/core"
+import { FiHelpCircle, FiAlertCircle, FiCheckCircle } from "react-icons/fi"
 
 export const colors = {
   main: "#fff",
@@ -17,6 +18,40 @@ export const breakingPoints = {
   lg: "@media (max-width: 1000px)",
   md: "@media (max-width: 800px)",
   sm: "@media (max-width: 600px)",
+}
+
+export const getPumpStyles = ({ iconSize = 20 }) => {
+  return {
+    status: {
+      0: {
+        icon: (
+          <FiAlertCircle
+            size={`${iconSize}px`}
+            css={{ opacity: 1, color: colors.danger }}
+          />
+        ),
+        color: colors.danger,
+      },
+      1: {
+        icon: (
+          <FiHelpCircle
+            size={`${iconSize}px`}
+            css={{ opacity: 1, color: colors.orange }}
+          />
+        ),
+        color: colors.orange,
+      },
+      2: {
+        icon: (
+          <FiCheckCircle
+            size={`${iconSize}px`}
+            css={{ opacity: 1, color: colors.success }}
+          />
+        ),
+        color: colors.success,
+      },
+    },
+  }
 }
 
 export default function Styles() {

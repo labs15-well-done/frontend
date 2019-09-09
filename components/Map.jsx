@@ -7,12 +7,20 @@ export default function Map({ pumps, setModalId }) {
     height: "500px",
     latitude: 12.55,
     longitude: 104.9,
-    zoom: 6.5,
-    // maxBounds: [
-    //   [10.727291, 102.899053], // Southwest coordinates
-    //   [14.841942, 107.66624], // Northeast coordinates
-    // ],
+    zoom: 6.28,
+    minZoom: 6.28,
+    maxZoom: 13,
   })
+
+  const [maxBounds] = useState([
+    [10.572449, 103.140854], // Southwest coordinates
+    [14.841942, 107.66624], // Northeast coordinates
+  ])
+
+  // var maxBounds = [
+  //   [10.572449, 103.140854], // Southwest coordinates
+  //   [14.841942, 107.66624], // Northeast coordinates
+  // ]
 
   const mapPins = {
     status: {
@@ -26,6 +34,8 @@ export default function Map({ pumps, setModalId }) {
     <div css={{ img: { cursor: "pointer" } }}>
       <ReactMapGL
         // andy's
+        fitBounds={undefined}
+        maxBounds={maxBounds}
         mapStyle="mapbox://styles/brudnak/cjzypjc362w9u1clduir026aw"
         mapboxApiAccessToken="pk.eyJ1IjoiYnJ1ZG5hayIsImEiOiJjanpramh2bnMwMGU4M210M3N5amRnMTVkIn0.ShGGESPCjVZo2MugiijwWw"
         onViewportChange={view => setViewPort({ ...view, width: "100%" })}
