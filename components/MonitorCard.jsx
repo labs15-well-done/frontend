@@ -23,8 +23,7 @@ function hexToRGB(hex, alpha) {
 }
 export default function MonitorCard({ pump, error }) {
   const pumpStyles = getPumpStyles({ iconSize: 25 })
-  console.log(pump)
-  const [graphData] = useState(() => {
+\  const [graphData] = useState(() => {
     if (pump.statuses) {
       return Object.keys(pump.statuses).map(date => {
         return {
@@ -34,7 +33,6 @@ export default function MonitorCard({ pump, error }) {
       })
     }
   })
-  console.log(graphData)
 
   return (
     <div
