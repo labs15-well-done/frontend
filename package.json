@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "npm run fetch && next dev",
     "fetch": "node services/jsonCache.js",
-    "build": "npm run fetch && next build",
+    "build": "next build",
     "start": "next start",
     "export": "npm run fetch && next export",
     "deploy": "npm run build && npm run export"
@@ -33,6 +33,7 @@
     "react-joyride": "^2.1.1",
     "react-map-gl": "^4.1.13",
     "reactour": "^1.15.0",
+    "recharts": "^1.7.1",
     "request": "^2.88.0",
     "request-promise": "^4.2.4"
   },

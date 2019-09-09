@@ -5,23 +5,10 @@ import {
   FiAlertCircle,
   FiCheckCircle,
 } from "react-icons/fi"
-
-const styles = {
-  0: {
-    icon: <FiAlertCircle size="20px" />,
-    color: "#f44336",
-  },
-  1: {
-    icon: <FiHelpCircle size="20px" />,
-    color: "#FFAD34",
-  },
-  2: {
-    icon: <FiCheckCircle size="20px" />,
-    color: "#01c000",
-  },
-}
+import { getPumpStyles } from "./Styles"
 
 export default function ModalCard({ pump }) {
+  const pumpStyles = getPumpStyles({ iconSize: 20 })
   return (
     <div
       css={{
@@ -35,9 +22,9 @@ export default function ModalCard({ pump }) {
       {/* <p>Total Water-Flow: {pump.statuses && pump.statuses[13].total}</p> */}
       <p css={{ fontWeight: "bolder" }}>
         <span css={{ textDecoration: "underline" }}>Status:</span>
-        <span css={{ color: styles[pump.status].color }}>
+        <span css={{ color: pumpStyles.status[pump.status].color }}>
           {" "}
-          {styles[pump.status].icon}
+          {pumpStyles.status[pump.status].icon}
         </span>
       </p>
       <p>
