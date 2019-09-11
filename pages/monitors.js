@@ -9,7 +9,7 @@ export default function Monitors({ pumps }) {
 
   return (
     <>
-      <Seo title="Monitors • Welldone Dashboard" />
+      {/* <Seo title="Monitors • Welldone Dashboard" /> */}
       <DashHeader
         title="Monitors"
         // actions={

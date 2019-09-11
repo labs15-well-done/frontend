@@ -50,12 +50,16 @@ async function getPumps() {
       if (pump.data && pump.data.village.id && !pump.data.village.isBroken) {
         village = await prismic.getVillage(pump.data.village.id)
       }
-      pumps = {
-        ...pumps,
-        [pump.uid]: {
-          ...pump.data,
-          village,
-        },
+      if (pump.data && pump.data.latitude && pump.data.longitude) {
+        pumps = {
+          ...pumps,
+          [pump.uid]: {
+            ...pump.data,
+            village,
+          },
+        }
+      } else {
+        console.log(`Missing data on pump #${pump.uid}`)
       }
     })
 

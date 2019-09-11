@@ -11,7 +11,7 @@ export default function Reports({ pumps }) {
 
   return (
     <>
-      <Seo title="Reports • Welldone Dashboard" />
+      {/* <Seo title="Reports • Welldone Dashboard" /> */}
       <DashHeader
         title="Reports"
         actions={
