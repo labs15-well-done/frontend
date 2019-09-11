@@ -21,13 +21,16 @@ export default function DashHeader({ title, actions }) {
             </div>
             <div
               css={{
-                a: {
+                "a,button": {
                   transition: ".2s",
                   marginLeft: 20,
                   color: colors.btnHover,
                   padding: "5px 10px",
                   fontWeight: "lighter",
                   borderRadius: 5,
+                  backgroundColor: "transparent",
+                  border: "none",
+                  outline: "none",
                   ":hover": {
                     backgroundColor: colors.btnHover,
                     color: "white",

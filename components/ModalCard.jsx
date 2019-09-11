@@ -5,8 +5,10 @@ import {
   FiAlertCircle,
   FiCheckCircle,
 } from "react-icons/fi"
+import { getPumpStyles } from "./Styles"
 
 export default function ModalCard({ pump }) {
+  const pumpStyles = getPumpStyles({ iconSize: 20 })
   return (
     <div
       css={{
@@ -20,41 +22,11 @@ export default function ModalCard({ pump }) {
       {/* <p>Total Water-Flow: {pump.statuses && pump.statuses[13].total}</p> */}
       {/* <span css={{ display: "flex" }}> */}
       <p css={{ fontWeight: "bolder" }}>
-        <div
-          css={{ display: "flex", alignItems: "center", flexDirection: "row" }}>
-          <span css={{ textDecoration: "underline" }}>Status:</span>
-          <span
-            css={
-              pump.status === 0
-                ? {
-                    color: "#f44336",
-                    marginLeft: "15px",
-                    fontSize: "2rem",
-                  }
-                : pump.status === 1
-                ? {
-                    color: "#FFAD34",
-                    marginLeft: "15px",
-                    fontSize: "2rem",
-                  }
-                : pump.status === 2
-                ? {
-                    color: "#01c000",
-                    marginLeft: "15px",
-                    fontSize: "2rem",
-                  }
-                : null
-            }>
-            {" "}
-            {pump.status === 0 ? (
-              <FiAlertCircle />
-            ) : pump.status === 1 ? (
-              <FiHelpCircle />
-            ) : pump.status === 2 ? (
-              <FiCheckCircle />
-            ) : null}
-          </span>
-        </div>
+        <span css={{ textDecoration: "underline" }}>Status:</span>
+        <span css={{ color: pumpStyles.status[pump.status].color }}>
+          {" "}
+          {pumpStyles.status[pump.status].icon}
+        </span>
       </p>
       {/* </span> */}
       <p>
@@ -77,11 +49,13 @@ export default function ModalCard({ pump }) {
               }>
               {" "}
               {pump.statuses ? (
-                pump.statuses[12].status === 0 ? (
+                pump.statuses[Object.keys(pump.statuses)[12]].status === 0 ? (
                   <FiAlertCircle />
-                ) : pump.statuses[12].status === 1 ? (
+                ) : pump.statuses[Object.keys(pump.statuses)[12]].status ===
+                  1 ? (
                   <FiHelpCircle />
-                ) : pump.statuses[12].status === 2 ? (
+                ) : pump.statuses[Object.keys(pump.statuses)[12]].status ===
+                  2 ? (
                   <FiCheckCircle />
                 ) : null
               ) : (
@@ -105,11 +79,13 @@ export default function ModalCard({ pump }) {
               }>
               {" "}
               {pump.statuses ? (
-                pump.statuses[11].status === 0 ? (
+                pump.statuses[Object.keys(pump.statuses)[11]].status === 0 ? (
                   <FiAlertCircle />
-                ) : pump.statuses[11].status === 1 ? (
+                ) : pump.statuses[Object.keys(pump.statuses)[11]].status ===
+                  1 ? (
                   <FiHelpCircle />
-                ) : pump.statuses[11].status === 2 ? (
+                ) : pump.statuses[Object.keys(pump.statuses)[11]].status ===
+                  2 ? (
                   <FiCheckCircle />
                 ) : null
               ) : (
@@ -133,11 +109,13 @@ export default function ModalCard({ pump }) {
               }>
               {" "}
               {pump.statuses ? (
-                pump.statuses[10].status === 0 ? (
+                pump.statuses[Object.keys(pump.statuses)[10]].status === 0 ? (
                   <FiAlertCircle />
-                ) : pump.statuses[10].status === 1 ? (
+                ) : pump.statuses[Object.keys(pump.statuses)[10]].status ===
+                  1 ? (
                   <FiHelpCircle />
-                ) : pump.statuses[10].status === 2 ? (
+                ) : pump.statuses[Object.keys(pump.statuses)[10]].status ===
+                  2 ? (
                   <FiCheckCircle />
                 ) : null
               ) : (
@@ -146,7 +124,8 @@ export default function ModalCard({ pump }) {
             </span>
             {pump.dates && pump.dates[10]}{" "}
           </li>
-        </ul>
+        </ul>{" "}
+        */}
       </p>
     </div>
   )

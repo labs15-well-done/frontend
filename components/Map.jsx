@@ -40,6 +40,10 @@ export default function Map({ pumps, setModalId }) {
         mapboxApiAccessToken="pk.eyJ1IjoiYnJ1ZG5hayIsImEiOiJjanpramh2bnMwMGU4M210M3N5amRnMTVkIn0.ShGGESPCjVZo2MugiijwWw"
         onViewportChange={view => setViewPort({ ...view, width: "100%" })}
         css={{ borderRadius: 5 }}
+        maxBounds={[
+          [-74.04728500751165, 40.68392799015035],
+          [-73.91058699000139, 40.87764500765852],
+        ]}
         {...viewPort}>
         {pumps.map(pump => (
           <Marker

@@ -11,7 +11,6 @@ import Card from "../components/Card"
 import { colors, breakingPoints } from "../components/Styles"
 import BlankCard from "../components/BlankCard"
 import Map from "../components/Map"
-import { SunburstChart } from "../components/SunburstChart"
 import { LineChart } from "../components/LineChart"
 import Modal from "../components/Modal"
 
@@ -20,7 +19,7 @@ export default function Dashboard({ pumps }) {
 
   return (
     <div css={{ width: "100%" }}>
-      <Seo title="Home • Welldone Dashboard" description="" />
+      {/* <Seo title="Home • Welldone Dashboard" description="" /> */}
       <Header
         title="Insights"
         actions={
@@ -123,8 +122,7 @@ export default function Dashboard({ pumps }) {
                 },
               }}>
               <BlankCard style={{ textAlign: "center" }}>
-                <h2>Details</h2>
-                <div css={{ textAlign: "left" }}>
+                <div css={{ textAlign: "center" }}>
                   <Modal modalId={modalId} pumps={pumps} />
                 </div>
               </BlankCard>

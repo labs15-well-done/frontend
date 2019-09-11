@@ -1,52 +1,33 @@
-import React, { useState } from "react"
+import React from "react"
 import Link from "next/link"
-import {
-  FiMenu,
-  FiLogOut,
-  FiBarChart2,
-  FiEdit,
-  FiSettings,
-} from "react-icons/fi"
 import { colors, breakingPoints } from "./Styles"
 import { useStore } from "./Layout"
+import { RichText } from "prismic-reactjs"
 
-const nav = [
-  {
-    name: "Dashboard",
-    link: "/dashboard",
-    id: "tour-dashboard",
-    content: "Dashboard Here",
-    icon: FiMenu,
-  },
-  {
-    name: "Monitors",
-    link: "/monitors",
-    id: "tour-monitors",
-    content: "Monitors Here",
-    icon: FiBarChart2,
-  },
-  {
-    name: "Reports",
-    link: "/reports",
-    id: "tour-reports",
-    content: "Reports Here",
-    icon: FiEdit,
-  },
-  {
-    name: "Settings",
-    link: "/settings",
-    id: "tour-settings",
-    content: "Settings Here",
-    icon: FiSettings,
-  },
-]
-
-export default function Nav() {
-  const { store } = useStore()
+export default function Nav({ navData: { data } }) {
+  console.log(data)
+  const { store, toggleNav } = useStore()
   return (
     <>
+      {store.nav ? (
+        <div
+          onClick={() => toggleNav(false)}
+          css={{
+            [breakingPoints.md]: {
+              position: "absolute",
+              backgroundColor: "black",
+              opacity: 0.2,
+              top: 0,
+              left: 0,
+              right: 0,
+              zIndex: 10000,
+              height: "100%",
+            },
+          }}></div>
+      ) : null}
       <div
         css={{
+          boxShadow: "0px 3px 6px rgba(0, 0, 0, 0.16)",
           position: "fixed",
           minHeight: "100vh",
           backgroundColor: colors.brand,
@@ -59,8 +40,10 @@ export default function Nav() {
         }}>
         <Link href="/">
           <img
-            src="../static/logo.png"
+            onClick={() => toggleNav(false)}
+            src={data.logo.url}
             css={{ width: 200, margin: "50px 20px ", cursor: "pointer" }}
+            alt={data.logo.alt}
           />
         </Link>
         <div
@@ -71,12 +54,13 @@ export default function Nav() {
               marginLeft: 10,
             },
           }}>
-          {nav.map(({ name, link, id, icon: Icon }) => {
+          {data.nav_links.map(({ name, link, id, icon }) => {
             return (
-              <Link href={link}>
+              <Link href={`/${link}`}>
                 <div
                   id={id}
                   className={id}
+                  onClick={() => toggleNav(false)}
                   css={{
                     padding: "10px 25px",
                     cursor: "pointer",
@@ -84,8 +68,8 @@ export default function Nav() {
                       backgroundColor: colors.btnHover,
                     },
                   }}>
-                  {Icon ? <Icon /> : null}
-                  <a>{name}</a>
+                  <img src={icon.url} />
+                  <a>{RichText.asText(name)}</a>
                 </div>
               </Link>
             )

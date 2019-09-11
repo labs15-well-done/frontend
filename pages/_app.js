@@ -1,9 +1,17 @@
 import React from "react"
 import App, { Container } from "next/app"
 import Styles, { breakingPoints } from "../components/Styles"
+import NProgress from "nprogress"
+import Router from "next/router"
 import Nav from "../components/Nav"
 import Layout from "../components/Layout"
 import TopNav from "../components/TopNav"
+
+import { getPrismicApi, linkResolver } from "../prismic"
+
+Router.events.on("routeChangeStart", () => NProgress.start())
+Router.events.on("routeChangeComplete", () => NProgress.done())
+Router.events.on("routeChangeError", () => NProgress.done())
 
 export default class extends App {
   static async getInitialProps({ Component, ctx }) {
@@ -11,16 +19,19 @@ export default class extends App {
     if (Component.getInitialProps) {
       pageProps = await Component.getInitialProps(ctx)
     }
-    return { pageProps }
+    const { api, ref } = await getPrismicApi(ctx)
+    const navData = await api.getSingle("nav", { ref })
+    // const footerData = await api.getSingle("footer", { ref })
+    return { pageProps, navData }
   }
 
   render() {
-    const { Component, pageProps } = this.props
+    const { Component, pageProps, navData } = this.props
 
     return (
       <Container>
         <Layout>
-          <Nav />
+          <Nav navData={navData} />
           <div
             css={{
               marginLeft: 240,
