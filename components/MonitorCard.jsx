@@ -102,7 +102,7 @@ export default function MonitorCard({ pump, error }) {
         </div>
         <div>
           <h4 css={{ margin: 0 }}>{pump.id}</h4>
-          <h4 css={{ margin: 0 }}>{pump.village.slug}</h4>
+          <h4 css={{ margin: 0 }}>{pump.id}</h4>
         </div>
       </div>
       {!error ? (
