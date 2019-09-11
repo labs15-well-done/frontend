@@ -46,10 +46,15 @@ async function getPumps() {
     let pumps = {}
     const prismicPumps = await prismic.getDocs("pump")
     await asyncForEach(prismicPumps.results, async pump => {
+      let village = null
+      if (pump.data && pump.data.village.id && !pump.data.village.isBroken) {
+        village = await prismic.getVillage(pump.data.village.id)
+      }
       pumps = {
         ...pumps,
         [pump.uid]: {
           ...pump.data,
+          village,
         },
       }
     })

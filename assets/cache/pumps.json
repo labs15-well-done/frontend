@@ -1,18 +1,15 @@
 {
-  "lastFetch": 1568232914,
+  "lastFetch": 1568239050,
   "pumps": [
     {
       "id": "4715",
       "latitude": 13.66048333,
       "longitude": 104.0075117,
       "village": {
-        "id": "XW2GnREAACYADSgz",
-        "type": "village",
-        "tags": [],
-        "slug": "khun-ream",
-        "lang": "en-us",
-        "link_type": "Document",
-        "isBroken": false
+        "village": "Khun Ream",
+        "commune": "Khun Ream",
+        "district": "Banteay Srei",
+        "province": "Siem Reap"
       },
       "finish_construction": null,
       "well_depth": null,
@@ -42,13 +39,10 @@
       "latitude": 13.74180294,
       "longitude": 106.9793701,
       "village": {
-        "id": "XXAppBEAACYAGSly",
-        "type": "village",
-        "tags": [],
-        "slug": "lak",
-        "lang": "en-us",
-        "link_type": "Document",
-        "isBroken": false
+        "village": "L'ak",
+        "commune": "L'ak",
+        "district": "Ou Chum",
+        "province": "Ratanak Kiri"
       },
       "finish_construction": null,
       "well_depth": null,
@@ -63,13 +57,10 @@
       "latitude": 13.74180294,
       "longitude": 106.9793701,
       "village": {
-        "id": "XXAqbREAACUAGS0I",
-        "type": "village",
-        "tags": [],
-        "slug": "kouk-ampil",
-        "lang": "en-us",
-        "link_type": "Document",
-        "isBroken": false
+        "village": "Kouk (Ampil)",
+        "commune": "L'ak",
+        "district": "Ou Chum",
+        "province": "Ratanak Kiri"
       },
       "finish_construction": null,
       "well_depth": null,
@@ -98,7 +89,12 @@
       "id": "4742",
       "latitude": 13.68651955,
       "longitude": 107.2160912,
-      "village": { "link_type": "Document" },
+      "village": {
+        "village": "Kouk (Pouy)",
+        "commune": "L'ak",
+        "district": "Ou Chum",
+        "province": "Ratanak Kiri"
+      },
       "finish_construction": "2014-01-01",
       "well_depth": 60,
       "yield": 1.5,
@@ -126,15 +122,7 @@
       "id": "4743",
       "latitude": 13.86639,
       "longitude": 107.055199,
-      "village": {
-        "id": "XXAppBEAACYAGSly",
-        "type": "village",
-        "tags": [],
-        "slug": "lak",
-        "lang": "en-us",
-        "link_type": "Document",
-        "isBroken": false
-      },
+      "village": null,
       "finish_construction": null,
       "well_depth": null,
       "yield": null,
@@ -162,15 +150,7 @@
       "id": "4746",
       "latitude": 13.865388,
       "longitude": 107.066529,
-      "village": {
-        "id": "XXAppBEAACYAGSly",
-        "type": "village",
-        "tags": [],
-        "slug": "lak",
-        "lang": "en-us",
-        "link_type": "Document",
-        "isBroken": false
-      },
+      "village": null,
       "finish_construction": null,
       "well_depth": null,
       "yield": null,
@@ -198,15 +178,7 @@
       "id": "4747",
       "latitude": 13.750234,
       "longitude": 106.94527,
-      "village": {
-        "id": "XXApWhEAACYAGSgd",
-        "type": "village",
-        "tags": [],
-        "slug": "cha-ungchan",
-        "lang": "en-us",
-        "link_type": "Document",
-        "isBroken": false
-      },
+      "village": null,
       "finish_construction": null,
       "well_depth": null,
       "yield": null,
@@ -219,7 +191,7 @@
       "id": "4749",
       "latitude": 13.78178833,
       "longitude": 107.0310667,
-      "village": { "link_type": "Document" },
+      "village": null,
       "finish_construction": null,
       "well_depth": null,
       "yield": null,
@@ -233,13 +205,10 @@
       "latitude": 13.74180294,
       "longitude": 106.9793701,
       "village": {
-        "id": "XW2HKhEAACgADSqo",
-        "type": "village",
-        "tags": [],
-        "slug": "ta-nga",
-        "lang": "en-us",
-        "link_type": "Document",
-        "isBroken": false
+        "village": "Ta Nga",
+        "commune": "Nhang",
+        "district": "Andoung Meas",
+        "province": "Ratanak Kiri"
       },
       "finish_construction": null,
       "well_depth": null,
@@ -254,13 +223,10 @@
       "latitude": 13.8653917,
       "longitude": 107.0437533,
       "village": {
-        "id": "XXAppBEAACYAGSly",
-        "type": "village",
-        "tags": [],
-        "slug": "lak",
-        "lang": "en-us",
-        "link_type": "Document",
-        "isBroken": false
+        "village": "L'ak",
+        "commune": "L'ak",
+        "district": "Ou Chum",
+        "province": "Ratanak Kiri"
       },
       "finish_construction": null,
       "well_depth": null,
@@ -289,7 +255,12 @@
       "id": "4763",
       "latitude": 13.66288,
       "longitude": 104.0218467,
-      "village": { "link_type": "Document" },
+      "village": {
+        "village": "Khnar Rungvas",
+        "commune": "Khun Ream",
+        "district": "Banteay Srei",
+        "province": "Siem Reap"
+      },
       "finish_construction": null,
       "well_depth": null,
       "yield": null,
@@ -318,13 +289,10 @@
       "latitude": 13.66423349,
       "longitude": 104.0051294,
       "village": {
-        "id": "XW2GnREAACYADSgz",
-        "type": "village",
-        "tags": [],
-        "slug": "khun-ream",
-        "lang": "en-us",
-        "link_type": "Document",
-        "isBroken": false
+        "village": "Khun Ream",
+        "commune": "Khun Ream",
+        "district": "Banteay Srei",
+        "province": "Siem Reap"
       },
       "finish_construction": null,
       "well_depth": null,

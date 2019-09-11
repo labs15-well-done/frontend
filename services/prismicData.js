@@ -19,8 +19,8 @@ async function getDocs(docType) {
 
 async function getVillage(village) {
   const api = await Prismic.api(API_ENDPOINT)
-  const doc = await api.query(Prismic.Predicates.at("document.id", village))
-  return doc.results[0].data
+  const doc = await api.getByID(village)
+  return doc.data
 }
 
 module.exports = {
