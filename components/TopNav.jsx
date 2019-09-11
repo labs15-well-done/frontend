@@ -15,6 +15,7 @@ export default function TopNav() {
         display: "flex",
         justifyContent: "flex-end",
         alignItems: "center",
+        position: "relative",
       }}>
       {/* <input
       placeholder="Search"
@@ -46,6 +47,7 @@ export default function TopNav() {
             backgroundColor: "transparent",
             outline: "none",
             border: "none",
+            zIndex: 1000,
             [breakingPoints.md]: {
               display: "inherit",
             },

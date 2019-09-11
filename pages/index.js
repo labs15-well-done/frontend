@@ -8,7 +8,6 @@ export default function index() {
   return (
     <div css={{ padding: "20px 20px", maxWidth: 1240, margin: "0 auto" }}>
       <Seo title="Welcome • Welldone Dashboard" />
-
       <div
         css={{
           zIndex: -1,
@@ -39,7 +38,7 @@ export default function index() {
               borderRadius: "9px 9px 0 0",
             },
           }}>
-          <h1 css={{ margin: "0px 0 10px" }}>MoMo Dashboard</h1>
+          <h1 css={{ margin: "0px 0 10px" }}>WellDone Dashboard</h1>
           <p
             css={{
               margin: "0px 0px 0px",

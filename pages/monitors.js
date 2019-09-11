@@ -1,60 +1,75 @@
 import React, { useState } from "react"
-import { MonitorData } from "../components/MonitorData"
+import { colors, breakingPoints, getPumpStyles } from "../components/Styles"
+import Seo from "../components/Seo"
+import DashHeader from "../components/Header"
 import MonitorCard from "../components/MonitorCard"
 
-const Monitors = () => {
-  const [data, setData] = useState(MonitorData)
+export default function Monitors({ pumps }) {
+  const [filter, setFilter] = useState({ 0: true, 1: true, 2: true })
+
   return (
-    <div className="card-container">
-      {data.map(pump => {
-        const pumpUrl = `/pump/${pump.id}`
-        return (
-          <a href={pumpUrl}>
-            <MonitorCard key={pump.id} pump={pump} />
-          </a>
-        )
-      })}
-      <style jsx>{`
-        .card-container {
-          display: flex;
-          flex-flow: wrap;
-          justify-content: center;
-          margin-top: 50px;
-        }
-      `}</style>
-    </div>
+    <>
+      <Seo title="Monitors • Welldone Dashboard" />
+      <DashHeader
+        title="Monitors"
+        // actions={
+        //   <div>
+        //     <button
+        //       active={filter[0]}
+        //       onClick={() => setFilter({ ...filter, 2: !filter[2] })}>
+        //       Functional
+        //     </button>
+        //     <button
+        //       active={filter[1]}
+        //       onClick={() => setFilter({ ...filter, 1: !filter[1] })}>
+        //       Non-Functional
+        //     </button>
+        //     <button onClick={() => setFilter({ ...filter, 0: !filter[0] })}>
+        //       Unknown
+        //     </button>
+        //   </div>
+        // }
+      />
+      <div
+        css={{
+          padding: "0 20px",
+          maxWidth: 1240,
+          margin: "0 auto",
+        }}>
+        <div
+          css={{
+            display: "flex",
+            flexWrap: "wrap",
+          }}>
+          {pumps
+            ? pumps
+                .filter(pump => !pump.error)
+                .map(pump => {
+                  return <MonitorCard pump={pump} />
+                })
+            : null}
+        </div>
+        <h4>Non Functional Pumps</h4>
+        <div
+          css={{
+            display: "flex",
+            flexWrap: "wrap",
+          }}>
+          {pumps
+            ? pumps
+                .filter(pump => pump.error)
+                .map(pump => {
+                  return <MonitorCard error pump={pump} />
+                })
+            : null}
+        </div>
+      </div>
+    </>
   )
 }
 
-export default Monitors
+Monitors.getInitialProps = async () => {
+  const { pumps } = require("../assets/cache/pumps.json")
 
-// import React, { useState, useEffect } from 'react';
-// import axios from 'axios';
-
-// const Monitors = () => {
-
-//     const [dates, setDates] = useState([]);
-
-//     useEffect(() => {
-//         fetch()
-//     },[])
-
-//     const fetch = () => {
-//         axios.get('https://welldone-cache.herokuapp.com/p-api/4762')
-//             .then(res => {
-//                 return setDates(res.data.dates)
-//             })
-//             .catch(err => {
-//                 return console.log(err)
-//             })
-//     }
-//     return (
-//         <>
-//             {dates.map(date => {
-//                 return <p>{date}</p>
-//             })}
-//         </>
-//     )
-// }
-
-// export default Monitors;
+  return { pumps }
+}
