@@ -5,7 +5,6 @@ import { useStore } from "./Layout"
 import { RichText } from "prismic-reactjs"
 
 export default function Nav({ navData: { data } }) {
-  console.log(data)
   const { store, toggleNav } = useStore()
   return (
     <>

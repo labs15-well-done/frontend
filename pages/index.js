@@ -5,7 +5,6 @@ import { breakingPoints } from "../components/Styles"
 import SliceResolver from "../components/SliceResolver"
 
 export default function IndexPage({ doc: { data } }) {
-  console.log(data)
   return (
     <div css={{ padding: "20px 20px", maxWidth: 1240, margin: "0 auto" }}>
       <Seo data={data} />

@@ -8,7 +8,7 @@ import {
   YAxis,
   Label,
 } from "recharts"
-import { getPumpStyles, breakingPoints } from "./Styles"
+import { getPumpStyles, breakingPoints, colors } from "./Styles"
 
 function hexToRGB(hex, alpha) {
   var r = parseInt(hex.slice(1, 3), 16),
@@ -33,7 +33,6 @@ export default function MonitorCard({ pump, error }) {
       })
     }
   })
-  console.log(pump)
   return (
     <div
       css={{
@@ -74,6 +73,9 @@ export default function MonitorCard({ pump, error }) {
               }}>
               {pumpStyles.status[pump.status].icon}
             </div>
+            <div css={{ marginTop: 10 }}>
+              <h4 css={{ margin: 0 }}>{pump && pump.id}</h4>
+            </div>
           </div>
           <div>
             <div css={{ display: "flex" }}>
@@ -95,15 +97,33 @@ export default function MonitorCard({ pump, error }) {
                   )
                 })
               ) : (
-                <h3 css={{ margin: 0, fontSize: 16 }}>No Data</h3>
+                <>
+                  {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14].map(item => (
+                    <div
+                      css={{
+                        width: 7,
+                        height: 20,
+                        margin: "0 2px",
+                        borderRadius: 3,
+                        border: `1px solid ${colors.danger}`,
+                        [breakingPoints.sm]: {
+                          width: 5,
+                        },
+                      }}
+                    />
+                  ))}
+                </>
               )}
             </div>
+            <div css={{ textAlign: "right", marginTop: 10 }}>
+              <h3 css={{ margin: 0 }}>
+                {pump.village && pump.village.commune}
+              </h3>
+              <h4 css={{ margin: 0 }}>
+                {pump.village && pump.village.village}
+              </h4>
+            </div>
           </div>
-        </div>
-        <div>
-          <h4 css={{ margin: 0 }}>{pump.id}</h4>
-          <h3 css={{ margin: 0 }}>{pump.village.commune}</h3>
-          <h4 css={{ margin: 0 }}>{pump.village.village}</h4>
         </div>
       </div>
       {!error ? (
