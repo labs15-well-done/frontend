@@ -23,27 +23,26 @@ const styles = {
 
 export default function Modal({ pumps, modalId }) {
 
-  const selectedPump = modalId ? pumps.find(pump => pump.id === modalId) : null;
+  const selectedPump = modalId ? pumps.find(pump => pump.id === modalId) : 1;
   const pumpToArr = modalId && selectedPump.statuses ? Object.keys(selectedPump.statuses).map(i => selectedPump.statuses[i]) : null;
 
   console.log("an array?", pumpToArr);
-  // console.log("help:", selectedPump);
+  console.log("help:", selectedPump.status);
   return (
     <div>
-      {modalId ? (
+      {(modalId && pumpToArr) ? (
         <div>
           <h3 css={{color:styles[selectedPump.status].color }}>Pump #{selectedPump.id}</h3>
           <p>Current: {styles[selectedPump.status].icon}</p>
           <p>3-Day Spread:</p>
-          {/* <ul>
+          <ul>
             <li>{pumpToArr[12].status}</li>
             <li>{pumpToArr[11].status}</li>
             <li>{pumpToArr[10].status}</li>
-          </ul> */}
+          </ul>
         </div>
-      ) : (
-        <h3>Select a Pump</h3>
-      )}
+      ) : selectedPump.status === 0 ? (<div><h3 css={{color:styles[selectedPump.status].color }}>Pump #{selectedPump.id}</h3><p>Current: {styles[selectedPump.status].icon}</p></div>) : (<h3>Select a Pump</h3>)
+      }
     </div>
   )
   // return (
