@@ -4,7 +4,7 @@ import Popup from "reactjs-popup"
 const LegandModal = () => {
   return (
     <>
-      <Popup trigger={<button>?</button>} position="top left">
+      <Popup trigger={<button>?</button>} position="left top">
         {close => (
           <>
             <h2>Icon Legend</h2>

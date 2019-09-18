@@ -18,8 +18,21 @@ export default function Reports({ pumps }) {
     & button {
       border: none;
       border-radius: 50%;
-      margin-right: 10%;
+      margin-right: 5%;
       cursor: pointer;
+      transition: 0.3s;
+      background-color: ${colors.brand};
+      box-shadow: 7px 10px 12px -5px rgba(0, 0, 0, 0.56);
+      color: white;
+      outline: none;
+      border: 3px solid ${colors.brand};
+      font-weight: 600;
+
+      & button:hover {
+        background-color: white;
+        color: ${colors.brand};
+        border: 3px solid ${colors.brand};
+      }
     }
   `
   return (
