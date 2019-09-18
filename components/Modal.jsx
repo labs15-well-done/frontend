@@ -12,7 +12,13 @@ export default function Modal({ pumps, modalId }) {
       {modalId ? (
         <div>
           <h3>Pump #{selectedPump.id}</h3>
-          {/* <p>{selectedPump.statuses[1]}</p> */}
+          <p>Current: {pumpToArr[13].status}</p>
+          <p>3-Day Spread:</p>
+          <ul>
+            <li>{pumpToArr[12].status}</li>
+            <li>{pumpToArr[11].status}</li>
+            <li>{pumpToArr[10].status}</li>
+          </ul>
         </div>
       ) : (
         <h3>Select a Pump</h3>
