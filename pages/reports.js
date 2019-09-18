@@ -2,7 +2,6 @@ import React, { useState } from "react"
 import { colors, breakingPoints } from "../components/Styles"
 import Seo from "../components/Seo"
 import DashHeader from "../components/Header"
-import styled from "@emotion/styled"
 import { FiHelpCircle, FiAlertCircle, FiCheckCircle } from "react-icons/fi"
 import { getPumpStyles } from "../components/Styles"
 import LegandModal from "../components/LegandModal"
@@ -10,31 +9,7 @@ import LegandModal from "../components/LegandModal"
 export default function Reports({ pumps }) {
   const pumpStyles = getPumpStyles({ iconSize: 25 })
   const [filter, setFilter] = useState({ 0: true, 1: true, 2: true })
-  const Wrapper = styled("div")`
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
 
-    & button {
-      border: none;
-      border-radius: 50%;
-      margin-right: 5%;
-      cursor: pointer;
-      transition: 0.3s;
-      background-color: ${colors.brand};
-      box-shadow: 7px 10px 12px -5px rgba(0, 0, 0, 0.56);
-      color: white;
-      outline: none;
-      border: 3px solid ${colors.brand};
-      font-weight: 600;
-
-      & button:hover {
-        background-color: white;
-        color: ${colors.brand};
-        border: 3px solid ${colors.brand};
-      }
-    }
-  `
   return (
     <>
       {/* <Seo title="Reports • Welldone Dashboard" /> */}
@@ -59,11 +34,7 @@ export default function Reports({ pumps }) {
           </div>
         }
       />
-
-      <Wrapper>
-        <LegandModal />
-      </Wrapper>
-
+      <LegandModal />
       <div css={{ padding: "0 20px", maxWidth: 1240, margin: "0 auto" }}>
         {pumps.sort().map(pump => {
           return (
