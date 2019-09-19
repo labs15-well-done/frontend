@@ -35,11 +35,9 @@ export default function Modal({ pumps, modalId }) {
           <h3 css={{color:styles[selectedPump.status].color }}>Pump #{selectedPump.id}</h3>
           <p>Current: {styles[selectedPump.status].icon}</p>
           <p>3-Day Spread:</p>
-          <ul>
-            <li>{pumpToArr[12].status}</li>
-            <li>{pumpToArr[11].status}</li>
-            <li>{pumpToArr[10].status}</li>
-          </ul>
+            <p>{styles[pumpToArr[12].status].icon} {pumpToArr[12].date}</p>
+            <p>{styles[pumpToArr[11].status].icon} {pumpToArr[11].date}</p>
+            <p>{styles[pumpToArr[10].status].icon} {pumpToArr[10].date}</p>
         </div>
       ) : selectedPump.status === 0 ? (<div><h3 css={{color:styles[selectedPump.status].color }}>Pump #{selectedPump.id}</h3><p>Current: {styles[selectedPump.status].icon}</p></div>) : (<h3>Select a Pump</h3>)
       }
