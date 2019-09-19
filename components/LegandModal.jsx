@@ -1,23 +1,23 @@
 import React from "react"
 import Popup from "reactjs-popup"
 import styled from "@emotion/styled"
-import { FiInfo, FiX } from "react-icons/fi"
-import { colors } from "./Styles"
+import { css } from "@emotion/core"
+import {
+  FiInfo,
+  FiX,
+  FiHelpCircle,
+  FiAlertCircle,
+  FiCheckCircle,
+} from "react-icons/fi"
 
-const mapPins = {
-  status: {
-    functional: "../static/success.svg",
-    unknown: "../static/unknown.svg",
-    nonFunctional: "../static/error.svg",
-  },
-}
+import { colors } from "./Styles"
 
 const Wrapper = styled("div")`
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
 
-  & span {
+  span {
     margin-right: 5%;
     font-size: 1.6rem;
     cursor: pointer;
@@ -37,9 +37,21 @@ const Legand = styled("div")`
   }
 `
 
+const dynamicStyle = props =>
+  css`
+    color: ${props.color};
+  `
+
 const Row = styled("div")`
   display: flex;
-  & p {
+  align-items: center;
+
+  svg {
+    font-size: 1.6rem;
+    ${dynamicStyle};
+  }
+
+  p {
     margin-left: 20px;
   }
 `
@@ -47,7 +59,7 @@ const Close = styled("div")`
   display: flex;
   justify-content: flex-end;
 
-  & svg {
+  svg {
     cursor: pointer;
     color: #2a2a32ed;
     font-size: 1.6rem;
@@ -69,35 +81,17 @@ const LegandModal = () => {
             <h4>Icon Legend</h4>
 
             <Row>
-              <img
-                src={mapPins.status.functional}
-                width={"24px"}
-                css={{ zIndex: 2 }}
-                onClick={() => setModalId(pump.id)}
-                alt=""
-              />
+              <FiCheckCircle color={colors.success} />
               <p>Functional</p>
             </Row>
 
             <Row>
-              <img
-                src={mapPins.status.unknown}
-                width={"24px"}
-                css={{ zIndex: 2 }}
-                onClick={() => setModalId(pump.id)}
-                alt=""
-              />
+              <FiHelpCircle color={colors.orange} />
               <p>Unknown</p>
             </Row>
 
             <Row>
-              <img
-                src={mapPins.status.nonFunctional}
-                width={"24px"}
-                css={{ zIndex: 2 }}
-                onClick={() => setModalId(pump.id)}
-                alt=""
-              />
+              <FiAlertCircle color={colors.danger} />
               <p>Non-Functional</p>
             </Row>
             <Close>
