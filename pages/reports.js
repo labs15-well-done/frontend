@@ -4,6 +4,7 @@ import Seo from "../components/Seo"
 import DashHeader from "../components/Header"
 import { FiHelpCircle, FiAlertCircle, FiCheckCircle } from "react-icons/fi"
 import { getPumpStyles } from "../components/Styles"
+import LegandModal from "../components/LegandModal"
 
 export default function Reports({ pumps }) {
   const pumpStyles = getPumpStyles({ iconSize: 25 })
@@ -12,6 +13,7 @@ export default function Reports({ pumps }) {
   return (
     <>
       {/* <Seo title="Reports • Welldone Dashboard" /> */}
+
       <DashHeader
         title="Reports"
         actions={
@@ -32,6 +34,7 @@ export default function Reports({ pumps }) {
           </div>
         }
       />
+      <LegandModal />
       <div css={{ padding: "0 20px", maxWidth: 1240, margin: "0 auto" }}>
         {pumps.sort().map(pump => {
           return (
