@@ -5,7 +5,6 @@ import { colors, breakingPoints } from "../components/Styles"
 import { RichText } from "prismic-reactjs"
 
 export default function ImageSlice({ primary, items }) {
-  console.log(primary)
   return (
     <div
       css={{
