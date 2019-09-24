@@ -2,8 +2,9 @@ import React, { useState } from "react"
 import { FiUser } from "react-icons/fi"
 import { colors, breakingPoints } from "./Styles"
 import { FiMenu, FiX } from "react-icons/fi"
+import SearchBar from './SearchBar'
 
-export default function DashHeader({ title, actions }) {
+export default function DashHeader({ title, actions, searchHandler }) {
   return (
     <>
       <div>
@@ -19,6 +20,7 @@ export default function DashHeader({ title, actions }) {
                 {title}
               </h1>
             </div>
+            <SearchBar searchHandler={searchHandler} />
             <div
               css={{
                 "a,button": {
