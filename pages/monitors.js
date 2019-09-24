@@ -3,6 +3,7 @@ import { colors, breakingPoints, getPumpStyles } from "../components/Styles"
 import Seo from "../components/Seo"
 import DashHeader from "../components/Header"
 import MonitorCard from "../components/MonitorCard"
+import LegandModal from "../components/LegandModal"
 
 export default function Monitors({ pumps }) {
   const [filter, setFilter] = useState({ 0: true, 1: true, 2: true })
@@ -30,6 +31,7 @@ export default function Monitors({ pumps }) {
         //   </div>
         // }
       />
+      <LegandModal />
       <div
         css={{
           padding: "0 20px",
