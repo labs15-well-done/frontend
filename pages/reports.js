@@ -11,14 +11,13 @@ export default function Reports({ pumps }) {
   const pumpStyles = getPumpStyles({ iconSize: 25 })
   const [filter, setFilter] = useState({ 0: true, 1: true, 2: true })
   const [search, setSearch] = useState([])
+  const [searchInput, setSearchInput] = useState('')
 
   //////////////////////////// search bar - work in progress ////////////////////
   // console.log(pumps)
   console.log(search)
   const searchHandler = e => {
-    // const unknown = 'unknown'
-    // const functional = 'functional'
-    // const nonFunc = 'nonfunctional non-functional non functional'
+    setSearchInput(e.target.value)
     const filtered = pumps.filter(pump => {
       return pump.latitude.toString().includes(e.target.value.toString()) || pump.longitude.toString().includes(e.target.value.toString()) || pump.village.commune.toLowerCase().includes(e.target.value.toLowerCase()) || pump.village.district.toLowerCase().includes(e.target.value.toLowerCase()) || pump.village.province.toLowerCase().includes(e.target.value.toLowerCase()) || pump.village.village.toLowerCase().includes(e.target.value.toLowerCase()) || pump.well_depth.toString().includes(e.target.value.toString()) || pump.id.toLowerCase().includes(e.target.value.toLowerCase()) || (pump.status === 2 && (e.target.value.toLowerCase() === ('green' || 'functional'))) || (pump.status === 1 && (e.target.value.toLowerCase() === ('yellow' || 'unknown'))) || (pump.status === 0 && (e.target.value.toLowerCase() === ('red' || 'non-functional')))
     })
@@ -27,7 +26,8 @@ export default function Reports({ pumps }) {
   // returns functional when non-functional inserted; (pump.status === 2 && e.target.value.toLowerCase().includes(functional)) || (pump.status === 1 && e.target.value.toLowerCase().includes(unknown)) || (pump.status === 0 && e.target.value.toLowerCase().includes(nonFunc)) 
   // requires entire name to be typed before filter kicks in; (pump.status === 2 && e.target.value.toLowerCase() === 'functional') || (pump.status === 1 && e.target.value.toLowerCase() === 'unknown' || (pump.status === 0 && e.target.value.toLowerCase() === 'non-functional')
 //////////////////////////////////////////////////////////////////////////////////
-
+console.log(searchInput)
+console.log(searchInput.length)
   return (
     <>
       {/* <Seo title="Reports • Welldone Dashboard" /> */}
@@ -55,7 +55,7 @@ export default function Reports({ pumps }) {
       />
       <LegandModal />
       <div css={{ padding: "0 20px", maxWidth: 1240, margin: "0 auto" }}>
-        {search.length === 0 ?  pumps.sort().map(pump => {
+        {(search.length === 0 && searchInput.length === 0)  ?  pumps.sort().map(pump => {
           return (
             <details
               css={{
