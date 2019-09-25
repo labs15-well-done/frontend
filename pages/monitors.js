@@ -94,7 +94,7 @@ export default function Monitors({ pumps }) {
                     <p css={{ marginLeft: "1%" }}>
                       Your search -{" "}
                       {
-                        <span css={{ color: "black", fontWeight: "bold" }}>
+                        <span css={{ color: [colors.danger], fontWeight: "bold" }}>
                           {searchInput}
                         </span>
                       }{" "}
