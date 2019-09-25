@@ -4,6 +4,7 @@ import Seo from "../components/Seo"
 import DashHeader from "../components/Header"
 import MonitorCard from "../components/MonitorCard"
 import LegandModal from "../components/LegandModal"
+import { FaExclamationTriangle } from "react-icons/fa"
 
 export default function Monitors({ pumps }) {
   const [filter, setFilter] = useState({ 0: true, 1: true, 2: true })
@@ -83,11 +84,24 @@ export default function Monitors({ pumps }) {
             {searchInput.length !== 0 ? (
               <>
                 <h4>
-                  Results{" "}
-                  {search.length > 0 || searchInput.length > 0
-                    ? `(${search.length})`
-                    : null}
+                  Results {search.length > 0 ? `(${search.length})` : null}
                 </h4>
+                {search.length === 0 && searchInput.length > 0 ? (
+                  <div css={{ display: "flex", alignItems: "center" }}>
+                    <FaExclamationTriangle
+                      style={{ color: [colors.danger], fontSize: "1.5rem" }}
+                    />
+                    <p css={{ marginLeft: "1%" }}>
+                      Your search -{" "}
+                      {
+                        <span css={{ color: "black", fontWeight: "bold" }}>
+                          {searchInput}
+                        </span>
+                      }{" "}
+                      - did not match any records
+                    </p>
+                  </div>
+                ) : null}
                 <div
                   css={{
                     display: "flex",
