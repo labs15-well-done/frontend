@@ -50,6 +50,7 @@ export default function Monitors({ pumps }) {
     <>
       {/* <Seo title="Monitors • Welldone Dashboard" /> */}
       <DashHeader
+        monitors
         searchHandler={searchHandler}
         title="Monitors"
         // actions={
@@ -81,7 +82,12 @@ export default function Monitors({ pumps }) {
           <>
             {searchInput.length !== 0 ? (
               <>
-                <h4>Results</h4>
+                <h4>
+                  Results{" "}
+                  {search.length > 0 || searchInput.length > 0
+                    ? `(${search.length})`
+                    : null}
+                </h4>
                 <div
                   css={{
                     display: "flex",
@@ -127,7 +133,6 @@ export default function Monitors({ pumps }) {
             )}
           </>
         }
-
       </div>
     </>
   )
