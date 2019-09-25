@@ -17,6 +17,7 @@ import Modal from "../components/Modal"
 export default function Dashboard({ pumps }) {
   const [modalId, setModalId] = useState(null)
 
+  console.log("pump info here:", pumps);
   return (
     <div css={{ width: "100%" }}>
       {/* <Seo title="Home • Welldone Dashboard" description="" /> */}
