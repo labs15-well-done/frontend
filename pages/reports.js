@@ -19,16 +19,59 @@ const Filter = ({ onFilter }) => (
   <TextField id="search" type="search" role="search" placeholder="Search Pump" onChange={e => onFilter(e.target.value)} />
 );
 
-const data = [{ id: 1, pump: '123', status: 'Functional' }, { id: 2, pump: "456", status: 'Unknown'}, { id: 3, pump: "789", status: 'Broken' }];
+const data = [
+  {
+    "id": "4715",
+    "latitude":13.66048333,
+    "longitude":104.0075117,
+    "village": {
+      "village":"Khun Ream",
+      "commune":"Khun Ream",
+      "district":"Banteay Srei",
+      "province":"Siem Reap"
+    }
+  }
+];
+
 const columns = [
   {
-    name: 'Pump',
-    selector: 'pump',
+    name: 'ID',
+    selector: 'id',
     sortable: true,
   },
   {
-    name: 'Status',
-    selector: 'status',
+    name: 'Latitude',
+    selector: 'latitude',
+    sortable: true,
+    right: true,
+  },
+  {
+    name: 'Longitude',
+    selector: 'longitude',
+    sortable: true,
+    right: true,
+  },
+  {
+    name: 'Village',
+    selector: 'village.village',
+    sortable: true,
+    right: true,
+  },
+  {
+    name: 'Commune',
+    selector: 'village.commune',
+    sortable: true,
+    right: true,
+  },
+  {
+    name: 'District',
+    selector: 'village.district',
+    sortable: true,
+    right: true,
+  },
+  {
+    name: 'Province',
+    selector: 'village.province',
     sortable: true,
     right: true,
   },
@@ -36,7 +79,7 @@ const columns = [
 
 const BasicTable = () => {
   const [filterText, setFilterText] = React.useState('');
-  const filteredItems = data.filter(item => item.pump.includes(filterText));
+  const filteredItems = data.filter(item => item.id.includes(filterText));
   const subHeaderComponentMemo = React.useMemo(() => <Filter onFilter={value => setFilterText(value)} />, []);
 
   return (
