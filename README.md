@@ -4,38 +4,41 @@ You can find the deployed project at [🚫URL NAME GOES HERE](🚫copy and paste
 
 ## Contributors
 
-|                                                      [Jean-Francois Sebagh](https://github.com/jaysebagh)                                                       |                                                       [Joshua Keslar](https://github.com/)                                                        |                                                      [Andrew Brudnak](https://github.com/brudnak)                                                       |                                                       [Joshua Wood](https://github.com/Joshua-Wood39)                                                        |                                                      [Maksim Vakarchuk](https://github.com/maks112v)                                                       |
+|                                                      [Jean-Francois Sebagh](https://github.com/jaysebagh)                                                       |                                                       [Joshua Keslar](https://github.com/Josh-Diamond)                                                        |                                                      [Andrew Brudnak](https://github.com/brudnak)                                                       |                                                       [Joshua Wood](https://github.com/Joshua-Wood39)                                                        |                                                      [Maksim Vakarchuk](https://github.com/maks112v)                                                       |
 | :-----------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------: |
-| [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/) | [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-female.png" width = "200" />](https://github.com/) | [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/) | [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-female.png" width = "200" />](https://github.com/) | [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/) |
-|                                [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/)                                |                            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/honda0306)                             |                          [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/Mister-Corn)                           |                          [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/NandoTheessen)                           |                           [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/wvandolah)                            |
-|                [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/)                |                 [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/)                 |                [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/)                |                 [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/)                 |                [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/)                |
+| [<img src="https://media.licdn.com/dms/image/C5603AQGbe2RtInqXVg/profile-displayphoto-shrink_200_200/0?e=1574899200&v=beta&t=utSBc1fP465pyU5-EwsHQCS38yt5a4suon7E94zM8Uw" width = "200" />](https://github.com/jaysebagh) | [<img src="https://media.licdn.com/dms/image/C4E03AQEGFyK4VkyF2Q/profile-displayphoto-shrink_200_200/0?e=1574899200&v=beta&t=TMKATkiXqtMGmJzUyPuOK7lfXDsCUbUuK6txbWcgu1k" width = "200" />](https://github.com/) | [<img src="https://media.licdn.com/dms/image/C4E03AQGStrFtGuPGHw/profile-displayphoto-shrink_200_200/0?e=1574899200&v=beta&t=v6zD7DCBCUmdZiB52KNrMXqZTF-tspK8kHulHZtFLEY" width = "200" />](https://github.com/brudnak) | [<img src="https://media.licdn.com/dms/image/C5603AQGLL7EVkLBkWg/profile-displayphoto-shrink_200_200/0?e=1574899200&v=beta&t=tYoredqmZeKHg1Wn1zjlPloMidZL0BKbwHjBrmB0EUg" width = "200" />](https://github.com/Joshua-Wood39) | [<img src="https://media.licdn.com/dms/image/C4E03AQFfveucZKGtcg/profile-displayphoto-shrink_200_200/0?e=1574899200&v=beta&t=sR_SAc2BHYdNIOlha-LEb2FADXqNviYhqjEpS6vYLt8" width = "200" />](https://github.com/maks112v) |
+|                                [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/jaysebagh)                                |                            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/Josh-Diamond)                             |                          [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/brudnak)                           |                          [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/Joshua-Wood39)                           |                           [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/maks112v)                            |
+|                [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/jean-francois-sebagh)                |                 [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/joshua-keslar)                 |                [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/andrew-brudnak)                |                 [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/joshua-wood-full-stack)                 |                [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/maks112v)                |
 
 <br>
 <br>
-
-🚫 4️⃣ Optional examples of using images with links for your tech stack, make sure to change these to fit your project
 
 ![MIT](https://img.shields.io/packagist/l/doctrine/orm.svg)
-![React](https://img.shields.io/badge/react-v16.7.0--alpha.2-blue.svg)
-![Typescript](https://img.shields.io/npm/types/typescript.svg?style=flat)
+![React](https://img.shields.io/badge/React-v16.9.0-blue)
+![Next.js](https://img.shields.io/badge/Next.js-v9.0.4-blue)
+![Prismic](https://img.shields.io/badge/Prismic-%5E2.1.1-yellow)
+![Emotion](https://img.shields.io/badge/Emotion-%5E10.0.16-ff69b4)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/b5c4db1c-b10d-42c3-b157-3746edd9e81d/deploy-status)](netlify link goes in these parenthesis)
-[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
-
-🚫 more info on using badges [here](https://github.com/badges/shields)
 
 ## Project Overview
 
-1️⃣ [Trello Board](🚫add link to trello board here)
+[Trello Board](https://trello.com/b/LH0NslAb/labs-15-well-done)
 
-1️⃣ [Product Canvas](🚫add link to product canvas here)
+[Product Canvas](🚫add link to product canvas here)
 
-1️⃣ [UX Design files](🚫add link to design files here) - 🚫 delete if not applicable
+(🚫add link to design files here) - 🚫 delete if not applicable
 
-🚫 Replace lorem ipsum with a description of your project
+A dashboard application to allow an NPO and it's clients to monitor current water pump statuses in Africa and Cambodia.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+* Built a server side rendered React application using Next.js
 
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+* Utilized Hooks to manage state.
+
+* Setup a headless CMS using Prismic.
+
+* Utilized Emotion for lightweight styling.
+
+An important aspect of this dashboard was making sure that it was as lightweight as possible for fast rendering, as well as limited requests to the endpoint.
 
 ### 4️⃣ Key Features
 
