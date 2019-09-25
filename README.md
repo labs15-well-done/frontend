@@ -1,6 +1,6 @@
 # Well-Done
 
-You can find the deployed project at [🚫URL NAME GOES HERE](🚫copy and paste URL here).
+You can find the deployed project at [Well-Done](https://welldone.netlify.com/).
 
 ## Contributors
 
@@ -18,15 +18,15 @@ You can find the deployed project at [🚫URL NAME GOES HERE](🚫copy and paste
 ![Next.js](https://img.shields.io/badge/Next.js-v9.0.4-blue)
 ![Prismic](https://img.shields.io/badge/Prismic-%5E2.1.1-yellow)
 ![Emotion](https://img.shields.io/badge/Emotion-%5E10.0.16-ff69b4)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/b5c4db1c-b10d-42c3-b157-3746edd9e81d/deploy-status)](netlify link goes in these parenthesis)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/b5c4db1c-b10d-42c3-b157-3746edd9e81d/deploy-status)](https://welldone.netlify.com/)
 
 ## Project Overview
 
 [Trello Board](https://trello.com/b/LH0NslAb/labs-15-well-done)
 
-[Product Canvas](🚫add link to product canvas here)
+[Product Canvas](https://www.notion.so/WellDone-068de827be164b9e814b636f9f36bef2)
 
-(🚫add link to design files here) - 🚫 delete if not applicable
+[Design Files](https://www.notion.so/Provided-Resources-69cce05e6bce4db9ab54857538725dc4)
 
 A dashboard application to allow an NPO and it's clients to monitor current water pump statuses in Africa and Cambodia.
 
@@ -48,107 +48,50 @@ An important aspect of this dashboard was making sure that it was as lightweight
 - Lightweight
 - Easy to scale without touching code
 
-## 1️⃣ Tech Stack
+## Tech Stack
 
 ### Front end built using:
 
-#### _Front end framework goes here_
+#### _React.js / Next.js_
 
-🚫 Why did you choose this framework?
+Why did you choose this framework?
 
-- point one
-- point two
-- point three
-- point four
+- Automatic code splitting, doesn't load unecessary code.
+- Simple client-side routing.
+- Sever Side Rendering for faster page loads.
 
-🚫List the rest of the front end features and libraries in the same format as the framework above.
+#### _Emotion_
 
-#### Front end deployed to `🚫insert service here`
+Why did you choose this framework?
 
-#### [Back end](🚫link to back end repo here) built using:
+- Requires no additional setup.
+- Lightweight, only loads visible css rather than everything.
 
-#### 🚫 back end framework goes here
+#### Front end deployed to [Well-Done](https://welldone.netlify.com/).
 
-- point one
-- point two
-- point three
+### CMS built using:
 
-🚫 List the rest of the back end end features and libraries in the same format as the framework above
+#### _Prismic_
 
-# APIs
+Why did you choose this framework?
 
-## 2️⃣ Authentication API here
+- Easy to use.
+- Scalable
+- Doesn't require touching code, allowing stakeholders to add new pumps quickly.
 
-🚫Replace text below with a description of the API
 
-Water's like me. It's laaazy ... Boy, it always looks for the easiest way to do things A little happy sunlight shining through there. Let all these little things happen. Don't fight them. Learn to use them. Even the worst thing we can do here is good.
+# Content Licenses
 
-## 2️⃣ Payment API here
-
-🚫Replace text below with a description of the API
-
-This is the way you take out your flustrations. Get away from those little Christmas tree things we used to make in school. Isn't it fantastic that you can change your mind and create all these happy things? Everything's not great in life, but we can still find beauty in it.
-
-## 3️⃣ Misc API here
-
-🚫Replace text below with a description of the API
-
-You can do anything your heart can imagine. In life you need colors. This is where you take out all your hostilities and frustrations. It's better than kicking the puppy dog around and all that so. I'm sort of a softy, I couldn't shoot Bambi except with a camera. Trees get lonely too, so we'll give him a little friend. We'll lay all these little funky little things in there.
-
-## 3️⃣ Misc API here
-
-🚫Replace text below with a description of the API
-
-When you do it your way you can go anywhere you choose. Let your heart take you to wherever you want to be. If I paint something, I don't want to have to explain what it is. A tree needs to be your friend if you're going to paint him. That's a son of a gun of a cloud. Even the worst thing we can do here is good.
-
-## 3️⃣ Misc API here
-
-🚫Replace text below with a description of the API
-
-Volunteering your time; it pays you and your whole community fantastic dividends. Maybe there's a happy little waterfall happening over here. You can spend all day playing with mountains. We don't have to be committed. We are just playing here. You have freedom here. The only guide is your heart. It's cold, but it's beautiful.
-
-# 3️⃣ Environment Variables
-
-In order for the app to function correctly, the user must set up their own environment variables. There should be a .env file containing the following:
-
-🚫These are just examples, replace them with the specifics for your app
-
-    *  REACT_APP_apiKey - this is your Google API key, which can be generated in the Google Cloud Console
-    *  REACT_APP_authDomain - when you set up your Firebase project, this information will be in the dashboard
-    *  REACT_APP_databaseURL - in the Firebase dashboard
-    *  REACT_APP_projectID - in the Firebase dashboard
-    *  REACT_APP_storageBucket - in the Firebase dashboard
-    *  REACT_APP_messagingSenderId - in the Firebase dashboard
-    *  REACT_APP_stripe_API - this is your public Stripe API key, generated in the Stripe dashboard
-    *  REACT_APP_backendURL - optional for your local development server
-    *  REACT_APP_clientid - this is the Stripe_connect clientID, generated in Stripe_connect settings
-    *  REACT_APP_stripe_plan - this is the ID for a second Stripe subscription plan, generated under Stripe products
-
-# 5️⃣ Content Licenses
-
-🚫For all content - images, icons, etc, use this table to document permission of use. Remove the two placeholders and add you content to this table
 
 | Image Filename | Source / Creator | License                                                                      |
 | -------------- | ---------------- | ---------------------------------------------------------------------------- |
-| doodles.png    | Nicole Bennett   | [Creative Commons](https://www.toptal.com/designers/subtlepatterns/doodles/) |
-| rings.svg      | Sam Herbert      | [MIT](https://github.com/SamHerbert/SVG-Loaders)                             |
+| Icons    | kamijin-fanta   | [License](https://github.com/react-icons/react-icons/blob/master/LICENSE) |
 
-# 4️⃣ Testing
 
-🚫Document what you used for testing and why
+# Installation Instructions
 
-# 4️⃣ Installation Instructions
-
-🚫explain how to install the required dependencies to get this project up and running with yarn and NPM
-
-## Other Scripts
-
-🚫replace these examples with your own
-
-    * typecheck - runs the TypeScript compiler
-    * build - creates a build of the application
-    * start - starts the production server after a build is created
-    * test - runs tests in **tests** directory \* eject - copy the configuration files and dependencies into the project so you have full control over them
+* Clone repo and install dependencies `npm i`
+* Run development `npm run dev`
 
 # Contributing
 
@@ -186,7 +129,3 @@ Remember that this project is licensed under the MIT license, and by submitting 
 ### Attribution
 
 These contribution guidelines have been adapted from [this good-Contributing.md-template](https://gist.github.com/PurpleBooth/b24679402957c63ec426).
-
-## Documentation
-
-See [Backend Documentation](🚫*link to your backend readme here*) for details on the backend of our project.
