@@ -19,82 +19,85 @@ const Filter = ({ onFilter }) => (
   <TextField id="search" type="search" role="search" placeholder="Search Pump" onChange={e => onFilter(e.target.value)} />
 );
 
-const data = [
-  {
-    "id": "4715",
-    "latitude":13.66048333,
-    "longitude":104.0075117,
-    "village": {
-      "village":"Khun Ream",
-      "commune":"Khun Ream",
-      "district":"Banteay Srei",
-      "province":"Siem Reap"
-    }
-  }
-];
 
-const columns = [
-  {
-    name: 'ID',
-    selector: 'id',
-    sortable: true,
-  },
-  {
-    name: 'Latitude',
-    selector: 'latitude',
-    sortable: true,
-    right: true,
-  },
-  {
-    name: 'Longitude',
-    selector: 'longitude',
-    sortable: true,
-    right: true,
-  },
-  {
-    name: 'Village',
-    selector: 'village.village',
-    sortable: true,
-    right: true,
-  },
-  {
-    name: 'Commune',
-    selector: 'village.commune',
-    sortable: true,
-    right: true,
-  },
-  {
-    name: 'District',
-    selector: 'village.district',
-    sortable: true,
-    right: true,
-  },
-  {
-    name: 'Province',
-    selector: 'village.province',
-    sortable: true,
-    right: true,
-  },
-];
-
-const BasicTable = () => {
-  const [filterText, setFilterText] = React.useState('');
-  const filteredItems = data.filter(item => item.id.includes(filterText));
-  const subHeaderComponentMemo = React.useMemo(() => <Filter onFilter={value => setFilterText(value)} />, []);
-
-  return (
-    <div>
-      <DataTable
-        columns={columns}
-        data={filteredItems}
-        subHeader
-        subHeaderComponent={subHeaderComponentMemo}
-      />
-    </div>
-  );
-};
 
 export default function Reports({ pumps }) {
+  // const data = [
+  //   {
+  //     "id": "4715",
+  //     "latitude":13.66048333,
+  //     "longitude":104.0075117,
+  //     "village": {
+  //       "village":"Khun Ream",
+  //       "commune":"Khun Ream",
+  //       "district":"Banteay Srei",
+  //       "province":"Siem Reap"
+  //     }
+  //   }
+  // ];
+
+  const data = pumps
+  
+  const columns = [
+    {
+      name: 'ID',
+      selector: 'id',
+      sortable: true,
+    },
+    {
+      name: 'Latitude',
+      selector: 'latitude',
+      sortable: true,
+      right: true,
+    },
+    {
+      name: 'Longitude',
+      selector: 'longitude',
+      sortable: true,
+      right: true,
+    },
+    {
+      name: 'Village',
+      selector: 'village.village',
+      sortable: true,
+      right: true,
+    },
+    {
+      name: 'Commune',
+      selector: 'village.commune',
+      sortable: true,
+      right: true,
+    },
+    {
+      name: 'District',
+      selector: 'village.district',
+      sortable: true,
+      right: true,
+    },
+    {
+      name: 'Province',
+      selector: 'village.province',
+      sortable: true,
+      right: true,
+    },
+  ];
+
+  const BasicTable = () => {
+    const [filterText, setFilterText] = React.useState('');
+    const filteredItems = data.filter(item => item.id.includes(filterText));
+    const subHeaderComponentMemo = React.useMemo(() => <Filter onFilter={value => setFilterText(value)} />, []);
+  
+    return (
+      <div>
+        <DataTable
+          columns={columns}
+          data={filteredItems}
+          subHeader
+          subHeaderComponent={subHeaderComponentMemo}
+        />
+      </div>
+    );
+  };
   return (
     <div>
       <DashHeader title="Reports" />
@@ -105,11 +108,5 @@ export default function Reports({ pumps }) {
 
 Reports.getInitialProps = async () => {
   const { pumps } = require("../assets/cache/pumps.json")
-  // const newPumps = []
-  // pumps.forEach(async pump => {
-  //   const village = await getVillage(pump.village.id)
-  //   console.log(village)
-  //   newPumps.push({ ...pump, village })
-  // })
   return { pumps }
 }
