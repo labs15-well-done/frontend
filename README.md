@@ -40,13 +40,13 @@ A dashboard application to allow an NPO and it's clients to monitor current wate
 
 An important aspect of this dashboard was making sure that it was as lightweight as possible for fast rendering, as well as limited requests to the endpoint.
 
-### 4️⃣ Key Features
+### Key Features
 
-- feature one
-- feature two
-- feature three
-- feature four
-- feature five
+- Overview of pump statuses
+- Full in-depth information about individual pumps
+- Printable reports for onsight technicians
+- Lightweight
+- Easy to scale without touching code
 
 ## 1️⃣ Tech Stack
 
