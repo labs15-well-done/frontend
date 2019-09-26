@@ -5,11 +5,9 @@ import { colors, breakingPoints } from "../components/Styles"
 import { RichText } from "prismic-reactjs"
 
 export default function ImageSlice({ primary, items }) {
-  console.log(primary)
   return (
     <div
       css={{
-        zIndex: -1,
         marginTop: -40,
         borderRadius: 10,
         margin: "0 0 20px",
@@ -49,10 +47,11 @@ export default function ImageSlice({ primary, items }) {
         {RichText.render(primary.content)}
       </div>
       <div css={{ flexGrow: 1 }}></div>
-      <Link href={primary.button_link}>
-        <button
+      <Link href={`/${primary.button_link}`} passHref>
+        <a
           css={{
             cursor: "pointer",
+            textDecoration:'none',
             transition: ".3s",
             backgroundColor: "white",
             border: "none",
@@ -64,14 +63,16 @@ export default function ImageSlice({ primary, items }) {
             alignItems: "center",
             color: colors.brand,
             fontWeight: "bold",
+            zIndex: 1000,
             "&:hover": {
               backgroundColor: colors.brand,
               color: "white",
             },
           }}>
           {RichText.asText(primary.button_text)} <FiArrowRight />
-        </button>
+        </a>
       </Link>
     </div>
   )
 }
+// primary.button_link

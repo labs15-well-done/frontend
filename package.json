@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@emotion/core": "^10.0.16",
+    "@emotion/styled": "^10.0.17",
     "@fortawesome/fontawesome-svg-core": "^1.2.21",
     "@fortawesome/free-solid-svg-icons": "^5.10.1",
     "@fortawesome/react-fontawesome": "^0.1.4",
@@ -31,15 +32,18 @@
     "prismic-javascript": "^2.1.1",
     "prismic-reactjs": "^1.1.0",
     "react": "16.9.0",
+    "react-data-table-component": "^3.5.0",
     "react-dom": "16.9.0",
     "react-icons": "^3.7.0",
     "react-joyride": "^2.1.1",
     "react-map-gl": "^4.1.13",
     "react-mapbox-gl": "^4.6.0",
+    "reactjs-popup": "^1.5.0",
     "reactour": "^1.15.0",
     "recharts": "^1.7.1",
     "request": "^2.88.0",
-    "request-promise": "^4.2.4"
+    "request-promise": "^4.2.4",
+    "styled-components": "^4.4.0"
   },
   "devDependencies": {
     "@emotion/babel-preset-css-prop": "^10.0.14",
