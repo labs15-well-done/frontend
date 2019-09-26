@@ -113,7 +113,6 @@ export default function Monitors({ pumps }) {
                       <li>Location</li>
                       <li>Latitude</li>
                       <li>Longitude</li>
-                      <li>Well Depth</li>
                     </ul>
                   </>
                 ) : null}
