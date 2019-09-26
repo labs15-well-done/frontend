@@ -7,7 +7,7 @@ import {
   FiCheckCircle,
 } from "react-icons/fi"
 import { colors } from "./Styles"
-
+ 
 const styles = {
   0: {
     color: colors.danger,
@@ -71,12 +71,19 @@ export default function Modal({ pumps, modalId }) {
         </div>
       ) : selectedPump.status === 0 ? (
         <div>
-          <h3>
-            Pump #{selectedPump.id}
-          </h3>
-          <div css={{display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
-          <p css={{textAlign: 'left', }}>Current: </p>
-          {<span css={{fontSize: '1.5rem', marginLeft: '3%'}}>{styles[selectedPump.status].icon}</span>}
+          <h3>Pump #{selectedPump.id}</h3>
+          <div
+            css={{
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+            }}>
+            <p css={{ textAlign: "left" }}>Current: </p>
+            {
+              <span css={{ fontSize: "1.5rem", marginLeft: "3%" }}>
+                {styles[selectedPump.status].icon}
+              </span>
+            }
           </div>
         </div>
       ) : (
