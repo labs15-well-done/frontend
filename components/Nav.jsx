@@ -5,7 +5,6 @@ import { useStore } from "./Layout"
 import { RichText } from "prismic-reactjs"
 
 export default function Nav({ navData: { data } }) {
-  console.log(data)
   const { store, toggleNav } = useStore()
   return (
     <>
@@ -65,11 +64,18 @@ export default function Nav({ navData: { data } }) {
                   css={{
                     padding: "10px 25px",
                     cursor: "pointer",
+                    display: "flex",
+                    alignItems: "center",
                     ":hover": {
                       backgroundColor: colors.btnHover,
                     },
                   }}>
-                  <img src={icon.url} />
+                  <div css={{ width: 20, height: 20, marginRight: 10 }}>
+                    <img
+                      css={{ width: "auto", height: "auto" }}
+                      src={icon.url}
+                    />
+                  </div>
                   <a>{RichText.asText(name)}</a>
                 </div>
               </Link>

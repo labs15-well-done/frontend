@@ -17,17 +17,18 @@ import Modal from "../components/Modal"
 export default function Dashboard({ pumps }) {
   const [modalId, setModalId] = useState(null)
 
+  console.log("pump info here:", pumps);
   return (
     <div css={{ width: "100%" }}>
       {/* <Seo title="Home • Welldone Dashboard" description="" /> */}
       <Header
         title="Insights"
-        actions={
-          <div>
-            <a>Weekly</a>
-            <a>Monthly</a>
-          </div>
-        }
+        // actions={
+        //   <div>
+        //     <a>Weekly</a>
+        //     <a>Monthly</a>
+        //   </div>
+        // }
       />
       <div css={{ padding: "20px 20px", maxWidth: 1240, margin: "0 auto" }}>
         {/* Card Section */}

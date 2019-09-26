@@ -77,6 +77,7 @@ async function getPumps() {
                   count: res.data.statuses[index].count,
                   total: res.data.statuses[index].total,
                   status: res.data.statuses[index].status,
+                  date:date,
                 },
               }
             })
