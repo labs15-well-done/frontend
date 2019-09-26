@@ -28,7 +28,7 @@ You can find the deployed project at [Well-Done](https://welldone.netlify.com/).
 
 [Design Files](https://www.notion.so/Provided-Resources-69cce05e6bce4db9ab54857538725dc4)
 
-A dashboard application to allow an NPO and it's clients to monitor current water pump statuses in Africa and Cambodia.
+A dashboard application to allow an NPO and it's clients to monitor current water pump statuses in Cambodia.
 
 * Built a server side rendered React application using Next.js
 
@@ -44,7 +44,7 @@ An important aspect of this dashboard was making sure that it was as lightweight
 
 - Overview of pump statuses
 - Full in-depth information about individual pumps
-- Printable reports for onsight technicians
+- Access reports for onsight technicians
 - Lightweight
 - Easy to scale without touching code
 
@@ -54,15 +54,11 @@ An important aspect of this dashboard was making sure that it was as lightweight
 
 #### _React.js / Next.js_
 
-Why did you choose this framework?
-
 - Automatic code splitting, doesn't load unecessary code.
 - Simple client-side routing.
-- Sever Side Rendering for faster page loads.
+- Server Side Rendering for faster page loads.
 
 #### _Emotion_
-
-Why did you choose this framework?
 
 - Requires no additional setup.
 - Lightweight, only loads visible css rather than everything.
@@ -72,8 +68,6 @@ Why did you choose this framework?
 ### CMS built using:
 
 #### _Prismic_
-
-Why did you choose this framework?
 
 - Easy to use.
 - Scalable
