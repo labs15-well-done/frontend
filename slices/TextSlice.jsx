@@ -3,8 +3,10 @@ import { FiArrowRight } from "react-icons/fi"
 import Link from "next/link"
 import { colors, breakingPoints } from "../components/Styles"
 import { RichText } from "prismic-reactjs"
+import { useStore } from "../components/Layout"
 
 export default function TextSlice({ primary, items, ...rest }) {
+  const { toggleTour } = useStore()
   return (
     <div
       css={{
@@ -23,6 +25,7 @@ export default function TextSlice({ primary, items, ...rest }) {
       {RichText.render(primary.content)}
       {primary.button_link ? (
         <button
+          onClick={primary.button_link === "tour" ? toggleTour : primary.button_link}
           css={{
             transition: ".3s",
             backgroundColor: colors.brand,

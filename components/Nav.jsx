@@ -59,6 +59,7 @@ export default function Nav({ navData: { data } }) {
               <Link href={`/${link}`}>
                 <div
                   id={id}
+                  data-tab={id}
                   className={id}
                   onClick={() => toggleNav(false)}
                   css={{
