@@ -87,20 +87,35 @@ export default function Monitors({ pumps }) {
                   Results {search.length > 0 ? `(${search.length})` : null}
                 </h4>
                 {search.length === 0 && searchInput.length > 0 ? (
-                  <div css={{ display: "flex", alignItems: "center" }}>
-                    <FaExclamationTriangle
-                      style={{ color: [colors.danger], fontSize: "1.5rem" }}
-                    />
-                    <p css={{ marginLeft: "1%" }}>
-                      Your search -{" "}
-                      {
-                        <span css={{ color: [colors.danger], fontWeight: "bold" }}>
-                          {searchInput}
-                        </span>
-                      }{" "}
-                      - did not match any records
-                    </p>
-                  </div>
+                  <>
+                    <div css={{ display: "flex", alignItems: "center" }}>
+                      <FaExclamationTriangle
+                        style={{ color: [colors.danger], fontSize: "1.5rem" }}
+                      />
+                      <p css={{ marginLeft: "1%" }}>
+                        Your search -{" "}
+                        {
+                          <span
+                            css={{
+                              color: [colors.danger],
+                              fontWeight: "bold",
+                            }}>
+                            {searchInput}
+                          </span>
+                        }{" "}
+                        - did not match any records
+                      </p>
+                    </div>
+                    <h4>Search Keys:</h4>
+                    <ul>
+                      <li>Pump ID</li>
+                      <li>Status</li>
+                      <li>Location</li>
+                      <li>Latitude</li>
+                      <li>Longitude</li>
+                      <li>Well Depth</li>
+                    </ul>
+                  </>
                 ) : null}
                 <div
                   css={{
