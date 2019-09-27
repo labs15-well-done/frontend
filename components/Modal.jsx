@@ -7,7 +7,7 @@ import {
   FiCheckCircle,
 } from "react-icons/fi"
 import { colors } from "./Styles"
- 
+
 const styles = {
   0: {
     color: colors.danger,
@@ -30,8 +30,6 @@ export default function Modal({ pumps, modalId }) {
       ? Object.keys(selectedPump.statuses).map(i => selectedPump.statuses[i])
       : null
 
-  console.log("an array?", pumpToArr)
-  console.log("help:", selectedPump.status)
   return (
     <div>
       {modalId && pumpToArr ? (

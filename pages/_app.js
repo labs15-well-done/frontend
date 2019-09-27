@@ -27,7 +27,6 @@ export default class extends App {
 
   render() {
     const { Component, pageProps, navData } = this.props
-    console.log(navData, "SOME NAV DATA !!!!!!!!!")
     return (
       <Container>
         <Layout>

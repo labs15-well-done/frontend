@@ -44,7 +44,7 @@ async function getPumps() {
   ) {
     console.log("Fetching Pumps Init")
     let pumps = {}
-    const prismicPumps = await prismic.getDocs("pump")
+    let prismicPumps = await prismic.getDocs("pump")
     await asyncForEach(prismicPumps.results, async pump => {
       let village = null
       if (pump.data && pump.data.village.id && !pump.data.village.isBroken) {
@@ -77,7 +77,7 @@ async function getPumps() {
                   count: res.data.statuses[index].count,
                   total: res.data.statuses[index].total,
                   status: res.data.statuses[index].status,
-                  date:date,
+                  date: date,
                 },
               }
             })
