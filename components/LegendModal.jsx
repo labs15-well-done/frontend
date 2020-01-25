@@ -1,14 +1,14 @@
-import React from "react"
-import Popup from "reactjs-popup"
-import styled from "@emotion/styled"
-import { css } from "@emotion/core"
+import React from "react";
+import Popup from "reactjs-popup";
+import styled from "@emotion/styled";
+import { css } from "@emotion/core";
 import {
   FiInfo,
   FiX,
   FiHelpCircle,
   FiAlertCircle,
   FiCheckCircle,
-} from "react-icons/fi"
+} from "react-icons/fi";
 
 import { colors } from "./Styles"
 
