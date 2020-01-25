@@ -1,6 +1,6 @@
 # Well-Done 
 
-You can find the deployed project at [Well-Done](https://welldone.netlify.com/).
+You can find the deployed project at [Well-Done](https://frontend.welldone.now.sh/).
 
 ## Contributors
 
@@ -63,7 +63,7 @@ An important aspect of this dashboard was making sure that it was as lightweight
 - Requires no additional setup.
 - Lightweight, only loads visible css rather than everything.
 
-#### Front end deployed to [Well-Done](https://welldone.netlify.com/).
+#### Front end deployed to [Well-Done](https://frontend.welldone.now.sh/).
 
 ### CMS built using:
 
