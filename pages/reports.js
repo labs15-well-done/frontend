@@ -20,8 +20,6 @@ const Filter = ({ onFilter }) => (
   <TextField id="search" type="search" role="search" placeholder="Search Pump" onChange={e => onFilter(e.target.value)} />
 );
 
-
-
 export default function Reports({ pumps }) {
   const data = pumps
   
@@ -68,7 +66,6 @@ export default function Reports({ pumps }) {
       right: true,
     },
   ];
-
   const BasicTable = () => {
     const [filterText, setFilterText] = React.useState('');
     const filteredItems = data.filter(item => item.id.includes(filterText));

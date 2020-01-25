@@ -60,7 +60,7 @@ export default function Monitors({ pumps }) {
           </div>
         }
       />
-      
+
       <div
         css={{
           padding: "0 20px",
