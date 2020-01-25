@@ -1,11 +1,40 @@
-import React from "react"
+import React, { useState } from "react"
 import Link from "next/link"
+import {
+  FiMenu,
+  FiLogOut,
+  FiBarChart2,
+  FiEdit,
+  FiSettings,
+} from "react-icons/fi"
 import { colors, breakingPoints } from "./Styles"
 import { useStore } from "./Layout"
-import { RichText } from "prismic-reactjs"
 
-export default function Nav({ navData: { data } }) {
-  console.log(data)
+const nav = [
+  {
+    name: "Dashboard",
+    link: "/dashboard",
+    id: "tour-dashboard",
+    content: "Dashboard Here",
+    icon: FiMenu,
+  },
+  {
+    name: "Monitors",
+    link: "/monitors",
+    id: "tour-monitors",
+    content: "Monitors Here",
+    icon: FiBarChart2,
+  },
+  {
+    name: "Reports",
+    link: "/reports",
+    id: "tour-reports",
+    content: "Reports Here",
+    icon: FiEdit,
+  },
+]
+
+export default function Nav() {
   const { store, toggleNav } = useStore()
   return (
     <>
@@ -41,9 +70,8 @@ export default function Nav({ navData: { data } }) {
         <Link href="/">
           <img
             onClick={() => toggleNav(false)}
-            src={data.logo.url}
+            src="https://i.imgur.com/gMVZphm.png"
             css={{ width: 200, margin: "50px 20px ", cursor: "pointer" }}
-            alt={data.logo.alt}
           />
         </Link>
         <div
@@ -54,9 +82,9 @@ export default function Nav({ navData: { data } }) {
               marginLeft: 10,
             },
           }}>
-          {data.nav_links.map(({ name, link, id, icon }) => {
+          {nav.map(({ name, link, id, icon: Icon }) => {
             return (
-              <Link href={`/${link}`}>
+              <Link href={link}>
                 <div
                   id={id}
                   className={id}
@@ -68,23 +96,12 @@ export default function Nav({ navData: { data } }) {
                       backgroundColor: colors.btnHover,
                     },
                   }}>
-                  <img src={icon.url} />
-                  <a>{RichText.asText(name)}</a>
+                  {Icon ? <Icon /> : null}
+                  <a>{name}</a>
                 </div>
               </Link>
             )
           })}
-          {/* <div
-            css={{
-              padding: "10px 25px",
-              cursor: "pointer",
-              ":hover": {
-                backgroundColor: colors.btnHover,
-              },
-            }}>
-            <FiLogOut />
-            <a>Logout</a>
-          </div> */}
         </div>
       </div>
     </>
