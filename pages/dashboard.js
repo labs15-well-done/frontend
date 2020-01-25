@@ -11,7 +11,6 @@ import Card from "../components/Card"
 import { colors, breakingPoints } from "../components/Styles"
 import BlankCard from "../components/BlankCard"
 import Map from "../components/Map"
-import { LineChart } from "../components/LineChart"
 import Modal from "../components/Modal"
 
 export default function Dashboard({ pumps }) {
@@ -20,15 +19,9 @@ export default function Dashboard({ pumps }) {
   console.log("pump info here:", pumps);
   return (
     <div css={{ width: "100%" }}>
-      {/* <Seo title="Home • Welldone Dashboard" description="" /> */}
+      <Seo title="Dashboard • Welldone Dashboard" />
       <Header
         title="Insights"
-        actions={
-          <div>
-            <a>Weekly</a>
-            <a>Monthly</a>
-          </div>
-        }
       />
       <div css={{ padding: "20px 20px", maxWidth: 1240, margin: "0 auto" }}>
         {/* Card Section */}
@@ -97,23 +90,6 @@ export default function Dashboard({ pumps }) {
                 <Map pumps={pumps} setModalId={setModalId} />
               </BlankCard>
             </div>
-            {/* <div
-              css={{
-                gridArea: "2 / 4 / 3 / 5",
-                [breakingPoints.lg]: {
-                  gridArea: "4 / 1 / 5 / 3",
-                },
-              }}>
-              <BlankCard style={{ textAlign: "center" }}>
-                <h2>Villages</h2>
-                <div css={{ textAlign: "left" }}>
-                  <div>
-                    <h6 css={{ margin: 0 }}>Village Name</h6>
-                    <h6 css={{ margin: 0 }}>#5</h6>
-                  </div>
-                </div>
-              </BlankCard>
-            </div> */}
             <div
               css={{
                 width: "24%",

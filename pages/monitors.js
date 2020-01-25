@@ -1,34 +1,15 @@
 import React, { useState } from "react"
-import { colors, breakingPoints, getPumpStyles } from "../components/Styles"
 import Seo from "../components/Seo"
 import DashHeader from "../components/Header"
 import MonitorCard from "../components/MonitorCard"
 
 export default function Monitors({ pumps }) {
-  const [filter, setFilter] = useState({ 0: true, 1: true, 2: true })
 
   return (
     <>
-      {/* <Seo title="Monitors • Welldone Dashboard" /> */}
+      <Seo title="Monitors • Welldone Dashboard" />
       <DashHeader
         title="Monitors"
-        // actions={
-        //   <div>
-        //     <button
-        //       active={filter[0]}
-        //       onClick={() => setFilter({ ...filter, 2: !filter[2] })}>
-        //       Functional
-        //     </button>
-        //     <button
-        //       active={filter[1]}
-        //       onClick={() => setFilter({ ...filter, 1: !filter[1] })}>
-        //       Non-Functional
-        //     </button>
-        //     <button onClick={() => setFilter({ ...filter, 0: !filter[0] })}>
-        //       Unknown
-        //     </button>
-        //   </div>
-        // }
       />
       <div
         css={{

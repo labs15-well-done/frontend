@@ -1,4 +1,5 @@
 import React from "react"
+import Seo from "../components/Seo"
 import DashHeader from "../components/Header"
 import DataTable from 'react-data-table-component';
 import styled from 'styled-components';
@@ -22,20 +23,6 @@ const Filter = ({ onFilter }) => (
 
 
 export default function Reports({ pumps }) {
-  // const data = [
-  //   {
-  //     "id": "4715",
-  //     "latitude":13.66048333,
-  //     "longitude":104.0075117,
-  //     "village": {
-  //       "village":"Khun Ream",
-  //       "commune":"Khun Ream",
-  //       "district":"Banteay Srei",
-  //       "province":"Siem Reap"
-  //     }
-  //   }
-  // ];
-
   const data = pumps
   
   const columns = [
@@ -89,6 +76,7 @@ export default function Reports({ pumps }) {
   
     return (
       <div>
+        <Seo title="Reports • Welldone Dashboard" />
         <DataTable
           columns={columns}
           data={filteredItems}
