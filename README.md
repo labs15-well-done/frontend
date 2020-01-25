@@ -4,11 +4,11 @@ You can find the deployed project at [Well-Done](https://welldone.netlify.com/).
 
 ## Contributors
 
-|                                                      [Jean-Francois Sebagh](https://github.com/jaysebagh)                                                       |                                                       [Joshua Keslar](https://github.com/Josh-Diamond)                                                        |                                                      [Andrew Brudnak](https://github.com/brudnak)                                                       |                                                       [Joshua Wood](https://github.com/Joshua-Wood39)                                                        |                                                      [Maksim Vakarchuk](https://github.com/maks112v)                                                       |
+|                                                      [Jean-Francois Sebagh](https://github.com/jaysebagh)                                                       |                                                       [Josh Diamond](https://github.com/Josh-Diamond)                                                        |                                                      [Andrew Brudnak](https://github.com/brudnak)                                                       |                                                       [Joshua Wood](https://github.com/Joshua-Wood39)                                                        |                                                      [Maksim Vakarchuk](https://github.com/maks112v)                                                       |
 | :-----------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------: |
-| [<img src="https://media.licdn.com/dms/image/C5603AQGbe2RtInqXVg/profile-displayphoto-shrink_200_200/0?e=1574899200&v=beta&t=utSBc1fP465pyU5-EwsHQCS38yt5a4suon7E94zM8Uw" width = "200" />](https://github.com/jaysebagh) | [<img src="https://media.licdn.com/dms/image/C4E03AQEGFyK4VkyF2Q/profile-displayphoto-shrink_200_200/0?e=1574899200&v=beta&t=TMKATkiXqtMGmJzUyPuOK7lfXDsCUbUuK6txbWcgu1k" width = "200" />](https://github.com/) | [<img src="https://media.licdn.com/dms/image/C4E03AQGStrFtGuPGHw/profile-displayphoto-shrink_200_200/0?e=1574899200&v=beta&t=v6zD7DCBCUmdZiB52KNrMXqZTF-tspK8kHulHZtFLEY" width = "200" />](https://github.com/brudnak) | [<img src="https://media.licdn.com/dms/image/C5603AQGLL7EVkLBkWg/profile-displayphoto-shrink_200_200/0?e=1574899200&v=beta&t=tYoredqmZeKHg1Wn1zjlPloMidZL0BKbwHjBrmB0EUg" width = "200" />](https://github.com/Joshua-Wood39) | [<img src="https://media.licdn.com/dms/image/C4E03AQFfveucZKGtcg/profile-displayphoto-shrink_200_200/0?e=1574899200&v=beta&t=sR_SAc2BHYdNIOlha-LEb2FADXqNviYhqjEpS6vYLt8" width = "200" />](https://github.com/maks112v) |
+| [<img src="./assets/pfp/Jean-Francois.jpeg" width = "200" />](https://github.com/jaysebagh) | [<img src="./assets/pfp/Keslar.jpeg" width = "200" />](https://github.com/) | [<img src="./assets/pfp/Andrew.jpeg" width = "200" />](https://github.com/brudnak) | [<img src="./assets/pfp/Wood.jpeg" width = "200" />](https://github.com/Joshua-Wood39) | [<img src="./assets/pfp/Maksim.jpeg" width = "200" />](https://github.com/maks112v) |
 |                                [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/jaysebagh)                                |                            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/Josh-Diamond)                             |                          [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/brudnak)                           |                          [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/Joshua-Wood39)                           |                           [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/maks112v)                            |
-|                [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/jean-francois-sebagh)                |                 [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/joshua-keslar)                 |                [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/andrew-brudnak)                |                 [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/joshua-wood-full-stack)                 |                [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/maks112v)                |
+|                [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/jean-francois-sebagh)                |                 [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/joshua-keslar)                 |                [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/andrew-brudnak)                |                 [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/joshua-wood-full-stack)                 |                [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/maks112v)                |
 
 <br>
 <br>
@@ -28,7 +28,7 @@ You can find the deployed project at [Well-Done](https://welldone.netlify.com/).
 
 [Design Files](https://www.notion.so/Provided-Resources-69cce05e6bce4db9ab54857538725dc4)
 
-A dashboard application to allow an NPO and it's clients to monitor current water pump statuses in Africa and Cambodia.
+A dashboard application to allow an NPO and it's clients to monitor current water pump statuses in Cambodia.
 
 * Built a server side rendered React application using Next.js
 
@@ -44,7 +44,7 @@ An important aspect of this dashboard was making sure that it was as lightweight
 
 - Overview of pump statuses
 - Full in-depth information about individual pumps
-- Printable reports for onsight technicians
+- Access reports for onsight technicians
 - Lightweight
 - Easy to scale without touching code
 
@@ -54,15 +54,11 @@ An important aspect of this dashboard was making sure that it was as lightweight
 
 #### _React.js / Next.js_
 
-Why did you choose this framework?
-
 - Automatic code splitting, doesn't load unecessary code.
 - Simple client-side routing.
-- Sever Side Rendering for faster page loads.
+- Server Side Rendering for faster page loads.
 
 #### _Emotion_
-
-Why did you choose this framework?
 
 - Requires no additional setup.
 - Lightweight, only loads visible css rather than everything.
@@ -72,8 +68,6 @@ Why did you choose this framework?
 ### CMS built using:
 
 #### _Prismic_
-
-Why did you choose this framework?
 
 - Easy to use.
 - Scalable
