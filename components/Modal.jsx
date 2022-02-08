@@ -30,7 +30,7 @@ export default function Modal({ pumps, modalId }) {
   console.log("help:", selectedPump.status);
   return (
     <div>
-      {(modalId && pumpToArr) ? (
+      {(modalId && pumpToArr && pumpToArr != undefined && pumpToArr.length != 0) ? (
         <div>
           <h3 css={{color:styles[selectedPump.status].color }}>Pump #{selectedPump.id}</h3>
           <p>Current: {styles[selectedPump.status].icon}</p>
@@ -39,7 +39,22 @@ export default function Modal({ pumps, modalId }) {
             <p>{styles[pumpToArr[11].status].icon} {pumpToArr[11].date}</p>
             <p>{styles[pumpToArr[10].status].icon} {pumpToArr[10].date}</p>
         </div>
-      ) : selectedPump.status === 0 ? (<div><h3 css={{color:styles[selectedPump.status].color }}>Pump #{selectedPump.id}</h3><p>Current: {styles[selectedPump.status].icon}</p></div>) : (<h3>Select a Pump</h3>)
+      ) 
+      // : selectedPump.status === 0 ? (
+      //   <div>
+      //     <h3 css={{color:styles[selectedPump.status].color }}>Pump #{selectedPump.id}</h3>
+      //     <p>Current: {styles[selectedPump.status].icon}</p></div>
+      // ) 
+      : selectedPump.status === 1 ? (
+        <div>
+          <h3 css={{color:styles[selectedPump.status].color }}>Pump #{selectedPump.id}</h3>
+          <p>Current: {styles[selectedPump.status].icon}</p>
+          <p>3-Day Spread:</p>
+            <p>{styles[0].icon} unavailable</p>
+            <p>{styles[0].icon} unavailable</p>
+            <p>{styles[0].icon} unavailable</p>
+        </div>
+      ) : (<h3>Select a Pump</h3>)
       }
     </div>
   )
